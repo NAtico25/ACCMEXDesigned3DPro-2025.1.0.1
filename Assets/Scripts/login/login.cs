@@ -8,12 +8,17 @@ public class login : MonoBehaviour
 {
     private string usuario = "admin";
     private string contrasena = "root";
+    string usuarioActual = "";
 
 
     private bool autenticar(string user, string pass)
     {
         if (user == usuario && pass == contrasena)
         {
+            usuarioActual = user;
+            PlayerPrefs.SetString("UsuarioGuardado", usuarioActual);
+            PlayerPrefs.Save();
+            Debug.Log("Usuario autenticado: " + usuarioActual);
             return true;
         }
         else
@@ -37,6 +42,21 @@ public class login : MonoBehaviour
         else
         {
             Debug.Log("Usuario o contraseña incorrectos.");
+        }
+    }
+
+    public string CargarUsuario()
+    {
+        if (PlayerPrefs.HasKey("UsuarioGuardado"))
+        {
+            usuarioActual = PlayerPrefs.GetString("UsuarioGuardado");
+            Debug.Log("Usuario cargado: " + usuarioActual);
+            return usuarioActual;
+        }
+        else
+        {
+            Debug.Log("No hay usuario guardado.");
+            return "";
         }
     }
 }
