@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//Que hubo prros >:V
+
 public class login : MonoBehaviour
 {
     private string usuario = "admin";
