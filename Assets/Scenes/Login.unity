@@ -376,14 +376,14 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 5
+  m_ContentType: 0
   m_InputType: 0
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 5
+  m_CharacterValidation: 0
   m_RegexValue: 
   m_GlobalPointSize: 14
   m_CharacterLimit: 0
@@ -3648,6 +3648,7 @@ GameObject:
   - component: {fileID: 906053123}
   - component: {fileID: 906053122}
   - component: {fileID: 906053121}
+  - component: {fileID: 906053124}
   m_Layer: 5
   m_Name: Login-InicarSesion
   m_TagString: Untagged
@@ -3757,6 +3758,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906053119}
   m_CullTransparentMesh: 1
+--- !u!114 &906053124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906053119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd780c05c3ef0e42b7e99837aba1086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usuarioInput: {fileID: 68523207}
+  contrasenaInput: {fileID: 1205836979}
+  botonLogin: {fileID: 906053121}
+  botonQuit: {fileID: 806717984}
 --- !u!1 &1019807769
 GameObject:
   m_ObjectHideFlags: 0

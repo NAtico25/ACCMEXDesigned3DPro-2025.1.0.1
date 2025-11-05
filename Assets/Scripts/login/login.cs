@@ -1,15 +1,32 @@
 //using Newtonsoft.Json.Bson;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class login : MonoBehaviour
 {
-    private string usuario = "admin";
-    private string contrasena = "root";
+    public TMP_InputField usuarioInput;
+    public TMP_InputField contrasenaInput;
+    public Button botonLogin;
+    public Button botonQuit;
+
+    private string usuario = "Admin";
+    private string contrasena = "Root";
     string usuarioActual = "";
 
+    private void Start()
+    {
+        string user = CargarUsuario();
+        if (user != "")
+        {
+            usuarioInput.text = user;
+        }
+        botonLogin.onClick.AddListener(() => comprobarUsuario(usuarioInput.text, contrasenaInput.text));
+        botonQuit.onClick.AddListener(() => salirAplicacion());
+    }
 
     private bool autenticar(string user, string pass)
     {
@@ -29,7 +46,7 @@ public class login : MonoBehaviour
 
     private void abrirEscena()
     {
-        SceneManager.LoadScene("NombreDeLaEscena");
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void comprobarUsuario(string user, string pass)
@@ -58,5 +75,11 @@ public class login : MonoBehaviour
             Debug.Log("No hay usuario guardado.");
             return "";
         }
+    }
+
+    public void salirAplicacion()
+    {
+        Application.Quit();
+        Debug.Log("Aplicación cerrada.");
     }
 }
