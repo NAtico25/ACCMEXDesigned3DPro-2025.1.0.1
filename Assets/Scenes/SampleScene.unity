@@ -5974,6 +5974,7 @@ GameObject:
   - component: {fileID: 7424268593819907500}
   - component: {fileID: 5753069586822363352}
   - component: {fileID: 4515877420506422357}
+  - component: {fileID: 7424268593819907501}
   m_Layer: 5
   m_Name: Button-Close-APP
   m_TagString: Untagged
@@ -7454,6 +7455,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4279926683047422264}
   m_CullTransparentMesh: 1
+--- !u!114 &7424268593819907501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4279926683047422264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6957ae09f8c576f4e8f9bf262f443c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  botonQuit: {fileID: 4515877420506422357}
 --- !u!23 &7433296329786607281
 MeshRenderer:
   m_ObjectHideFlags: 0
