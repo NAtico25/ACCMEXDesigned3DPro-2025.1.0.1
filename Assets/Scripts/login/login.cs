@@ -1,10 +1,13 @@
 //using Newtonsoft.Json.Bson;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class login : MonoBehaviour
 {
@@ -13,10 +16,10 @@ public class login : MonoBehaviour
     public Button botonLogin;
     public Button botonQuit;
 
-    private string usuario = "Admin";
-    private string contrasena = "Root";
+    private string usuario;
+    private string contrasena;
     string usuarioActual = "";
-
+    
     private void Start()
     {
         string user = CargarUsuario();
@@ -28,20 +31,46 @@ public class login : MonoBehaviour
         botonQuit.onClick.AddListener(() => salirAplicacion());
     }
 
-    private bool autenticar(string user, string pass)
+    private async Task<bool> autenticar(string user, string pass)
     {
-        if (user == usuario && pass == contrasena)
+        ent_usuario ent_Usuario = new ent_usuario
         {
-            usuarioActual = user;
+            usuario = user,
+            contrasena = pass
+        };
+        DataTable dtUsuario = await neg_login.neg_loginUser(ent_Usuario);
+
+        if (dtUsuario.Columns.Contains("IdUsuario"))
+        {
+            ent_Usuario.id_usuario = int.Parse(dtUsuario.Rows[0]["IdUsuario"].ToString());
+            ent_Usuario.rol = dtUsuario.Rows[0]["NombreRol"].ToString();
+            usuarioActual = ent_Usuario.usuario;
             PlayerPrefs.SetString("UsuarioGuardado", usuarioActual);
-            PlayerPrefs.Save();
-            Debug.Log("Usuario autenticado: " + usuarioActual);
             return true;
+        }
+        else if (dtUsuario.Columns.Contains("Mensaje"))
+        {
+            Debug.Log("Error de autenticación: " + dtUsuario.Rows[0]["Mensaje"].ToString());
+            return false;
         }
         else
         {
+            Debug.Log("Error desconocido durante la autenticación.");
             return false;
         }
+
+        //if (user == usuario && pass == contrasena)
+        //{
+        //    usuarioActual = user;
+        //    PlayerPrefs.SetString("UsuarioGuardado", usuarioActual);
+        //    PlayerPrefs.Save();
+        //    Debug.Log("Usuario autenticado: " + usuarioActual);
+        //    return true;
+        //}
+        //else
+        //{
+        //    return false;
+        //}
     }
 
     private void abrirEscena()
@@ -49,9 +78,9 @@ public class login : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
-    public void comprobarUsuario(string user, string pass)
+    public  async void comprobarUsuario(string user, string pass)
     {
-        bool autenticado = autenticar(user, pass);
+        bool autenticado = await autenticar(user, pass);
         if (autenticado)
         {
             abrirEscena();

@@ -5,8 +5,12 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Transactions;
 using UnityEngine;
+//using Microsoft.Data.SqlClient;
+using Microsoft.SqlServer;
 
-class dat_Conexion
+
+
+public class dat_Conexion
 {
     private SqlConnection SqlConnection = null;
 
@@ -15,12 +19,22 @@ class dat_Conexion
 
     public dat_Conexion()
     {
-       this.SqlConnection = new SqlConnection("Data Source=IP_SERVIDOR;Initial Catalog=TU_BASE_DE_DATOS;User ID=TU_USUARIO;Password=TU_CONTRASEÑA");
-    }   
+        try
+        {
+            this.SqlConnection = new SqlConnection(@"Data Source=127.0.0.1,1433;Initial Catalog=Sistema_Cotizacion;User ID=Alex;Password=Fron0417");
+            //this.SqlConnection = new SqlConnection("Data Source=35.224.226.204;Initial Catalog=bd_ERP_ACC_MEX_2020;User ID=ds;Password=Visual2020");
+        }
+        catch (Exception ex)
+        {
+            Debug.Log($"Error al crear la conección con la base de datos. {ex.Message}");
+            throw;
 
+        }
+    } 
+    
     public void abrirConexion(Boolean transaction)
     {
-        if (SqlConnection.State == System.Data.ConnectionState.Closed)
+        if (SqlConnection.State == ConnectionState.Closed)
         {
             try
             {
@@ -37,7 +51,7 @@ class dat_Conexion
             }
             catch (Exception ex)
             {
-                //Console.WriteLine($"Error al abrir conección con la base de datos. {ex.Message}");
+                Debug.Log($"Error al abrir conección con la base de datos. {ex.Message}");
                 throw;
             }
         }
