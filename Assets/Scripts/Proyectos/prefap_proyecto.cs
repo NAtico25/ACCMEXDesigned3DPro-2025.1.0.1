@@ -14,7 +14,11 @@ public class prefap_proyecto : MonoBehaviour, IPointerClickHandler, IPointerEnte
     public TextMeshProUGUI fechaProyecto;
     public int idProyecto;
 
-    public Image fondo;      // el Image que creaste como Background
+    public Button botonFavorito;
+    public Sprite iconoFavoritoOn;
+    public Sprite iconoFavoritoOff;
+
+    public Image fondo;    
     public Color normalColor = new Color(1, 1, 1, 0);      // transparente
     public Color hoverColor = new Color(0.8f, 0.8f, 0.8f, 0.3f);  // gris claro
 
@@ -33,7 +37,30 @@ public class prefap_proyecto : MonoBehaviour, IPointerClickHandler, IPointerEnte
     {
         if (fondo != null)
             fondo.color = normalColor;
+        VerificarFavorito();
+        botonFavorito.onClick.AddListener(() =>
+        {
+            try
+            {
+                if (botonFavorito.image.sprite == iconoFavoritoOff)
+                {
+                    botonFavorito.image.sprite = iconoFavoritoOn;
+                    AgregarFavorito();
+                }
+                else
+                {
+                    botonFavorito.image.sprite = iconoFavoritoOff;
+                    QuitarFavorito();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"Error al cambiar estado de favorito: {ex.Message}");
+            }
+        });
+
     }
+
 
     // Update is called once per frame
     void Update()
@@ -61,9 +88,7 @@ public class prefap_proyecto : MonoBehaviour, IPointerClickHandler, IPointerEnte
         Debug.Log($"Proyecto seleccionado: {idProyecto} - {nombreProyecto.text}");
     }
 
-    
-
-
+    #region Eventos PunterosMouse
     public void OnPointerEnter(PointerEventData eventData)
     {
         fondo.color = hoverColor;
@@ -73,5 +98,36 @@ public class prefap_proyecto : MonoBehaviour, IPointerClickHandler, IPointerEnte
     {
         fondo.color = normalColor;
     }
+    #endregion
+
+    #region Metodos  btn favorito
+
+    private void AgregarFavorito()
+    {
+        PlayerPrefs.SetInt($"ProyectoFavorito_{idProyecto}", 1);
+    }
+
+    private void QuitarFavorito()
+    {
+        PlayerPrefs.SetInt($"ProyectoFavorito_{idProyecto}", 0);
+    }
+    private void VerificarFavorito()
+    {
+        try
+        {
+            if (PlayerPrefs.GetInt($"ProyectoFavorito_{idProyecto}") == 1)
+                botonFavorito.image.sprite = iconoFavoritoOn;
+            else
+                botonFavorito.image.sprite = iconoFavoritoOff;
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"Error al verificar favorito: {ex.Message}");
+            botonFavorito.image.sprite = iconoFavoritoOff;
+        }
+    }
+
+
+    #endregion
 
 }

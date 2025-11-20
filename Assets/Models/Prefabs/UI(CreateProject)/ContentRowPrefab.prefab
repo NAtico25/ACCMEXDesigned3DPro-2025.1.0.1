@@ -200,7 +200,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e2835f78527f32f4a9b01dbe21894ed6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 83c5e9b6d7e17e04782b2df9da451963, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -476,6 +476,9 @@ MonoBehaviour:
   ultimaModificacionProyecto: {fileID: 2782963351410606692}
   fechaProyecto: {fileID: 943076396650330362}
   idProyecto: 0
+  botonFavorito: {fileID: 147778967907536799}
+  iconoFavoritoOn: {fileID: 21300000, guid: e2835f78527f32f4a9b01dbe21894ed6, type: 3}
+  iconoFavoritoOff: {fileID: 21300000, guid: 83c5e9b6d7e17e04782b2df9da451963, type: 3}
   fondo: {fileID: 562787735539747719}
   normalColor: {r: 1, g: 1, b: 1, a: 0}
   hoverColor: {r: 0.8, g: 0.8, b: 0.8, a: 0.3}
