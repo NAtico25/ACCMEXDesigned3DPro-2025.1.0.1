@@ -5,13 +5,13 @@ using System.Data;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class proyectos : MonoBehaviour
 {
-    
-
     public GameObject prefabItem;  
     public Transform content;
+    public Button botonCrearProyecto;
 
     public void CrearLista(DataTable tabla)
     {
@@ -50,7 +50,12 @@ public class proyectos : MonoBehaviour
         if (proyectos != null)
             CrearLista(proyectos);
 
-
+        
+        botonCrearProyecto.onClick.AddListener(() =>
+        {
+            Debug.Log("Botón Crear Proyecto presionado.");
+            // Lógica para crear un nuevo proyecto
+        });
     }
 
     // Update is called once per frame
@@ -71,5 +76,19 @@ public class proyectos : MonoBehaviour
             Debug.LogError("Error al cargar proyectos: " + ex.Message);
         }
         return dt_Proyectos;
+    }
+
+    private async Task<int> CrearProyecto(ent_proyecto nuevoProyecto)
+    {
+        int resultado = 0;
+        try
+        {
+            resultado = await neg_proyectos.neg_crearProyecto(nuevoProyecto);
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError("Error al crear proyecto: " + ex.Message);
+        }
+        return resultado;
     }
 }
