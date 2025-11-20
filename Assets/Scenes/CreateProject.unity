@@ -2130,6 +2130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabItem: {fileID: 5767636271396479742, guid: 80663fbdc5216664781ede80baa249d0, type: 3}
   content: {fileID: 980924507}
+  botonCrearProyecto: {fileID: 981233058}
 --- !u!1 &1427224545
 GameObject:
   m_ObjectHideFlags: 0
