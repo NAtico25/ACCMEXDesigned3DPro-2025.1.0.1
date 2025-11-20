@@ -385,6 +385,7 @@ GameObject:
   - component: {fileID: 1662190032055631579}
   - component: {fileID: 1100895410789482639}
   - component: {fileID: 843063906357552556}
+  - component: {fileID: 6148451636752254615}
   m_Layer: 0
   m_Name: ContentRowPrefab
   m_TagString: Untagged
@@ -457,6 +458,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &6148451636752254615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5767636271396479742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cab463222d7b5aa41a461be76605129f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  favoritoProyecto: {fileID: 7075058123919754426}
+  nombreProyecto: {fileID: 3292120441456872809}
+  ultimaModificacionProyecto: {fileID: 2782963351410606692}
+  fechaProyecto: {fileID: 943076396650330362}
+  idProyecto: 0
 --- !u!1 &6722117609284683621
 GameObject:
   m_ObjectHideFlags: 0

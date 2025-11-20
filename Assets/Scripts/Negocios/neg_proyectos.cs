@@ -26,6 +26,7 @@ public class neg_proyectos : MonoBehaviour
         {
             if (dat_Conexion != null)
                 dat_Conexion.CerrarConexion();
+            Debug.Log("Conexión cerrada en neg_obtenerProyectos.");
         }
         return sqldt_VerificarSesion;
     }
