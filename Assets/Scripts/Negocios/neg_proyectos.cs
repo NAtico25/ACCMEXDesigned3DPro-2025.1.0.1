@@ -26,7 +26,31 @@ public class neg_proyectos : MonoBehaviour
         {
             if (dat_Conexion != null)
                 dat_Conexion.CerrarConexion();
+            Debug.Log("Conexión cerrada en neg_obtenerProyectos.");
         }
         return sqldt_VerificarSesion;
+    }
+
+    public static async Task<int> neg_crearProyecto(ent_proyecto ent_proyecto)
+    {
+        dat_Conexion dat_Conexion = null;
+        int cont = 0;
+        try
+        {
+            dat_Conexion = new dat_Conexion();
+            dat_Conexion.abrirConexion(true);
+            cont = await dat_proyectos.dat_crearProyecto(ent_proyecto, dat_Conexion);
+            dat_Conexion.sqlCommand.Transaction.Commit();
+        }
+        catch (Exception)
+        {
+            dat_Conexion.sqlCommand.Transaction.Rollback();
+            throw;
+        }
+        finally
+        {
+            dat_Conexion.CerrarConexion();
+        }
+        return cont;
     }
 }

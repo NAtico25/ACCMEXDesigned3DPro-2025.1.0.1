@@ -42,4 +42,27 @@ public class dat_proyectos : MonoBehaviour
         }
         return dataTable_verificarSesion;
     }
+
+    public static async Task<int> dat_crearProyecto(ent_proyecto ent_proyecto, dat_Conexion dat_Conexion)
+    {
+        try
+        {
+            dat_Conexion.sqlCommand.CommandType = CommandType.StoredProcedure;
+            dat_Conexion.sqlCommand.CommandText = "sp_CrearProyecto";
+            dat_Conexion.sqlCommand.Parameters.Clear();
+            dat_Conexion.sqlCommand.Parameters.AddWithValue("@Nombre", ent_proyecto.nombreProyecto);
+            dat_Conexion.sqlCommand.Parameters.AddWithValue("@Cliente", ent_proyecto.clienteProyecto);
+            dat_Conexion.sqlCommand.Parameters.AddWithValue("@DadoAlta", ent_proyecto.dadoAltaProyecto);
+            dat_Conexion.sqlCommand.Parameters.AddWithValue("@Fecha", ent_proyecto.fechaProyecto);
+            dat_Conexion.sqlCommand.Parameters.AddWithValue("@Layout", ent_proyecto.LayoutProyecto);
+            dat_Conexion.sqlCommand.Parameters.AddWithValue("@DocumentoCotizacion", ent_proyecto.documentoCotizacion);
+            dat_Conexion.sqlCommand.Parameters.AddWithValue("@Gastos", ent_proyecto.gastosProyecto);
+            int rowsAffected = await dat_Conexion.sqlCommand.ExecuteNonQueryAsync();
+            return 1;
+        }
+        catch (Exception)
+        {
+            return 0;
+        }
+    }
 }
