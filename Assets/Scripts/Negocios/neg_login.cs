@@ -20,8 +20,9 @@ public class neg_login : MonoBehaviour
             dat_Conexion.abrirConexion(false);
             sqldt_VerificarSesion = await Dat_login.dat_loginUser(dat_Conexion, ent_Usuario);
         }
-        catch (Exception)
+        catch (Exception ex)
         {
+            Debug.LogError("Error en neg_loginUser: " + ex.Message);
             throw;
         }
         finally

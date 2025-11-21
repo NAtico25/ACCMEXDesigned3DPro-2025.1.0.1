@@ -23,7 +23,6 @@ public class login : MonoBehaviour
 
     ent_usuario ent_Usuario;
 
-
     private void Start()
     {
         string user = CargarUsuario();
@@ -45,6 +44,8 @@ public class login : MonoBehaviour
             contrasenaInput.ActivateInputField();
         }
     }
+
+
 
     private async Task<bool> autenticar(string user, string pass)
     {
@@ -89,16 +90,24 @@ public class login : MonoBehaviour
 
     }
 
-    public  async void comprobarUsuario(string user, string pass)
+    public async void comprobarUsuario(string user, string pass)
     {
-        bool autenticado = await autenticar(user, pass);
-        if (autenticado)
+        try
         {
-            abrirEscena();
+            bool autenticado = await autenticar(user, pass);
+            if (autenticado)
+            {
+                abrirEscena();
+            }
+            else
+            {
+                Debug.Log("Usuario o contraseña incorrectos.");
+            }
         }
-        else
+        catch (System.Exception ex)
         {
-            Debug.Log("Usuario o contraseña incorrectos.");
+            Debug.LogError("Error durante la comprobación del usuario: " + ex.Message);
+
         }
     }
 
