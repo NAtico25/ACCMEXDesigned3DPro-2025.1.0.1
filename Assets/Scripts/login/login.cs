@@ -7,6 +7,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 
 public class login : MonoBehaviour
@@ -32,6 +33,17 @@ public class login : MonoBehaviour
         }
         botonLogin.onClick.AddListener(() => comprobarUsuario(usuarioInput.text, contrasenaInput.text));
         botonQuit.onClick.AddListener(() => salirAplicacion());
+
+        if(usuarioInput.text == null || usuarioInput.text == "")
+        {
+            EventSystem.current.SetSelectedGameObject(usuarioInput.gameObject);
+            usuarioInput.ActivateInputField();
+        }
+        else
+        {
+            EventSystem.current.SetSelectedGameObject(contrasenaInput.gameObject);
+            contrasenaInput.ActivateInputField();
+        }
     }
 
     private async Task<bool> autenticar(string user, string pass)

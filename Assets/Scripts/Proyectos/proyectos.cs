@@ -12,12 +12,17 @@ public class proyectos : MonoBehaviour
     public GameObject prefabItem;  
     public Transform content;
     public Button botonCrearProyecto;
+    public TMP_InputField busqueda;
+
+    private List<prefap_proyecto> items = new List<prefap_proyecto>();
 
     public void CrearLista(DataTable tabla)
     {
         // Limpia los objetos previos
         foreach (Transform child in content)
             Destroy(child.gameObject);
+
+        items.Clear();
 
         // Crear los prefabs 
         foreach (DataRow row in tabla.Rows)
@@ -37,9 +42,11 @@ public class proyectos : MonoBehaviour
 
             Debug.Log($"Asignando datos al item: Id={id}, Nombre={nombre}, Fecha={fecha}");
             item.SetData(id, nombre, fecha);
-            
+
+            items.Add(item); // Agregar a la lista de items para que pueda usarla en el sistema de busqueda :D ;v //
         }
     }
+
     // Start is called before the first frame update
     async void Start()
     {
@@ -56,6 +63,8 @@ public class proyectos : MonoBehaviour
             Debug.Log("Botón Crear Proyecto presionado.");
             // Lógica para crear un nuevo proyecto
         });
+
+        busqueda.onValueChanged.AddListener(Filtrar);
     }
 
     // Update is called once per frame
@@ -91,4 +100,25 @@ public class proyectos : MonoBehaviour
         }
         return resultado;
     }
+
+    void Filtrar(string texto)
+    {
+        string filtro = texto.ToLower();
+
+        // Si está vacío, mostrar todo
+        if (string.IsNullOrWhiteSpace(filtro))
+        {
+            foreach (var item in items)
+                item.gameObject.SetActive(true);
+            return;
+        }
+
+        // Filtrar normalmente
+        foreach (var item in items)
+        {
+            bool coincide = item.nombreProyecto.text.ToLower().Contains(filtro);
+            item.gameObject.SetActive(coincide);
+        }
+    }
+
 }
