@@ -19,7 +19,10 @@ public class login : MonoBehaviour
     private string usuario;
     private string contrasena;
     string usuarioActual = "";
-    
+
+    ent_usuario ent_Usuario;
+
+
     private void Start()
     {
         string user = CargarUsuario();
@@ -33,11 +36,14 @@ public class login : MonoBehaviour
 
     private async Task<bool> autenticar(string user, string pass)
     {
-        ent_usuario ent_Usuario = new ent_usuario
+        Debug.Log("Iniciando autenticación para el usuario: " + user);
+        ent_Usuario = new ent_usuario
         {
             usuario = user,
             contrasena = pass
         };
+        
+        
         DataTable dtUsuario = await neg_login.neg_loginUser(ent_Usuario);
 
         if (dtUsuario.Columns.Contains("IdUsuario"))
@@ -58,24 +64,17 @@ public class login : MonoBehaviour
             Debug.Log("Error desconocido durante la autenticación.");
             return false;
         }
-
-        //if (user == usuario && pass == contrasena)
-        //{
-        //    usuarioActual = user;
-        //    PlayerPrefs.SetString("UsuarioGuardado", usuarioActual);
-        //    PlayerPrefs.Save();
-        //    Debug.Log("Usuario autenticado: " + usuarioActual);
-        //    return true;
-        //}
-        //else
-        //{
-        //    return false;
-        //}
     }
 
     private void abrirEscena()
     {
-        SceneManager.LoadScene("SampleScene");
+        if (ent_Usuario.rol == "Administrador")
+            SceneManager.LoadScene("AdminProject");
+        else if (ent_Usuario.rol == "Usuario")
+            SceneManager.LoadScene("CreateProject");
+        else
+            Debug.Log("Rol de usuario desconocido.");
+
     }
 
     public  async void comprobarUsuario(string user, string pass)

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ent_proyecto : MonoBehaviour
 {
+    public int idProyecto { get; set; }
     public string nombreProyecto { get; set; }
     public string clienteProyecto { get; set; }
     public bool dadoAltaProyecto { get; set; }
