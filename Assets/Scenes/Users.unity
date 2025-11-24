@@ -885,7 +885,7 @@ GameObject:
   - component: {fileID: 8532908457982500160}
   - component: {fileID: 1235171304067341198}
   m_Layer: 5
-  m_Name: Btn-anadirUrs-Admin
+  m_Name: Btn-regresarProyectos-Admin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3405,7 +3405,7 @@ GameObject:
   - component: {fileID: 6496285687034356838}
   - component: {fileID: 4009874670078597552}
   m_Layer: 5
-  m_Name: Btn-CreateProject-Admin
+  m_Name: Btn-CreateUser-Admin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7905,6 +7905,7 @@ MonoBehaviour:
   content: {fileID: 4352620795858362728}
   botonCrearProyecto: {fileID: 4009874670078597552}
   botonGestionarUsuarios: {fileID: 1235171304067341198}
+  botonIrUsuarios: {fileID: 4009874670078597552}
 --- !u!114 &7835236213085432021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7920,6 +7921,7 @@ MonoBehaviour:
   prefabItem: {fileID: 6145516282851647804, guid: 01bef84d0702b9449980ce2cdcf61a49, type: 3}
   content: {fileID: 4352620795858362728}
   botonCrearUsuario: {fileID: 1235171304067341198}
+  botonIrProyectos: {fileID: 1235171304067341198}
   busqueda: {fileID: 1784803082498110639}
 --- !u!224 &7864318068962399037
 RectTransform:
