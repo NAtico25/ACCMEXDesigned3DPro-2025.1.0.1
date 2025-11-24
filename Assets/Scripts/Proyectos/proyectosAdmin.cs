@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
@@ -13,6 +14,7 @@ public class proyectosAdmin : MonoBehaviour
     public Transform content;
     public UnityEngine.UI.Button botonCrearProyecto;
     public UnityEngine.UI.Button botonGestionarUsuarios;
+    public UnityEngine.UI.Button botonIrUsuarios;
     // Start is called before the first frame update
     async void Start()
     {
@@ -27,6 +29,13 @@ public class proyectosAdmin : MonoBehaviour
         {
             Debug.Log("Botón Crear Proyecto presionado.");
             // Lógica para crear un nuevo proyecto
+        });
+
+        botonGestionarUsuarios.onClick.AddListener(() =>
+        {
+            //abrir escena de gestion de usuarios
+            Debug.Log("Botón Gestionar Usuarios presionado.");
+            SceneManager.LoadScene("Users");
         });
     }
 

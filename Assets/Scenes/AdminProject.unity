@@ -1441,7 +1441,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 342984799883032567}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.99997413
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8263,6 +8263,7 @@ MonoBehaviour:
   content: {fileID: 2775448773723408134}
   botonCrearProyecto: {fileID: 5043161618849587853}
   botonGestionarUsuarios: {fileID: 6113651826378387401}
+  botonIrUsuarios: {fileID: 6113651826378387401}
 --- !u!1 &7901490778890664464
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ using System.Data;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
@@ -13,6 +14,7 @@ public class usuarios_admin : MonoBehaviour
     public GameObject prefabItem;
     public Transform content;
     public UnityEngine.UI.Button botonCrearUsuario;
+    public UnityEngine.UI.Button botonIrProyectos;
     public TMP_InputField busqueda;
     //public TMP_Dropdown dropdownOrdenar;
 
@@ -68,6 +70,13 @@ public class usuarios_admin : MonoBehaviour
 
         busqueda.onValueChanged.AddListener(Filtrar);
         //dropdownOrdenar.onValueChanged.AddListener(OnDropdownValueChanged);
+
+        botonIrProyectos.onClick.AddListener(() =>
+        {
+            //abrir escena de gestion de usuarios
+            Debug.Log("Botón Gestionar proyectos presionado.");
+            SceneManager.LoadScene("AdminProject");
+        });
     }
 
     // Update is called once per frame
