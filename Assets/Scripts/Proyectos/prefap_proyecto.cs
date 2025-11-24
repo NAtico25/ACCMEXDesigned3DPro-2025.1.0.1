@@ -12,6 +12,7 @@ public class prefap_proyecto : MonoBehaviour, IPointerClickHandler, IPointerEnte
     public TextMeshProUGUI nombreProyecto;
     public TextMeshProUGUI ultimaModificacionProyecto;
     public TextMeshProUGUI fechaProyecto;
+    public TextMeshProUGUI clienteProyecto;
     public int idProyecto;
 
     public Button botonFavorito;
@@ -26,12 +27,12 @@ public class prefap_proyecto : MonoBehaviour, IPointerClickHandler, IPointerEnte
     private const float doubleClickThreshold = 0.25f;
     // Start is called before the first frame update
 
-    public void SetData(int id, string nombre, string fecha)
+    public void SetData(int id, string nombre, string fecha, string cliente)
     {
         idProyecto = id;
         nombreProyecto.text = nombre;
         fechaProyecto.text = fecha;
-        
+        clienteProyecto.text = cliente;
     }
     void Start()
     {

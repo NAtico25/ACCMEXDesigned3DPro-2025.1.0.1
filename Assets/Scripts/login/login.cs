@@ -45,8 +45,6 @@ public class login : MonoBehaviour
         }
     }
 
-
-
     private async Task<bool> autenticar(string user, string pass)
     {
         Debug.Log("Iniciando autenticación para el usuario: " + user);
@@ -87,7 +85,6 @@ public class login : MonoBehaviour
             SceneManager.LoadScene("CreateProject");
         else
             Debug.Log("Rol de usuario desconocido.");
-
     }
 
     public async void comprobarUsuario(string user, string pass)
