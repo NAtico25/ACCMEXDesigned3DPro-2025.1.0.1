@@ -21,7 +21,8 @@ public class dat_Conexion
     {
         try
         {
-            this.SqlConnection = new SqlConnection(@"Data Source=127.0.0.1,1433;Initial Catalog=Sistema_Cotizacion;User ID=Alex;Password=Fron0417");
+            //this.SqlConnection = new SqlConnection(@"Data Source=127.0.0.1,1433;Initial Catalog=Sistema_Cotizacion;User ID=Alex;Password=Fron0417");
+            this.SqlConnection = new SqlConnection(@"Data Source=10.10.10.248,1433;Initial Catalog=Sistema_Cotizacion;User ID=Alex;Password=Fron0417");
             //this.SqlConnection = new SqlConnection("Data Source=35.224.226.204;Initial Catalog=bd_ERP_ACC_MEX_2020;User ID=ds;Password=Visual2020");
         }
         catch (Exception ex)
