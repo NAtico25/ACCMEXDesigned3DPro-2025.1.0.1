@@ -44,9 +44,10 @@ public class usuarios_admin : MonoBehaviour
             string nombre = row["NombreUsuario"].ToString();
             string rol = row["NombreRol"].ToString();
             string fecha = DateTime.Now.ToString("yyyy-MM-dd");
+            bool estado = bool.Parse(row["Estado"].ToString());
 
             Debug.Log($"Asignando datos al item: Id={id}, NombreUsuario={nombre}, Rol={rol}");
-            item.SetData(id, nombre, fecha, rol);
+            item.SetData(id, nombre, fecha, rol, estado);
 
             items.Add(item); // Agregar a la lista de items para que pueda usarla en el sistema de busqueda :D ;v //
         }
