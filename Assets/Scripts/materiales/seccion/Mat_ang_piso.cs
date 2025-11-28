@@ -9,4 +9,4 @@ public class Mat_ang_piso : Material
 
     public double largo { get; set; }
     public double ancho { get; set; }
-    }
+}

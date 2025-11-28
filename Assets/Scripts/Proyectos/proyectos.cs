@@ -6,6 +6,7 @@ using System.Security.Permissions;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class proyectos : MonoBehaviour
@@ -64,7 +65,7 @@ public class proyectos : MonoBehaviour
         botonCrearProyecto.onClick.AddListener(() =>
         {
             Debug.Log("Botón Crear Proyecto presionado.");
-            // Lógica para crear un nuevo proyecto
+            SceneManager.LoadScene("Inicio-Project");
         });
 
         busqueda.onValueChanged.AddListener(Filtrar);
