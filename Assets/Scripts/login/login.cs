@@ -45,6 +45,28 @@ public class login : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            comprobarUsuario(usuarioInput.text, contrasenaInput.text);
+        }
+
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (usuarioInput.text == "")
+            {
+                EventSystem.current.SetSelectedGameObject(usuarioInput.gameObject);
+                usuarioInput.ActivateInputField();
+            }
+            else
+            {
+                EventSystem.current.SetSelectedGameObject(contrasenaInput.gameObject);
+                contrasenaInput.ActivateInputField();
+            }
+        }
+    }
+
     private async Task<bool> autenticar(string user, string pass)
     {
         Debug.Log("Iniciando autenticación para el usuario: " + user);
