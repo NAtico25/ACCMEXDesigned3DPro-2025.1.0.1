@@ -41,15 +41,25 @@ public class inpectorDinamico : MonoBehaviour
             }
             catch
             {
-                CrearLinea($"{Indent(indentLevel)}{property.Name}: <no soportado>");
+                //CrearLinea($"{Indent(indentLevel)}{property.Name}: <no soportado>");
                 continue;
             }
 
-            if (propertyValue != null)
+            if (propertyValue == null)
             {
                 CrearLinea($"{Indent(indentLevel)}{property.Name}: NULL");
                 continue;
             }
+
+            if (typeof(UnityEngine.Object).IsAssignableFrom(property.PropertyType))
+                continue;
+
+            // Ignorar propiedades heredadas que no son tuyas
+            if (property.DeclaringType != obj.GetType())
+                continue;
+
+            if (property.GetIndexParameters().Length > 0)
+                continue;
 
             if (propertyValue is Enumerable && propertyValue.GetType() != typeof(string))
             {
@@ -89,6 +99,15 @@ public class inpectorDinamico : MonoBehaviour
 
         foreach (var prop in subProps)
         {
+            if (typeof(UnityEngine.Object).IsAssignableFrom(prop.PropertyType))
+                continue;
+
+            if (prop.DeclaringType != subObj.GetType())
+                continue;
+
+            if (prop.GetIndexParameters().Length > 0)
+                continue;
+
             object valor = prop.GetValue(subObj);
 
             CrearLinea($"{Indent(indent)}{prop.Name}: {valor}");

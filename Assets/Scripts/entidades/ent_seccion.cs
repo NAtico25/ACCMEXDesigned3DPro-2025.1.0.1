@@ -38,5 +38,32 @@ public class ent_seccion : MonoBehaviour
     {
         
     }
- 
+
+    private void Awake()
+    {
+        no_seccion = 1;
+        zoclo = new Mat_zoclo();
+        piezas_Anclaje = new Mat_piezas_anclaje();
+        orejas_Carga = new Mat_orejas_carga();
+        placas_Metal_Piso = new Mat_placas_metal_piso();
+
+        angulos_piso = new List<Mat_ang_piso>();
+        angulos_techo = new List<Mat_ang_techo>();
+        perfiles = new List<Mat_perfil>();
+        pisos = new List<Mat_piso.piso>();
+
+        cubre_Bus = new Mat_cubre_bus();
+        porta_Bus = new Mat_porta_bus();
+        bus_lateral = new Mat_bus_lateral();
+        tapas_bus_lateral = new List<Mat_tapa_bus_lateral>();
+
+        conectores_bus = new Mat_conector_bus();
+        puertas = new List<Mat_puerta>();
+        pestana_superior = new Mat_pestana_superior();
+        angulos_anclaje = new Mat_angulo_anclaje();
+        conectores_sujecion = new Mat_conector_sugestion();
+    }
+
+
+
 }

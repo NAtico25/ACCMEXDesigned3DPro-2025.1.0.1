@@ -38,7 +38,7 @@ public class clic : MonoBehaviour
             }
         });
 
-        
+       
         inspector.MostrarObjeto(seccion);
     }
 
