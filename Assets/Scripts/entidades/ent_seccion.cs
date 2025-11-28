@@ -38,4 +38,5 @@ public class ent_seccion : MonoBehaviour
     {
         
     }
+ 
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,7 +33,18 @@ public class inpectorDinamico : MonoBehaviour
         var properties = obj.GetType().GetProperties();  //Nota: igual se puede probar con BindingFlags.Public | BindingFlags.Instance dentro de GetProperties() pero aun no estoy seguro de como funciona asi que de momento lo dejo asi
         foreach (var property in properties) 
         {
-            object propertyValue = property.GetValue(obj);
+            object propertyValue = null;
+
+            try
+            {
+                propertyValue = property.GetValue(obj);
+            }
+            catch
+            {
+                CrearLinea($"{Indent(indentLevel)}{property.Name}: <no soportado>");
+                continue;
+            }
+
             if (propertyValue != null)
             {
                 CrearLinea($"{Indent(indentLevel)}{property.Name}: NULL");
@@ -86,7 +98,7 @@ public class inpectorDinamico : MonoBehaviour
     void CrearLinea(string texto)
     {
         var go = Instantiate(textPrefap, contentPanel);
-        go.GetComponent<Text>().text = texto;
+        go.GetComponent<TextMeshProUGUI>().text = texto;
     }
 
     string Indent(int level)
