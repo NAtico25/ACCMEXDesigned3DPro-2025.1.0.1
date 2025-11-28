@@ -51,6 +51,7 @@ public class inpectorDinamico : MonoBehaviour
                 continue;
             }
 
+            #region Ignorar propiedades especificas
             if (typeof(UnityEngine.Object).IsAssignableFrom(property.PropertyType))
                 continue;
 
@@ -60,6 +61,7 @@ public class inpectorDinamico : MonoBehaviour
 
             if (property.GetIndexParameters().Length > 0)
                 continue;
+            #endregion
 
             if (propertyValue is Enumerable && propertyValue.GetType() != typeof(string))
             {
@@ -99,6 +101,7 @@ public class inpectorDinamico : MonoBehaviour
 
         foreach (var prop in subProps)
         {
+            #region Ignorar propiedades especificas
             if (typeof(UnityEngine.Object).IsAssignableFrom(prop.PropertyType))
                 continue;
 
@@ -107,6 +110,7 @@ public class inpectorDinamico : MonoBehaviour
 
             if (prop.GetIndexParameters().Length > 0)
                 continue;
+            #endregion
 
             object valor = prop.GetValue(subObj);
 
