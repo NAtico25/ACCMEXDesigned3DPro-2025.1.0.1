@@ -7,7 +7,7 @@ public class clic : MonoBehaviour
 {
     public inpectorDinamico inspector;
     private ent_seccion seccion;
-    public Button botonVerDatos;
+    //public Button botonVerDatos;
 
     void Awake()
     {
@@ -17,7 +17,7 @@ public class clic : MonoBehaviour
             Debug.LogWarning("No se encontró ent_seccion en el objeto " + gameObject.name);
     }
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         if (seccion != null && inspector != null)
         {
@@ -28,18 +28,22 @@ public class clic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        /*if (inspector != null && seccion != null)
+        {
+            inspector.MostrarObjeto(seccion);
+        }*/
         // Evento clic boton
-        botonVerDatos.onClick.AddListener(() =>
+        /*botonVerDatos.onClick.AddListener(() =>
         {
             if (seccion != null && inspector != null)
             {
                 inspector.MostrarObjeto(seccion);
                 Debug.Log("Objeto clickeado desde boton: " + seccion.name);
             }
-        });
+        });*/
 
-       
-        inspector.MostrarObjeto(seccion);
+
+        //inspector.MostrarObjeto(seccion);
     }
 
     // Update is called once per frame
