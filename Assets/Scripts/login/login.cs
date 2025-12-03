@@ -129,7 +129,7 @@ public class login : MonoBehaviour
 
         }
     }
-
+       
     public string CargarUsuario()
     {
         if (PlayerPrefs.HasKey("UsuarioGuardado"))
