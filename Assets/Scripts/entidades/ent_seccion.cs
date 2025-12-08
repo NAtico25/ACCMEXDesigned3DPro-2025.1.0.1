@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ent_seccion : MonoBehaviour
 {
+    public string nombre_Seccion = "Seccion";
     public int no_seccion { get; set; }
     public Mat_zoclo zoclo { get; set; }
     public Mat_piezas_anclaje piezas_Anclaje { get; set; }

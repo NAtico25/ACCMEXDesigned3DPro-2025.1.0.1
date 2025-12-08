@@ -5,6 +5,7 @@ using UnityEngine;
 public class Material : MonoBehaviour
 {
     // Start is called before the first frame update
+    public string nombre_Material { get; set; }
     public materialParaUso MaterialParaUso { get; set; }
     public materialPara MaterialPara { get; set; }
 
