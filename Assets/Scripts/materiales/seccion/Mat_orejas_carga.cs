@@ -2,10 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Mat_orejas_carga : Material
 {
-    public materialParaUso MaterialParaUso = materialParaUso.Metal_mecanico;
-    public materialPara MaterialPara = materialPara.Seccion;
 
-    public int cantidad { get; set; }
+
+    public int cantidad;
+
+    public Mat_orejas_carga()
+    {
+        nombre_Material = "Orejas de carga";
+        cantidad = 0;
+        Precio = 1500.75;
+        MaterialParaUso = materialParaUso.Metal_mecanico;
+        MaterialPara =  materialPara.Seccion;
+
+    }
 }

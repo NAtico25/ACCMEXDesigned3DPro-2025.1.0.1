@@ -41,13 +41,13 @@ public class NewBehaviourScript : MonoBehaviour
 
                 if (seccion != null)
                 {
-                    Debug.Log($"Encontrada ent_seccion en: {seccion.gameObject.name}");
+                    Debug.Log($"Encontrada ent_seccion en: {seccion.nombre_Seccion}");
                     // intenta obtener el inspector dinámico desde la escena
                     var inspector = FindObjectOfType<inpectorDinamico>();
                     if (inspector != null)
                     {
                         inspector.MostrarObjeto(seccion);
-                        Debug.Log($"MostrarObjeto llamado para: {seccion.gameObject.name}");
+                        Debug.Log($"MostrarObjeto llamado para: {seccion.nombre_Seccion}");
                     }
                     else
                     {
