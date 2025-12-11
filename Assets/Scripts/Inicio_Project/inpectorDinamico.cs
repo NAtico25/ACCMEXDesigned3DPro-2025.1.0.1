@@ -134,9 +134,63 @@ public class inpectorDinamico : MonoBehaviour
         foreach (Transform t in contentPanel)
             Destroy(t.gameObject);
     }
+
+    public void Guardar(ent_proyecto ent_Proyecto)
+    {
+        ent_Proyecto.LayoutProyecto = convertidor.ConvertirJson(ent_Proyecto);
+        //string json = JsonUtility.ToJson(ent_Proyecto.LayoutProyecto, true);
+        
+    }
     void Start()
     {
-        
+        ent_proyecto proyectoEjemplo = new ent_proyecto
+        {
+            idProyecto = 1,
+            nombreProyecto = "Proyecto de Ejemplo",
+            clienteProyecto = "Cliente XYZ",
+            dadoAltaProyecto = true,
+            fechaProyecto = System.DateTime.Now,
+            gastosProyecto = 1500.75,
+            seccionesProyecto = new ent_seccion[]
+            {
+                new ent_seccion
+                {
+                    nombre_Seccion = "Seccion A" ,
+                    no_seccion = 1,
+                    
+                    zoclo = new Mat_zoclo
+                    {
+                        con_zoclo = true
+                    },
+                    piezas_Anclaje = new Mat_piezas_anclaje
+                    {
+                        cantidad = 10
+                    },
+                    angulos_piso = new List<Mat_ang_piso>
+                    {
+                        new Mat_ang_piso
+                        { 
+                            nombre_Material = "Angulo para piso",
+                            MaterialParaUso = Material.materialParaUso.Metal_mecanico,
+                            MaterialPara = Material.materialPara.Seccion,
+                            Precio = 1800.25,
+                            largo = 20,
+                            ancho = 4 },
+                        new Mat_ang_piso 
+                        {
+                            nombre_Material = "Angulo para piso",
+                            MaterialParaUso = Material.materialParaUso.Metal_mecanico,
+                            MaterialPara = Material.materialPara.Seccion,
+                            Precio = 1800.25,
+                            largo = 50, 
+                            ancho = 2 
+                        }
+                    },
+                },
+                new ent_seccion { no_seccion = 2, nombre_Seccion = "Seccion B" }
+            }
+        };
+        Guardar(proyectoEjemplo);
     }
 
     // Update is called once per frame

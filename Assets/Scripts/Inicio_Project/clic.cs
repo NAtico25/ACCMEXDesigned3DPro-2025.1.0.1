@@ -22,7 +22,7 @@ public class clic : MonoBehaviour
         if (seccion != null && inspector != null)
         {
             inspector.MostrarObjeto(seccion);
-            Debug.Log("Objeto clickeado: " + seccion.name);
+            Debug.Log("Objeto clickeado: " + seccion.nombre_Seccion);
         }
     }
     // Start is called before the first frame update

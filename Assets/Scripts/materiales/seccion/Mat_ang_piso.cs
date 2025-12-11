@@ -2,11 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Mat_ang_piso : Material
 {
-    public materialParaUso MaterialParaUso = materialParaUso.Metal_mecanico;
-    public materialPara MaterialPara = materialPara.Seccion;
+    public double largo;
+    public double ancho;
 
-    public double largo { get; set; }
-    public double ancho { get; set; }
+    public Mat_ang_piso()
+    {
+        //nombre_Material = "Angulo para piso";
+        //MaterialParaUso = materialParaUso.Metal_mecanico;
+        //MaterialPara = materialPara.Seccion;
+        //Precio = 1800.25;
+        //largo = 0;
+        //ancho = 0;
+    }
 }

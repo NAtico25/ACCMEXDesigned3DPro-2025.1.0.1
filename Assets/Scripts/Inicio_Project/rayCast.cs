@@ -21,7 +21,7 @@ public class rayCast : MonoBehaviour
                 if (seccion != null)
                 {
                     inspector.MostrarObjeto(seccion);
-                    Debug.Log("Click detectado en " + seccion.name);
+                    Debug.Log("Click detectado en " + seccion.nombre_Seccion);
                 }
             }
             Debug.Log("Click en la pantalla" );
