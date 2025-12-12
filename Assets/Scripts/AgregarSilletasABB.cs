@@ -32,5 +32,8 @@ public class AgregarSilletasABB : MonoBehaviour
 
         // Asegura que no cambie de tamaño por el parent
         nuevo.transform.localScale = prefab.transform.localScale;
+       
+        nuevo.GetComponent<ent_seccion>().no_seccion = contenedor.childCount; // Asignar numero de seccion basado en la cantidad de hijos
+        Debug.Log("Se agregó la silleta número: " + nuevo.GetComponent<ent_seccion>().no_seccion);
     }
 }
