@@ -14,7 +14,7 @@ public class Mat_zoclo : Material
     {
         nombre_Material = "Zoclo";
         con_zoclo = true;
-        Precio = 1000.50;
+        Precio = 1000.50; 
         MaterialParaUso = materialParaUso.Metal_mecanico;
         MaterialPara = materialPara.Seccion;
     }
