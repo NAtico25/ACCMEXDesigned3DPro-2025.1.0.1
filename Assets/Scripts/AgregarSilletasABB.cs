@@ -3,34 +3,34 @@ using UnityEngine;
 public class AgregarSilletasABB : MonoBehaviour
 {
     public GameObject prefab;
-    public Transform spawnPoint;       // El empty donde quieres que aparezca
-    public float offsetX = 2f;         // Separación hacia la derecha
-    private Vector3 ultimoSpawn;
+    public Transform contenedor;   // ESTE es tu empty padre
+    public float offsetX = 2f;
 
+    private Vector3 ultimaPosicion;
     private bool primero = true;
 
     public void AgregarPrefab()
     {
-        Vector3 posicion;
+        Vector3 pos;
 
         if (primero)
         {
-            // El primer modelo aparece EXACTO donde está tu empty
-            posicion = spawnPoint.position;
-            ultimoSpawn = posicion;
+            // Primer objeto se coloca EXACTO donde está el empty
+            pos = contenedor.position;
+            ultimaPosicion = pos;
             primero = false;
         }
         else
         {
-            // Para los siguientes, simplemente avanzamos en X
-            posicion = ultimoSpawn + new Vector3(offsetX, 0, 0);
-            ultimoSpawn = posicion;
+            // Los siguientes avanzan en X
+            pos = ultimaPosicion + new Vector3(offsetX, 0, 0);
+            ultimaPosicion = pos;
         }
 
-        // Instanciamos sin que el pivot lo mueva
-        GameObject nuevo = Instantiate(prefab, posicion, Quaternion.identity);
+        // Instanciar como hijo del empty
+        GameObject nuevo = Instantiate(prefab, pos, Quaternion.identity, contenedor);
 
-        // Evita que cambie de tamaño por el parent
+        // Asegura que no cambie de tamaño por el parent
         nuevo.transform.localScale = prefab.transform.localScale;
     }
 }
