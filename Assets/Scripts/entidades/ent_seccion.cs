@@ -13,7 +13,7 @@ public class ent_seccion : MonoBehaviour
     public List<Mat_ang_piso> angulos_piso { get; set; }
     public List<Mat_ang_techo> angulos_techo { get; set; }
     public List<Mat_perfil> perfiles { get; set; } // largo
-    public List<Mat_piso.piso> pisos { get; set; } // Si son para silleta o lisos (enum)
+    public List<Mat_piso> pisos { get; set; } // Si son para silleta o lisos (enum)
     public Mat_cubre_bus cubre_Bus { get; set; }
     public Mat_porta_bus porta_Bus { get; set; }
     public Mat_bus_lateral bus_lateral { get; set; }
@@ -50,7 +50,7 @@ public class ent_seccion : MonoBehaviour
         angulos_piso = new List<Mat_ang_piso>();
         angulos_techo = new List<Mat_ang_techo>();
         perfiles = new List<Mat_perfil>();
-        pisos = new List<Mat_piso.piso>();
+        pisos = new List<Mat_piso>();
 
         cubre_Bus = new Mat_cubre_bus();
         porta_Bus = new Mat_porta_bus();

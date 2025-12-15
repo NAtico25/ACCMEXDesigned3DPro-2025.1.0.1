@@ -19,8 +19,8 @@ public class Mat_piso : Material
         nombre_Material = "Angulo para techo";
         MaterialParaUso = materialParaUso.Metal_mecanico;
         MaterialPara = materialPara.Seccion;
-        Precio = 1750.00;
-        tipoPiso = piso.silleta;
+        //Precio = 1750.00;
+        //tipoPiso = piso.silleta;
     }
 
     //void Start()

@@ -9,4 +9,12 @@ public class Mat_bus_lateral : Material
     //public materialPara MaterialPara = materialPara.Seccion;
 
     public int cantidad;
+
+    public Mat_bus_lateral()
+    {
+        nombre_Material = "Bus lateral";
+        cantidad = 0;
+        MaterialPara = materialPara.Seccion;
+        MaterialParaUso = materialParaUso.Metal_mecanico;
+    }
 }

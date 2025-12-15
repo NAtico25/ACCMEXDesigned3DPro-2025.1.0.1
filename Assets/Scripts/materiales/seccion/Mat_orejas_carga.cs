@@ -12,8 +12,8 @@ public class Mat_orejas_carga : Material
     public Mat_orejas_carga()
     {
         nombre_Material = "Orejas de carga";
-        cantidad = 0;
-        Precio = 1500.75;
+        cantidad = 4;
+        //Precio = 1500.75;
         MaterialParaUso = materialParaUso.Metal_mecanico;
         MaterialPara =  materialPara.Seccion;
 

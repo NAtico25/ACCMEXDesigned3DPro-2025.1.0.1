@@ -18,6 +18,7 @@ public class datosJsonProyecto
     public SeccionData[] secciones;
 }
 
+ 
 [System.Serializable]
 public class SeccionData
 {
@@ -30,7 +31,7 @@ public class SeccionData
     public List<Mat_ang_piso> angulos_piso;
     public List<Mat_ang_techo> angulos_techo;
     public List<Mat_perfil> perfiles; // largo
-    public List<Mat_piso.piso> pisos; // Si son para silleta o lisos (enum)
+    public List<Mat_piso> pisos; // Si son para silleta o lisos (enum)
     public Mat_cubre_bus cubre_Bus;
     public Mat_porta_bus porta_Bus;
     public Mat_bus_lateral bus_lateral;

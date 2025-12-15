@@ -9,4 +9,11 @@ public class Mat_conector_sugestion : Material
     //public materialPara MaterialPara = materialPara.Seccion;
 
     public int cantidad;
+
+    public Mat_conector_sugestion()
+    {
+        nombre_Material = "Conector de sugestion";
+        MaterialPara = materialPara.Seccion;
+        MaterialParaUso = materialParaUso.Metal_mecanico;
+    }
 }
