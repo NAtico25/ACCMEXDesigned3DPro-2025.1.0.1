@@ -175,8 +175,9 @@ public class inpectorDinamico : MonoBehaviour
                             MaterialPara = Material.materialPara.Seccion,
                             Precio = 1800.25,
                             largo = 20,
-                            ancho = 4 },
-                        new Mat_ang_piso 
+                            ancho = 4 
+                        },
+                        new Mat_ang_piso
                         {
                             nombre_Material = "Angulo para piso",
                             MaterialParaUso = Material.materialParaUso.Metal_mecanico,
@@ -186,6 +187,36 @@ public class inpectorDinamico : MonoBehaviour
                             ancho = 2 
                         }
                     },
+                    angulos_techo = new List<Mat_ang_techo>
+                    {
+                        new Mat_ang_techo
+                        {
+
+                        },
+                        new Mat_ang_techo
+                        {
+
+                        }
+                    },
+                    perfiles = new List<Mat_perfil>
+                    {
+                        new Mat_perfil
+                        {
+                        },
+                        new Mat_perfil
+                        {
+                        } 
+                    },
+                    pisos = new List<Mat_piso>
+                    {
+                        new Mat_piso
+                        {
+                        },
+                        new Mat_piso
+                        {
+                        }
+                    },
+                    
                 },
                 new ent_seccion { no_seccion = 2, nombre_Seccion = "Seccion B" }
             }
