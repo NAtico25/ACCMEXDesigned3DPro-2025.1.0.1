@@ -11,7 +11,7 @@ public class Mat_placas_metal_piso : Material
     {
         nombre_Material = "Placas de metal para piso";
         cantidad = 0;
-        Precio = 2000.00;
+        //Precio = 2000.00;
         MaterialParaUso = materialParaUso.Metal_mecanico;
         MaterialPara = materialPara.Seccion;
 

@@ -13,7 +13,7 @@ public class Mat_piezas_anclaje : Material
     {
         nombre_Material = "piezas de anclaje";
         cantidad = 0;
-        Precio = 1000.50;
+        //Precio = 1000.50;
         MaterialParaUso = materialParaUso.Metal_mecanico;
         MaterialPara = materialPara.Seccion;
     }

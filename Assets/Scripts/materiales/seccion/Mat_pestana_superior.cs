@@ -9,4 +9,11 @@ public class Mat_pestana_superior : Material
     //public materialPara MaterialPara = materialPara.Seccion;
 
     public int cantidad;
+
+    public Mat_pestana_superior()
+    {
+        nombre_Material = "Pestaña superior";
+        MaterialPara = materialPara.Seccion;
+        MaterialParaUso = materialParaUso.Metal_mecanico;
+    }
 }

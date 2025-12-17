@@ -15,8 +15,8 @@ public class Mat_ang_techo : Material
         nombre_Material = "Angulo para techo";
         MaterialParaUso = materialParaUso.Metal_mecanico;
         MaterialPara = materialPara.Seccion;
-        Precio = 1750.00;
-        largo = 0;
-        ancho = 0;
+        //Precio = 1750.00;
+        //largo = 0;
+        //ancho = 0;
     }
 }

@@ -10,9 +10,9 @@ public class Mat_ang_piso : Material
 
     public Mat_ang_piso()
     {
-        //nombre_Material = "Angulo para piso";
-        //MaterialParaUso = materialParaUso.Metal_mecanico;
-        //MaterialPara = materialPara.Seccion;
+        nombre_Material = "Angulo para piso";
+        MaterialParaUso = materialParaUso.Metal_mecanico;
+        MaterialPara = materialPara.Seccion;
         //Precio = 1800.25;
         //largo = 0;
         //ancho = 0;

@@ -12,4 +12,13 @@ public class Mat_puerta : Material
     public double ancho;
     public int numero_seguros;
     public int porta_seguros;
+    public bool conPuerta;
+
+    public Mat_puerta()
+    {
+        nombre_Material = "Puerta de sección";
+        conPuerta = false;
+        MaterialPara = materialPara.Seccion;
+        MaterialParaUso = materialParaUso.Metal_mecanico;
+    }
 }

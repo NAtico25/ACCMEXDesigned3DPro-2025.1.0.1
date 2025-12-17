@@ -13,6 +13,9 @@ public class Mat_cubre_bus : Material
 
     public Mat_cubre_bus()
     {
-        
+        nombre_Material = "Cubre bus";
+        cantidad = 0;
+        MaterialPara = materialPara.Seccion;
+        MaterialParaUso = materialParaUso.Metal_mecanico;
     }
 }

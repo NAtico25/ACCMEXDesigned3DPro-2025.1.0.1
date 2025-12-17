@@ -11,4 +11,11 @@ public class Mat_tapa_bus_lateral : Material
 
     public double largo;
     public double ancho;
+
+    public Mat_tapa_bus_lateral()
+    {
+        nombre_Material = "Tapa para bus lateral";
+        MaterialPara = materialPara.Seccion;
+        MaterialParaUso = materialParaUso.Metal_mecanico;
+    }
 }
