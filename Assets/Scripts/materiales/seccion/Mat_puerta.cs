@@ -13,6 +13,14 @@ public class Mat_puerta : Material
     public int numero_seguros;
     public int porta_seguros;
     public bool conPuerta;
+    public string descripcion;
+
+    public enum tipo_Puerta
+    {
+        Superior,
+        Inferior,
+        General
+    }
 
     public Mat_puerta()
     {

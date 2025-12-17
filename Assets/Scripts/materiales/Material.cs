@@ -17,6 +17,7 @@ public class Material
     public materialPara MaterialPara;
 
     public double Precio;
+    public string Numero_Parte;
 
 
     public enum materialParaUso

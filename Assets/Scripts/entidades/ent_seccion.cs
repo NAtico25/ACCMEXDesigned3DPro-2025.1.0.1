@@ -6,9 +6,9 @@ public class ent_seccion : MonoBehaviour
 {
     public string nombre_Seccion = "Seccion";
     public int no_seccion { get; set; }
-    public Mat_zoclo zoclo { get; set; }
+    public Mat_zoclo zoclo { get; set; } // Obligatorio
     public Mat_piezas_anclaje piezas_Anclaje { get; set; }
-    public Mat_orejas_carga orejas_Carga { get; set; }
+    public Mat_orejas_carga orejas_Carga { get; set; } // Obligatorio
     public Mat_placas_metal_piso placas_Metal_Piso { get; set; }
     public List<Mat_ang_piso> angulos_piso { get; set; }
     public List<Mat_ang_techo> angulos_techo { get; set; }
@@ -24,6 +24,8 @@ public class ent_seccion : MonoBehaviour
     public Mat_angulo_anclaje angulos_anclaje { get; set; } // son las L
     public Mat_conector_sugestion conectores_sujecion { get; set; }
 
+    //Agregar tapas de seccion, letrero de seccion,  
+     
 
     // cuando se agrega una silleta se debe agregar piso, porta clemas, clemas, guia de silleta, carretillas, acrilicos separadores, clemas de fuerza.
 
