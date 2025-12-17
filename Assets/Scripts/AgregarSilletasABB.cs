@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class AgregarSilletasABB : MonoBehaviour
@@ -6,6 +7,7 @@ public class AgregarSilletasABB : MonoBehaviour
     public Transform contenedor;   // ESTE es tu empty padre
     public float offsetX = 2f;
 
+    private int contador = 1;
     private Vector3 ultimaPosicion;
     private bool primero = true;
 
@@ -15,7 +17,7 @@ public class AgregarSilletasABB : MonoBehaviour
 
         if (primero)
         {
-            // Primer objeto se coloca EXACTO donde está el empty
+            // Primer objeto se coloca donde está el empty
             pos = contenedor.position;
             ultimaPosicion = pos;
             primero = false;
@@ -35,5 +37,14 @@ public class AgregarSilletasABB : MonoBehaviour
        
         nuevo.GetComponent<ent_seccion>().no_seccion = contenedor.childCount; // Asignar numero de seccion basado en la cantidad de hijos
         Debug.Log("Se agregó la silleta número: " + nuevo.GetComponent<ent_seccion>().no_seccion);
+
+        // Cambiar el texto del prefab clonado
+        TMP_Text texto = nuevo.GetComponentInChildren<TMP_Text>();
+        if (texto != null)
+        {
+            texto.text = $"Seccion {contador}";
+        }
+
+        contador++;
     }
 }
