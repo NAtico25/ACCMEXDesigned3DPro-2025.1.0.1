@@ -17,15 +17,23 @@ public class ent_seccion : MonoBehaviour
     public Mat_cubre_bus cubre_Bus { get; set; }
     public Mat_porta_bus porta_Bus { get; set; }
     public Mat_bus_lateral bus_lateral { get; set; }
-    public List<Mat_tapa_bus_lateral> tapas_bus_lateral { get; set; } // largo y ancho
+    public List<Mat_tapa_bus_lateral> tapas_bus_lateral { get; set; } // largo y ancho tambien conocida como puerta lateral o puerta de bus
     public Mat_conector_bus conectores_bus { get; set; }
     public List<Mat_puerta> puertas { get; set; } // cada una debe tener sus medidas (alto y ancho) cuando se agrega se debe agregar un numero de seguros y porta seguros (esto lo define el usuario)
     public Mat_pestana_superior pestana_superior { get; set; } // la cosa que cubre la etiqueta roja de arriba
     public Mat_angulo_anclaje angulos_anclaje { get; set; } // son las L
     public Mat_conector_sugestion conectores_sujecion { get; set; }
 
+
+    // Nuevos datos agregados el dia 17/12/25
+    public Mat_tapa_trasera_seccion tapa_trasera_seccion { get; set; }
+    public Mat_tapas_laterales_seccion tapas_laterales_seccion { get; set; }
+    public Mat_tapa_lateral_Inferior_seccion tapa_lateral_Inferior_seccion { get; set; }
+    public Mat_tapa_superior_seccion tapa_superior_seccion { get; set; }
+
+
     //Agregar tapas de seccion, letrero de seccion,  
-     
+
 
     // cuando se agrega una silleta se debe agregar piso, porta clemas, clemas, guia de silleta, carretillas, acrilicos separadores, clemas de fuerza.
 

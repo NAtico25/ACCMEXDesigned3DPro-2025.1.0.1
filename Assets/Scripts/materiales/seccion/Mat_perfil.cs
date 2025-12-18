@@ -8,6 +8,7 @@ public class Mat_perfil : Material
     // Start is called before the first frame update
 
     public double largo;
+    public int cantidad;    
 
     public Mat_perfil()
     {
@@ -16,5 +17,6 @@ public class Mat_perfil : Material
         MaterialPara = materialPara.Seccion;
         //Precio = 1750.00;
         largo = 0;
+        cantidad = 1;
     }
 }
