@@ -35,10 +35,14 @@ public class SeccionData
     public Mat_cubre_bus cubre_Bus;
     public Mat_porta_bus porta_Bus;
     public Mat_bus_lateral bus_lateral;
-    public List<Mat_tapa_bus_lateral> tapas_bus_lateral; // largo y ancho
+    //public List<Mat_tapa_bus_lateral> tapas_bus_lateral; // largo y ancho
     public Mat_conector_bus conectores_bus;
     public List<Mat_puerta> puertas; // cada una debe tener sus medidas (alto y ancho) cuando se agrega se debe agregar un numero de seguros y porta seguros (esto lo define el usuario)
     public Mat_pestana_superior pestana_superior; // la cosa que cubre la etiqueta roja de arriba
     public Mat_angulo_anclaje angulos_anclaje; // son las L
     public Mat_conector_sugestion conectores_sujecion;
+    public Mat_tapa_trasera_seccion tapa_trasera_seccion;
+    public Mat_tapas_laterales_seccion tapas_laterales_seccion;
+    public Mat_tapa_lateral_Inferior_seccion tapa_lateral_Inferior_seccion;
+    public Mat_tapa_superior_seccion tapa_superior_seccion;
 }

@@ -17,7 +17,7 @@ public class ent_seccion : MonoBehaviour
     public Mat_cubre_bus cubre_Bus { get; set; }
     public Mat_porta_bus porta_Bus { get; set; }
     public Mat_bus_lateral bus_lateral { get; set; }
-    public List<Mat_tapa_bus_lateral> tapas_bus_lateral { get; set; } // largo y ancho tambien conocida como puerta lateral o puerta de bus
+    //public List<Mat_tapa_bus_lateral> tapas_bus_lateral { get; set; } // largo y ancho tambien conocida como puerta lateral o puerta de bus
     public Mat_conector_bus conectores_bus { get; set; }
     public List<Mat_puerta> puertas { get; set; } // cada una debe tener sus medidas (alto y ancho) cuando se agrega se debe agregar un numero de seguros y porta seguros (esto lo define el usuario)
     public Mat_pestana_superior pestana_superior { get; set; } // la cosa que cubre la etiqueta roja de arriba
@@ -65,7 +65,7 @@ public class ent_seccion : MonoBehaviour
         cubre_Bus = new Mat_cubre_bus();
         porta_Bus = new Mat_porta_bus();
         bus_lateral = new Mat_bus_lateral();
-        tapas_bus_lateral = new List<Mat_tapa_bus_lateral>();
+        //tapas_bus_lateral = new List<Mat_tapa_bus_lateral>();
 
         conectores_bus = new Mat_conector_bus();
         puertas = new List<Mat_puerta>();

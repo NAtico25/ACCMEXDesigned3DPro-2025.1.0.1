@@ -170,21 +170,21 @@ public class inpectorDinamico : MonoBehaviour
                     {
                         new Mat_ang_piso
                         { 
-                            nombre_Material = "Angulo para piso",
-                            MaterialParaUso = Material.materialParaUso.Metal_mecanico,
-                            MaterialPara = Material.materialPara.Seccion,
-                            Precio = 1800.25,
-                            largo = 20,
-                            ancho = 4 
+                            //nombre_Material = "Angulo para piso",
+                            //MaterialParaUso = Material.materialParaUso.Metal_mecanico,
+                            //MaterialPara = Material.materialPara.Seccion,
+                            //Precio = 1800.25,
+                            //largo = 20,
+                            //ancho = 4 
                         },
                         new Mat_ang_piso
                         {
-                            nombre_Material = "Angulo para piso",
-                            MaterialParaUso = Material.materialParaUso.Metal_mecanico,
-                            MaterialPara = Material.materialPara.Seccion,
-                            Precio = 1800.25,
-                            largo = 50, 
-                            ancho = 2 
+                            //nombre_Material = "Angulo para piso",
+                            //MaterialParaUso = Material.materialParaUso.Metal_mecanico,
+                            //MaterialPara = Material.materialPara.Seccion,
+                            //Precio = 1800.25,
+                            //largo = 50, 
+                            //ancho = 2 
                         }
                     },
                     angulos_techo = new List<Mat_ang_techo>
@@ -216,11 +216,34 @@ public class inpectorDinamico : MonoBehaviour
                         {
                         }
                     },
-                    
+                    puertas = new List<Mat_puerta>
+                    {
+                        new Mat_puerta
+                        {
+                            PuertaTipo = Mat_puerta.tipo_Puerta.Superior,
+                            
+                        },
+                        new Mat_puerta
+                        {
+                            PuertaTipo = Mat_puerta.tipo_Puerta.Inferior,
+                        }
+                    }
+
                 },
                 new ent_seccion { no_seccion = 2, nombre_Seccion = "Seccion B" }
             }
         };
+
+        for (int j = 0; j <= proyectoEjemplo.seccionesProyecto.Length - 2; j ++) // debo cambiar el -2 a -1 pero primero debo agregar puertas a la seccion 1 [partiendo de 0 en adelante]
+        {
+            for (int i = 0; i < proyectoEjemplo.seccionesProyecto[j].puertas.Count; i++)
+            {
+                proyectoEjemplo.seccionesProyecto[j].puertas[i].asignarNumeroParte();
+                Debug.Log($"estamos en {j} con {i}");
+            }
+        }
+
+
         Guardar(proyectoEjemplo);
     }
 
@@ -229,4 +252,5 @@ public class inpectorDinamico : MonoBehaviour
     {
         
     }
+
 }

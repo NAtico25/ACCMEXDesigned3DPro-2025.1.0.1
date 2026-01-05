@@ -44,13 +44,17 @@ public static class convertidor
             datos.secciones[i].cubre_Bus = ent_Proyecto.seccionesProyecto[i].cubre_Bus;
             datos.secciones[i].porta_Bus = ent_Proyecto.seccionesProyecto[i].porta_Bus;
             datos.secciones[i].bus_lateral = ent_Proyecto.seccionesProyecto[i].bus_lateral;
-            datos.secciones[i].tapas_bus_lateral = ent_Proyecto.seccionesProyecto[i].tapas_bus_lateral;
             datos.secciones[i].conectores_bus = ent_Proyecto.seccionesProyecto[i].conectores_bus;
             datos.secciones[i].puertas = ent_Proyecto.seccionesProyecto[i].puertas;
             datos.secciones[i].pestana_superior = ent_Proyecto.seccionesProyecto[i].pestana_superior;
             datos.secciones[i].angulos_anclaje = ent_Proyecto.seccionesProyecto[i].angulos_anclaje;
             datos.secciones[i].conectores_sujecion = ent_Proyecto.seccionesProyecto[i].conectores_sujecion;
-        }
+            datos.secciones[i].tapa_trasera_seccion = ent_Proyecto.seccionesProyecto[i].tapa_trasera_seccion;
+            datos.secciones[i].tapas_laterales_seccion = ent_Proyecto.seccionesProyecto[i].tapas_laterales_seccion;
+            datos.secciones[i].tapa_lateral_Inferior_seccion = ent_Proyecto.seccionesProyecto[i].tapa_lateral_Inferior_seccion;
+            datos.secciones[i].tapa_superior_seccion = ent_Proyecto.seccionesProyecto[i].tapa_superior_seccion;
+
+}
 
 
     string json = JsonUtility.ToJson(datos, true);
