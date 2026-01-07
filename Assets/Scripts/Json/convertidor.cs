@@ -40,6 +40,7 @@ public static class convertidor
             datos.secciones[i].angulos_piso = ent_Proyecto.seccionesProyecto[i].angulos_piso;
             datos.secciones[i].angulos_techo = ent_Proyecto.seccionesProyecto[i].angulos_techo;
             datos.secciones[i].perfiles = ent_Proyecto.seccionesProyecto[i].perfiles;
+            datos.secciones[i].piso_Seccion = ent_Proyecto.seccionesProyecto[i].piso_Seccion;
             datos.secciones[i].pisos = ent_Proyecto.seccionesProyecto[i].pisos;
             datos.secciones[i].cubre_Bus = ent_Proyecto.seccionesProyecto[i].cubre_Bus;
             datos.secciones[i].porta_Bus = ent_Proyecto.seccionesProyecto[i].porta_Bus;
@@ -52,9 +53,15 @@ public static class convertidor
             datos.secciones[i].tapa_trasera_seccion = ent_Proyecto.seccionesProyecto[i].tapa_trasera_seccion;
             datos.secciones[i].tapas_laterales_seccion = ent_Proyecto.seccionesProyecto[i].tapas_laterales_seccion;
             datos.secciones[i].tapa_lateral_Inferior_seccion = ent_Proyecto.seccionesProyecto[i].tapa_lateral_Inferior_seccion;
-            datos.secciones[i].tapa_superior_seccion = ent_Proyecto.seccionesProyecto[i].tapa_superior_seccion;
-
-}
+            //datos.secciones[i].tapa_superior_seccion = ent_Proyecto.seccionesProyecto[i].tapa_superior_seccion;
+            datos.secciones[i].trabesano_estructural = ent_Proyecto.seccionesProyecto[i].trabesano_estructural;
+            datos.secciones[i].tapa_piso_seccion = ent_Proyecto.seccionesProyecto[i].tapa_piso_seccion;
+            datos.secciones[i].techo_seccion_ventana_sup = ent_Proyecto.seccionesProyecto[i].techo_seccion_ventana_sup;
+            datos.secciones[i].tapa_techo_seccion = ent_Proyecto.seccionesProyecto[i].tapa_techo_seccion;
+            datos.secciones[i].techo_seccion_ciego = ent_Proyecto.seccionesProyecto[i].techo_seccion_ciego;
+            datos.secciones[i].letrero_Seccion = ent_Proyecto.seccionesProyecto[i].letrero_Seccion;
+            datos.secciones[i].bisagras_Puerta = ent_Proyecto.seccionesProyecto[i].bisagras_Puerta;
+        }
 
 
     string json = JsonUtility.ToJson(datos, true);

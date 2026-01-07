@@ -31,6 +31,7 @@ public class SeccionData
     public List<Mat_ang_piso> angulos_piso;
     public List<Mat_ang_techo> angulos_techo;
     public List<Mat_perfil> perfiles; // largo
+    public Mat_piso_seccion piso_Seccion; // piso general de la seccion
     public List<Mat_piso> pisos; // Si son para silleta o lisos (enum)
     public Mat_cubre_bus cubre_Bus;
     public Mat_porta_bus porta_Bus;
@@ -44,5 +45,12 @@ public class SeccionData
     public Mat_tapa_trasera_seccion tapa_trasera_seccion;
     public Mat_tapas_laterales_seccion tapas_laterales_seccion;
     public Mat_tapa_lateral_Inferior_seccion tapa_lateral_Inferior_seccion;
-    public Mat_tapa_superior_seccion tapa_superior_seccion;
+    //public Mat_tapa_superior_seccion tapa_superior_seccion;
+    public Mat_trabesano_estructural trabesano_estructural;
+    public Mat_tapa_piso_seccion tapa_piso_seccion;
+    public Mat_techo_seccion_ventana_sup techo_seccion_ventana_sup;
+    public Mat_tapa_techo_seccion tapa_techo_seccion;
+    public Mat_techo_seccion_ciego techo_seccion_ciego;
+    public Mat_letrero_seccion letrero_Seccion;
+    public Mat_bisagras_puerta bisagras_Puerta;
 }

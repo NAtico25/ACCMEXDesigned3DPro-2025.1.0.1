@@ -12,6 +12,6 @@ public class Mat_tapa_trasera_seccion : Material
         nombre_Material = "Tapa trasera de seccion";
         MaterialPara = materialPara.Seccion;
         MaterialParaUso = materialParaUso.Metal_mecanico;
-        Numero_Parte = "2TDA010226P1006";
+        Numero_Parte = "ABB-TAP-TRAS";
     }
 }

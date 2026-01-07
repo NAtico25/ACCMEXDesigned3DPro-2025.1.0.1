@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 using UnityEngine;
+using System.Text;
 //using Microsoft.Data.SqlClient;
 
 public class neg_login : MonoBehaviour

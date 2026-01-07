@@ -11,9 +11,9 @@ public class Mat_orejas_carga : Material
 
     public Mat_orejas_carga()
     {
-        nombre_Material = "Orejas de carga";
+        nombre_Material = "Orejas de izaje";
         cantidad = 4;
-        //Precio = 1500.75;
+        Numero_Parte = "ABB-SUJ-SCC";
         MaterialParaUso = materialParaUso.Metal_mecanico;
         MaterialPara =  materialPara.Seccion;
 

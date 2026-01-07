@@ -16,7 +16,7 @@ public class Mat_piso : Material
 
     public Mat_piso()
     {
-        nombre_Material = "Angulo para techo";
+        nombre_Material = "Piso de silleta";
         MaterialParaUso = materialParaUso.Metal_mecanico;
         MaterialPara = materialPara.Seccion;
         //Precio = 1750.00;

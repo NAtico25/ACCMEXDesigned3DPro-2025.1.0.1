@@ -1,12 +1,13 @@
+//using Microsoft.Data.SqlClient;
+using Microsoft.SqlServer;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text;
 using System.Transactions;
 using UnityEngine;
-//using Microsoft.Data.SqlClient;
-using Microsoft.SqlServer;
 
 
 
@@ -21,9 +22,8 @@ public class dat_Conexion
     {
         try
         {
-            //this.SqlConnection = new SqlConnection(@"Data Source=127.0.0.1,1433;Initial Catalog=Sistema_Cotizacion;User ID=Alex;Password=Fron0417");
-            this.SqlConnection = new SqlConnection(@"Data Source=10.10.10.248,1433;Initial Catalog=Sistema_Cotizacion;User ID=Alex;Password=Fron0417");
-            //this.SqlConnection = new SqlConnection("Data Source=35.224.226.204;Initial Catalog=bd_ERP_ACC_MEX_2020;User ID=ds;Password=Visual2020");
+            this.SqlConnection = new SqlConnection(@"Data Source=10.10.10.248,1433;Initial Catalog=Sistema_Cotizacion;User ID=Alex;Password=Fron0417;Encrypt=False;TrustServerCertificate=True;");
+            //this.SqlConnection = new SqlConnection(@"Data Source=10.10.10.248,1433;Initial Catalog=Sistema_Cotizacion;User ID=Alex;Password=Fron0417");
         }
         catch (Exception ex)
         {

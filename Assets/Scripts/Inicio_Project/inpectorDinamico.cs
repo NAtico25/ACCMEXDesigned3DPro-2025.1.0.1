@@ -207,6 +207,7 @@ public class inpectorDinamico : MonoBehaviour
                         {
                         } 
                     },
+                    piso_Seccion = null,
                     pisos = new List<Mat_piso>
                     {
                         new Mat_piso
@@ -227,7 +228,15 @@ public class inpectorDinamico : MonoBehaviour
                         {
                             PuertaTipo = Mat_puerta.tipo_Puerta.Inferior,
                         }
+                    },
+                    techo_seccion_ventana_sup = new Mat_techo_seccion_ventana_sup(false)
+                    {
+
+                    },
+                    tapa_techo_seccion = new Mat_tapa_techo_seccion(true)
+                    {
                     }
+
 
                 },
                 new ent_seccion { no_seccion = 2, nombre_Seccion = "Seccion B" }

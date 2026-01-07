@@ -13,6 +13,7 @@ public class ent_seccion : MonoBehaviour
     public List<Mat_ang_piso> angulos_piso { get; set; }
     public List<Mat_ang_techo> angulos_techo { get; set; }
     public List<Mat_perfil> perfiles { get; set; } // largo
+    public Mat_piso_seccion piso_Seccion { get; set; } // piso general de la seccion
     public List<Mat_piso> pisos { get; set; } // Si son para silleta o lisos (enum)
     public Mat_cubre_bus cubre_Bus { get; set; }
     public Mat_porta_bus porta_Bus { get; set; }
@@ -29,7 +30,16 @@ public class ent_seccion : MonoBehaviour
     public Mat_tapa_trasera_seccion tapa_trasera_seccion { get; set; }
     public Mat_tapas_laterales_seccion tapas_laterales_seccion { get; set; }
     public Mat_tapa_lateral_Inferior_seccion tapa_lateral_Inferior_seccion { get; set; }
-    public Mat_tapa_superior_seccion tapa_superior_seccion { get; set; }
+    //public Mat_tapa_superior_seccion tapa_superior_seccion { get; set; }
+
+    // Nuevos datos agregados el dia 07/01/26
+    public Mat_trabesano_estructural trabesano_estructural { get; set; }
+    public Mat_tapa_piso_seccion tapa_piso_seccion { get; set; }
+    public Mat_techo_seccion_ventana_sup techo_seccion_ventana_sup { get; set; }
+    public Mat_tapa_techo_seccion tapa_techo_seccion { get; set; }
+    public Mat_techo_seccion_ciego techo_seccion_ciego { get; set; }
+    public Mat_letrero_seccion letrero_Seccion { get; set; }
+    public Mat_bisagras_puerta bisagras_Puerta { get; set; }
 
 
     //Agregar tapas de seccion, letrero de seccion,  
@@ -51,27 +61,27 @@ public class ent_seccion : MonoBehaviour
 
     private void Awake()
     {
-        no_seccion = 1;
-        zoclo = new Mat_zoclo();
-        piezas_Anclaje = new Mat_piezas_anclaje();
-        orejas_Carga = new Mat_orejas_carga();
-        placas_Metal_Piso = new Mat_placas_metal_piso();
+        //no_seccion = 1;
+        //zoclo = new Mat_zoclo();
+        //piezas_Anclaje = new Mat_piezas_anclaje();
+        //orejas_Carga = new Mat_orejas_carga();
+        //placas_Metal_Piso = new Mat_placas_metal_piso();
 
-        angulos_piso = new List<Mat_ang_piso>();
-        angulos_techo = new List<Mat_ang_techo>();
-        perfiles = new List<Mat_perfil>();
-        pisos = new List<Mat_piso>();
+        //angulos_piso = new List<Mat_ang_piso>();
+        //angulos_techo = new List<Mat_ang_techo>();
+        //perfiles = new List<Mat_perfil>();
+        //pisos = new List<Mat_piso>();
 
-        cubre_Bus = new Mat_cubre_bus();
-        porta_Bus = new Mat_porta_bus();
-        bus_lateral = new Mat_bus_lateral();
-        //tapas_bus_lateral = new List<Mat_tapa_bus_lateral>();
+        //cubre_Bus = new Mat_cubre_bus();
+        //porta_Bus = new Mat_porta_bus();
+        //bus_lateral = new Mat_bus_lateral();
+        ////tapas_bus_lateral = new List<Mat_tapa_bus_lateral>();
 
-        conectores_bus = new Mat_conector_bus();
-        puertas = new List<Mat_puerta>();
-        pestana_superior = new Mat_pestana_superior();
-        angulos_anclaje = new Mat_angulo_anclaje();
-        conectores_sujecion = new Mat_conector_sugestion();
+        //conectores_bus = new Mat_conector_bus();
+        //puertas = new List<Mat_puerta>();
+        //pestana_superior = new Mat_pestana_superior();
+        //angulos_anclaje = new Mat_angulo_anclaje();
+        //conectores_sujecion = new Mat_conector_sugestion();
     }
 
 

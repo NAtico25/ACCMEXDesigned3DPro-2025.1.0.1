@@ -12,7 +12,8 @@ public class Mat_perfil : Material
 
     public Mat_perfil()
     {
-        nombre_Material = "Perfil de sección";
+        nombre_Material = "Perfil";
+        Numero_Parte = "ABB-PF-2300";
         MaterialParaUso = materialParaUso.Metal_mecanico;
         MaterialPara = materialPara.Seccion;
         //Precio = 1750.00;
