@@ -29,7 +29,6 @@ public class dat_Conexion
         {
             Debug.LogError($"Error al crear la conección con la base de datos. {ex.Message}");
             throw;
-
         }
     } 
     
