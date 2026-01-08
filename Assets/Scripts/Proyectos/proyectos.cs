@@ -19,6 +19,8 @@ public class proyectos : MonoBehaviour
 
     private List<prefap_proyecto> items = new List<prefap_proyecto>();
 
+    
+
     public void CrearLista(DataTable tabla)
     {
         // Limpia los objetos previos
@@ -65,6 +67,13 @@ public class proyectos : MonoBehaviour
         botonCrearProyecto.onClick.AddListener(() =>
         {
             Debug.Log("Botón Crear Proyecto presionado.");
+            ProyectoManager.Instance.proyectoNuevo = new datosJsonProyecto()
+            {
+                nombreProyecto = "Nuevo Proyecto",
+                clienteProyecto = "Cliente",
+                dadoAltaProyecto = false,
+                fechaProyecto = DateTime.Now,
+            };
             SceneManager.LoadScene("Inicio-Project");
         });
 
