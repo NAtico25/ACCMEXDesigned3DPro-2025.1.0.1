@@ -22,7 +22,7 @@ public class dat_Conexion
     {
         try
         {
-            this.SqlConnection = new SqlConnection(@"Data Source=10.10.10.248,1433;Initial Catalog=Sistema_Cotizacion;User ID=Alex;Password=Fron0417;Encrypt=False;TrustServerCertificate=True;");
+            this.SqlConnection = new SqlConnection(@"Data Source=35.224.226.204,1433;Initial Catalog=bd_CCM_design;User ID=TI;Password=bjk2291;Encrypt=False;TrustServerCertificate=True;");
             //this.SqlConnection = new SqlConnection(@"Data Source=10.10.10.248,1433;Initial Catalog=Sistema_Cotizacion;User ID=Alex;Password=Fron0417");
         }
         catch (Exception ex)
