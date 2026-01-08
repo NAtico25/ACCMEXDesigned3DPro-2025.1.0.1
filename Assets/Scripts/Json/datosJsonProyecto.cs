@@ -52,5 +52,10 @@ public class SeccionData
     public Mat_tapa_techo_seccion tapa_techo_seccion;
     public Mat_techo_seccion_ciego techo_seccion_ciego;
     public Mat_letrero_seccion letrero_Seccion;
-    public Mat_bisagras_puerta bisagras_Puerta;
+    public List<Mat_bisagras_puerta> bisagras_Puerta;
+    public Mat_acople_plano acople_Plano;
+    public Mat_acople_l acople_L;
+    public Mat_contraseguro contraseguro;
+    public Mat_soporte_aislante_bus soporte_Aislante_Bus;
+    public Mat_base_tapa_trasera base_Tapa_Trasera;
 }

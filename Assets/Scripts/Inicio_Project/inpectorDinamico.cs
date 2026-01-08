@@ -235,8 +235,14 @@ public class inpectorDinamico : MonoBehaviour
                     },
                     tapa_techo_seccion = new Mat_tapa_techo_seccion(true)
                     {
-                    }
+                    },
+                    bisagras_Puerta = new List<Mat_bisagras_puerta>
+                    {
+                    },
+                    acople_Plano = new Mat_acople_plano()
+                    {
 
+                    }
 
                 },
                 new ent_seccion { no_seccion = 2, nombre_Seccion = "Seccion B" }

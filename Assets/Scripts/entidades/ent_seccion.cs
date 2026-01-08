@@ -39,7 +39,12 @@ public class ent_seccion : MonoBehaviour
     public Mat_tapa_techo_seccion tapa_techo_seccion { get; set; }
     public Mat_techo_seccion_ciego techo_seccion_ciego { get; set; }
     public Mat_letrero_seccion letrero_Seccion { get; set; }
-    public Mat_bisagras_puerta bisagras_Puerta { get; set; }
+    public List<Mat_bisagras_puerta> bisagras_Puerta { get; set; }
+    public Mat_acople_plano acople_Plano { get; set; }
+    public Mat_acople_l acople_L { get; set; }
+    public Mat_contraseguro contraseguro { get; set; }
+    public Mat_soporte_aislante_bus soporte_Aislante_Bus { get; set; }
+    public Mat_base_tapa_trasera base_Tapa_Trasera { get; set; }
 
 
     //Agregar tapas de seccion, letrero de seccion,  

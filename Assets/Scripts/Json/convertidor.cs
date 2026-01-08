@@ -15,7 +15,6 @@ public static class convertidor
     //// Update is called once per frame
     //void Update()
     //{
-        
     //}
 
     public static byte[] ConvertirJson(ent_proyecto ent_Proyecto)
@@ -61,6 +60,11 @@ public static class convertidor
             datos.secciones[i].techo_seccion_ciego = ent_Proyecto.seccionesProyecto[i].techo_seccion_ciego;
             datos.secciones[i].letrero_Seccion = ent_Proyecto.seccionesProyecto[i].letrero_Seccion;
             datos.secciones[i].bisagras_Puerta = ent_Proyecto.seccionesProyecto[i].bisagras_Puerta;
+            datos.secciones[i].acople_Plano = ent_Proyecto.seccionesProyecto[i].acople_Plano;
+            datos.secciones[i].acople_L = ent_Proyecto.seccionesProyecto[i].acople_L;
+            datos.secciones[i].contraseguro = ent_Proyecto.seccionesProyecto[i].contraseguro;
+            datos.secciones[i].soporte_Aislante_Bus = ent_Proyecto.seccionesProyecto[i].soporte_Aislante_Bus;
+            datos.secciones[i].base_Tapa_Trasera = ent_Proyecto.seccionesProyecto[i].base_Tapa_Trasera;
         }
 
 

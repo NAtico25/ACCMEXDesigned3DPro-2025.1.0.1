@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Mat_bisagras_puerta : Material
+public class Mat_contraseguro : Material
 {
     public int cantidad;
-    public double largo;
-    public double ancho;
-    public string descripcion; 
-    public Mat_bisagras_puerta()
+    public Mat_contraseguro()
     {
-        nombre_Material = "Bisagras para puerta";
-        Numero_Parte = "ABB-BIS-GDE";
+        nombre_Material = "Contraseguro";
+        Numero_Parte = "ABB-BIG-SEG";
         MaterialParaUso = materialParaUso.Metal_mecanico;
         MaterialPara = materialPara.Seccion;
         cantidad = 2;
