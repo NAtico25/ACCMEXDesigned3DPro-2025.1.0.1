@@ -74,7 +74,7 @@ public class proyectos : MonoBehaviour
                 dadoAltaProyecto = false,
                 fechaProyecto = DateTime.Now,
             };
-            SceneManager.LoadScene("Inicio-Project");
+            SceneManager.LoadScene("Testeo");
         });
 
         busqueda.onValueChanged.AddListener(Filtrar);
