@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Text;
 
 
 public class login : MonoBehaviour
@@ -65,6 +66,12 @@ public class login : MonoBehaviour
                 contrasenaInput.ActivateInputField();
             }
         }
+    }
+
+    void Awake()
+    {
+        Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+        Debug.Log("Proveedor de páginas de códigos registrado.");
     }
 
     private async Task<bool> autenticar(string user, string pass)
