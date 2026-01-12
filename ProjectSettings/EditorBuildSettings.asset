@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Inicio-Project.unity
     guid: e91c55a4e563f434d9bf6948fd5aa340
+  - enabled: 1
+    path: Assets/Scenes/Testeo.unity
+    guid: ab2dff95064e70640a12e76bbdd2d3c1
   m_configObjects: {}

@@ -28,6 +28,7 @@ public class inpectorDinamico : MonoBehaviour
         MostrarPropiedades(obj, 1);
     }
 
+    //Se va a reacer codigo
     void MostrarPropiedades(object obj, int indentLevel)
     {
         var properties = obj.GetType().GetProperties();  //Nota: igual se puede probar con BindingFlags.Public | BindingFlags.Instance dentro de GetProperties() pero aun no estoy seguro de como funciona asi que de momento lo dejo asi
