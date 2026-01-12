@@ -1,14 +1,15 @@
 //using Newtonsoft.Json.Bson;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Text;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
-using System.Text;
 
 
 public class login : MonoBehaviour
@@ -92,6 +93,9 @@ public class login : MonoBehaviour
             ent_Usuario.rol = dtUsuario.Rows[0]["NombreRol"].ToString();
             usuarioActual = ent_Usuario.usuario;
             PlayerPrefs.SetString("UsuarioGuardado", usuarioActual);
+
+            ProyectoManager.Instance.ent_Usuario =  convertidor.ConvertirUsuario(ent_Usuario);
+            Debug.Log("Autenticación exitosa para el usuario: " + user + " con rol: " + dtUsuario.Rows[0]["NombreRol"].ToString() + " se guardo desde " + ProyectoManager.Instance.ent_Usuario.rol);
             return true;
         }
         else if (dtUsuario.Columns.Contains("Mensaje"))
@@ -123,6 +127,9 @@ public class login : MonoBehaviour
             bool autenticado = await autenticar(user, pass);
             if (autenticado)
             {
+                Debug.Log("Usuario autenticado correctamente: " + user);
+                //ProyectoManager.Instance.ent_Usuario =  convertidor.ConvertirUsuario(ent_Usuario);
+
                 abrirEscena();
             }
             else

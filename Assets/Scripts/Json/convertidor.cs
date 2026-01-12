@@ -86,4 +86,14 @@ public static class convertidor
         return proyecto;
     }
 
+    public static json_usuario ConvertirUsuario(ent_usuario ent_Usuario)
+    {
+        json_usuario jsonUsuario = new json_usuario
+        {
+            usuario = ent_Usuario.usuario,
+            rol = ent_Usuario.rol,
+            id_usuario = ent_Usuario.id_usuario,
+        };
+        return jsonUsuario;
+    }
 }

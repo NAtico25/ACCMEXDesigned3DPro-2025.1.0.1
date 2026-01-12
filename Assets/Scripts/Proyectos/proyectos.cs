@@ -69,11 +69,12 @@ public class proyectos : MonoBehaviour
             Debug.Log("Botón Crear Proyecto presionado.");
             ProyectoManager.Instance.proyectoNuevo = new datosJsonProyecto()
             {
-                nombreProyecto = "Nuevo Proyecto",
-                clienteProyecto = "Cliente",
+                nombreProyecto = "Prueba Nuevo Proyecto",
+                clienteProyecto = "Por determinar",
                 dadoAltaProyecto = false,
                 fechaProyecto = DateTime.Now,
             };
+
             SceneManager.LoadScene("Testeo");
         });
 

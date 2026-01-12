@@ -9,3 +9,12 @@ public class ent_usuario : MonoBehaviour
     public string contrasena { get; set; }
     public string rol { get; set; }
 }
+
+[System.Serializable]
+public class json_usuario
+{
+    public int id_usuario;
+    public string usuario;
+    public string contrasena;
+    public string rol;
+}

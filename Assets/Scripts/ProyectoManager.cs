@@ -6,6 +6,8 @@ public class ProyectoManager : MonoBehaviour
 {
     public static ProyectoManager Instance;
 
+    public json_usuario ent_Usuario;
+
     public datosJsonProyecto proyectoNuevo;
 
     private void Awake()
