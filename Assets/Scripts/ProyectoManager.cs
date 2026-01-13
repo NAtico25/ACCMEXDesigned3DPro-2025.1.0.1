@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ProyectoManager : MonoBehaviour
@@ -7,6 +8,8 @@ public class ProyectoManager : MonoBehaviour
     public static ProyectoManager Instance;
 
     public json_usuario ent_Usuario;
+
+    public ent_proyecto ent_Proyecto;
 
     public datosJsonProyecto proyectoNuevo;
 
@@ -20,6 +23,9 @@ public class ProyectoManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
+
+    
+
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void AutoCreate()
