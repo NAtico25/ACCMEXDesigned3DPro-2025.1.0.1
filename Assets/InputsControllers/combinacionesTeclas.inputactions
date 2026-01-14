@@ -1,5 +1,45 @@
 {
     "name": "combinacionesTeclas",
-    "maps": [],
+    "maps": [
+        {
+            "name": "AccionesRapidas",
+            "id": "df2d1e70-af1f-4b1d-9581-61d6795fdd1f",
+            "actions": [
+                {
+                    "name": "Guardar",
+                    "type": "Button",
+                    "id": "93a58273-3367-4ba5-9e58-bede79748e72",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "594bcd8f-51a3-4eff-990c-f6588afd6553",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Guardar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d2495354-7191-4f4e-a7a7-09ee4ed286c6",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Guardar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
     "controlSchemes": []
 }
