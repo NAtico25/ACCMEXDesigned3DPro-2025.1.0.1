@@ -7,6 +7,7 @@ public class clic : MonoBehaviour
 {
     public inpectorDinamico inspector;
     private ent_seccion seccion;
+    public ComponentesSeccion uiSeccion;
     //public Button botonVerDatos;
 
     void Awake()
@@ -23,6 +24,11 @@ public class clic : MonoBehaviour
         {
             inspector.MostrarObjeto(seccion);
             Debug.Log("Objeto clickeado: " + seccion.nombre_Seccion);
+        }
+
+        if (uiSeccion != null && seccion != null)
+        {
+            uiSeccion.AsignarSeccion(seccion);
         }
     }
     // Start is called before the first frame update

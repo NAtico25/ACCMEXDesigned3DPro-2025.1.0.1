@@ -119,11 +119,19 @@ public class inpectorDinamico : MonoBehaviour
         }
     }
 
-    void CrearLinea(string texto)
+    /*void CrearLinea(string texto)
     {
         var go = Instantiate(textPrefap, contentPanel);
         go.GetComponent<TextMeshProUGUI>().text = texto;
+    }*/
+
+    void CrearLinea(string texto)
+    {
+        var go = Instantiate(textPrefap, contentPanel);
+        var txt = go.GetComponentInChildren<TextMeshProUGUI>();
+        txt.text = texto;
     }
+
 
     string Indent(int level)
     {

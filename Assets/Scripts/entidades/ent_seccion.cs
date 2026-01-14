@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ent_seccion : MonoBehaviour
@@ -45,6 +46,54 @@ public class ent_seccion : MonoBehaviour
     public Mat_contraseguro contraseguro { get; set; }
     public Mat_soporte_aislante_bus soporte_Aislante_Bus { get; set; }
     public Mat_base_tapa_trasera base_Tapa_Trasera { get; set; }
+
+
+    //Lista
+    public List<Material> ObtenerMateriales()
+    {
+        List<Material> materiales = new List<Material>();
+
+        void AddIfNotNull(Material mat)
+        {
+            if (mat != null)
+                materiales.Add(mat);
+        }
+
+        AddIfNotNull(zoclo);
+        AddIfNotNull(piezas_Anclaje);
+        AddIfNotNull(orejas_Carga);
+        AddIfNotNull(placas_Metal_Piso);
+        AddIfNotNull(piso_Seccion);
+        AddIfNotNull(cubre_Bus);
+        AddIfNotNull(porta_Bus);
+        AddIfNotNull(bus_lateral);
+        AddIfNotNull(conectores_bus);
+        AddIfNotNull(pestana_superior);
+        AddIfNotNull(angulos_anclaje);
+        AddIfNotNull(conectores_sujecion);
+        AddIfNotNull(tapa_trasera_seccion);
+        AddIfNotNull(tapas_laterales_seccion);
+        AddIfNotNull(tapa_lateral_Inferior_seccion);
+        AddIfNotNull(trabesano_estructural);
+        AddIfNotNull(tapa_piso_seccion);
+        AddIfNotNull(techo_seccion_ventana_sup);
+        AddIfNotNull(tapa_techo_seccion);
+        AddIfNotNull(techo_seccion_ciego);
+        AddIfNotNull(letrero_Seccion);
+        AddIfNotNull(acople_Plano);
+        AddIfNotNull(acople_L);
+        AddIfNotNull(contraseguro);
+        AddIfNotNull(soporte_Aislante_Bus);
+        AddIfNotNull(base_Tapa_Trasera);
+
+        if (perfiles != null) materiales.AddRange(perfiles);
+        if (puertas != null) materiales.AddRange(puertas);
+        if (pisos != null) materiales.AddRange(pisos);
+        if (bisagras_Puerta != null) materiales.AddRange(bisagras_Puerta);
+
+        return materiales;
+    }
+
 
 
     //Agregar tapas de seccion, letrero de seccion,  
