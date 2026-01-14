@@ -300,7 +300,10 @@ public class inpectorDinamico : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyUp(KeyCode.LeftShift) && Input.GetKeyUp(KeyCode.S))
+        {
+            Debug.Log("Guardando proyecto...");
+        }
     }
 
 }
