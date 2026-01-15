@@ -20507,15 +20507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a21d72d4952d0498874d9c6a105c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Guardar:
-    m_Name: Guardar
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 348cd247-17a5-4296-aff0-8e9ea0919527
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
+  Guardar: {fileID: -898926445451343350, guid: 8dbf95a352675b949b16aaf03c5d8243, type: 3}
 --- !u!4 &8386376458432875362
 Transform:
   m_ObjectHideFlags: 0

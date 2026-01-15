@@ -17,26 +17,37 @@
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "594bcd8f-51a3-4eff-990c-f6588afd6553",
+                    "name": "One Modifier",
+                    "id": "57585b7a-ae95-4e2d-82bf-cece977c5b13",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Guardar",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "29dceb60-d72a-4021-b027-7cf55deba143",
                     "path": "<Keyboard>/ctrl",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Guardar",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "d2495354-7191-4f4e-a7a7-09ee4ed286c6",
+                    "name": "binding",
+                    "id": "23c49b40-f7de-4b35-91db-21792fd46d0e",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Guardar",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 }
             ]
         }

@@ -6,31 +6,31 @@ using UnityEngine.InputSystem;
 
 public class inputsControlador : MonoBehaviour
 {
-    public InputAction Guardar;
+    public InputActionReference Guardar;
     
     // Start is called before the first frame update
     void Start()
     {
-        Guardar.Enable();
+        Guardar.action.Enable();
     }
 
     private void OnEnable()
     {
-        Guardar.Enable();
+        Guardar.action.Enable();
     }
     private void OnDisable()
     {
-        Guardar.Disable();
+        Guardar.action.Disable();
     }
 
     void Update()
     {
-        if (Guardar.WasPressedThisFrame())
+        if (Guardar.action.WasPressedThisFrame())
         {
             try
             {
                 ProyectoManager.Instance.ent_Proyecto = convertidor.ToCampo(ProyectoManager.Instance.proyectoNuevo);
-                inpectorDinamico inpector = FindObjectOfType<inpectorDinamico>();
+                inpectorDinamico inpector = new inpectorDinamico();
                 inpector.Guardar(ProyectoManager.Instance.ent_Proyecto);
                 Debug.Log("Proyecto guardado correctamente.");
             }
