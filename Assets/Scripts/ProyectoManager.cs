@@ -25,8 +25,6 @@ public class ProyectoManager : MonoBehaviour
     }
 
     
-
-
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void AutoCreate()
     {

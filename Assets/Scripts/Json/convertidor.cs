@@ -69,11 +69,6 @@ public static class convertidor
             }
         }
             
-
-
-        
-
-
         string json = JsonUtility.ToJson(datos, true);
         string path = Application.persistentDataPath + "/proyecto_" + ent_Proyecto.idProyecto + ".json";
         File.WriteAllText(path, json);
@@ -101,7 +96,6 @@ public static class convertidor
         };
         return jsonUsuario;
     }
-
     public static ent_proyecto ToCampo(datosJsonProyecto p) => new ent_proyecto
     {
         idProyecto = p.idProyecto,
@@ -114,7 +108,6 @@ public static class convertidor
         gastosProyecto = p.gastosProyecto,
         seccionesProyecto = p.secciones?.Select(Tocampo).ToArray()
     };
-
     public static ent_seccion Tocampo(SeccionData s) => new ent_seccion
     {
         nombre_Seccion = s.nombre_Seccion,
@@ -152,8 +145,6 @@ public static class convertidor
         soporte_Aislante_Bus = s.soporte_Aislante_Bus,
         base_Tapa_Trasera = s.base_Tapa_Trasera
     };
-
-
     public static datosJsonProyecto ToCampo(ent_proyecto p) => new datosJsonProyecto
     {
         idProyecto = p.idProyecto,
@@ -166,7 +157,6 @@ public static class convertidor
         gastosProyecto = p.gastosProyecto,
         secciones = p.seccionesProyecto?.Select(Tocampo).ToArray()
     };
-
     public static SeccionData Tocampo(ent_seccion s) => new SeccionData
     {
         nombre_Seccion = s.nombre_Seccion,
