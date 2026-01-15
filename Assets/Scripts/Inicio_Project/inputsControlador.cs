@@ -32,6 +32,7 @@ public class inputsControlador : MonoBehaviour
                 ProyectoManager.Instance.ent_Proyecto = convertidor.ToCampo(ProyectoManager.Instance.proyectoNuevo);
                 inpectorDinamico inpector = FindObjectOfType<inpectorDinamico>();
                 inpector.Guardar(ProyectoManager.Instance.ent_Proyecto);
+                Debug.Log("Proyecto guardado correctamente.");
             }
             catch (System.Exception e)
             {

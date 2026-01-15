@@ -3771,7 +3771,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1466756255}
   m_HandleRect: {fileID: 1466756254}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -6705,7 +6705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabItem: {fileID: 0}
-  contenedor: {fileID: 0}
+  content: {fileID: 0}
 --- !u!1 &1819516430
 GameObject:
   m_ObjectHideFlags: 0
@@ -10156,6 +10156,7 @@ GameObject:
   - component: {fileID: 7463722260706999417}
   - component: {fileID: 8381167162060759999}
   - component: {fileID: 8381167162060760000}
+  - component: {fileID: 8381167162060760001}
   m_Layer: 5
   m_Name: Fondo
   m_TagString: Untagged
@@ -20492,9 +20493,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txtNombre: {fileID: 0}
-  inputCantidad: {fileID: 0}
-  inputNumeroParte: {fileID: 4816519650577614587}
   inputPrecio: {fileID: 1819516432}
+  toggleActivo: {fileID: 0}
+--- !u!114 &8381167162060760001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244630447697770878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a21d72d4952d0498874d9c6a105c1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Guardar:
+    m_Name: Guardar
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 348cd247-17a5-4296-aff0-8e9ea0919527
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!4 &8386376458432875362
 Transform:
   m_ObjectHideFlags: 0
