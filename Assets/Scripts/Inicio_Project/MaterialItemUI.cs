@@ -6,27 +6,22 @@ using UnityEngine;
 public class MaterialItemUI : MonoBehaviour
 {
     public TMP_Text txtNombre;
-    public TMP_InputField inputCantidad;
+    public TMP_InputField inputPrecio;
+    public UnityEngine.UI.Toggle toggleActivo;
 
-    private Material material;
+    Material material;
 
-    public void Inicializar(Material mat)
+    public void Bind(Material mat)
     {
         material = mat;
 
         txtNombre.text = mat.nombre_Material;
-        inputCantidad.text = mat.Numero_Parte.ToString();
+        inputPrecio.text = mat.Precio.ToString("0.00");
 
-        inputCantidad.onEndEdit.RemoveAllListeners();
-        inputCantidad.onEndEdit.AddListener(OnCantidadChanged);
-    }
-
-    void OnCantidadChanged(string value)
-    {
-        if (int.TryParse(value, out int cantidad))
+        inputPrecio.onEndEdit.AddListener(v =>
         {
-            txtNombre.text = material.nombre_Material;
-            inputCantidad.text = material.Numero_Parte.ToString();
-        }
+            if (double.TryParse(v, out double p))
+                mat.Precio = p;
+        });
     }
 }

@@ -5,19 +5,19 @@ using UnityEngine;
 public class ListaMaterialesUI : MonoBehaviour
 {
     public MaterialItemUI prefabItem;
-    public Transform contenedor;
+    public Transform content;
 
-    public void Construir(List<Material> materiales)
+    public void MostrarMateriales(ent_seccion seccion)
     {
-        foreach (Transform child in contenedor)
-            Destroy(child.gameObject);
+        // Limpia lista anterior
+        foreach (Transform hijo in content)
+            Destroy(hijo.gameObject);
 
-        foreach (var mat in materiales)
+        // Genera UI dinámicamente
+        foreach (var material in seccion.ObtenerMateriales())
         {
-            if (mat == null) continue;
-
-            var item = Instantiate(prefabItem, contenedor);
-            item.Inicializar(mat);
+            var item = Instantiate(prefabItem, content);
+            item.Bind(material);
         }
     }
 }
