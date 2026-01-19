@@ -920,7 +920,7 @@ GameObject:
   - component: {fileID: 238500977}
   - component: {fileID: 238500976}
   m_Layer: 5
-  m_Name: Btn_ABB (1)
+  m_Name: Seccion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2594,7 +2594,7 @@ GameObject:
   - component: {fileID: 696420557}
   - component: {fileID: 696420556}
   m_Layer: 5
-  m_Name: Btn_AllenB (1)
+  m_Name: Principal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4754,7 +4754,7 @@ GameObject:
   - component: {fileID: 1187538038}
   - component: {fileID: 1187538037}
   m_Layer: 5
-  m_Name: Btn_ABB (2)
+  m_Name: Personalizado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4983,7 +4983,7 @@ GameObject:
   - component: {fileID: 1216027386}
   - component: {fileID: 1216027385}
   m_Layer: 5
-  m_Name: Btn_AllenB (2)
+  m_Name: Tablero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
