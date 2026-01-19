@@ -75,6 +75,11 @@ public class proyectos : MonoBehaviour
                 fechaProyecto = DateTime.Now,
             };
 
+            ProyectoManager.Instance.ent_Proyecto = convertidor.ToCampo(ProyectoManager.Instance.proyectoNuevo);
+            Debug.Log($"Se cargo el proyecton con nombre: {ProyectoManager.Instance.ent_Proyecto.nombreProyecto}");
+            //inpectorDinamico inpector = new inpectorDinamico();
+            //inpector.Guardar(ProyectoManager.Instance.ent_Proyecto);
+
             SceneManager.LoadScene("Testeo");
         });
 
@@ -87,6 +92,7 @@ public class proyectos : MonoBehaviour
     {
         
     }
+
 
     private async Task<DataTable> CargarProyectos()
     {

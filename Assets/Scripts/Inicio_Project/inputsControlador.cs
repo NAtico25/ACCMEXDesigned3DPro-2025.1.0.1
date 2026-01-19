@@ -7,11 +7,13 @@ using UnityEngine.InputSystem;
 public class inputsControlador : MonoBehaviour
 {
     public InputActionReference Guardar;
+    public Transform objetoPadre;
     
     // Start is called before the first frame update
     void Start()
     {
         Guardar.action.Enable();
+        ProyectoManager.Instance.ent_Proyecto = convertidor.ToCampo(ProyectoManager.Instance.proyectoNuevo);
     }
 
     private void OnEnable()
@@ -38,6 +40,19 @@ public class inputsControlador : MonoBehaviour
             {
                 Debug.LogError(e.Message);
             }
+        }
+        Actualizar();
+    }
+
+    public void Actualizar()
+    {
+        if (objetoPadre.GetComponentsInChildren<ent_seccion>() != null)
+        {
+            ent_seccion[] secciones = objetoPadre.GetComponentsInChildren<ent_seccion>();
+            Debug.Log("Secciones encontradas: " + secciones.Length);
+           
+            ProyectoManager.Instance.ent_Proyecto.seccionesProyecto = secciones;
+            ProyectoManager.Instance.proyectoNuevo = convertidor.ToCampo(ProyectoManager.Instance.ent_Proyecto);
         }
     }
 }

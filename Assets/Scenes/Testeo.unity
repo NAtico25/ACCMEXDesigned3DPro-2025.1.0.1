@@ -20508,6 +20508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Guardar: {fileID: -898926445451343350, guid: 8dbf95a352675b949b16aaf03c5d8243, type: 3}
+  objetoPadre: {fileID: 1821156908}
 --- !u!4 &8386376458432875362
 Transform:
   m_ObjectHideFlags: 0
