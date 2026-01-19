@@ -16,8 +16,8 @@ public class ListaMaterialesUI : MonoBehaviour
         // Genera UI dinámicamente
         foreach (var material in seccion.ObtenerMateriales())
         {
-            var item = Instantiate(prefabItem, content);
-            item.Bind(material);
+            /*var item = Instantiate(prefabItem, content);
+            item.MostrarPrecio(material);*/
         }
     }
 }
