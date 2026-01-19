@@ -74,7 +74,7 @@ public class proyectos : MonoBehaviour
                 dadoAltaProyecto = false,
                 fechaProyecto = DateTime.Now,
             };
-
+            ProyectoManager.Instance.esNuevoProyecto = true;
             ProyectoManager.Instance.ent_Proyecto = convertidor.ToCampo(ProyectoManager.Instance.proyectoNuevo);
             Debug.Log($"Se cargo el proyecton con nombre: {ProyectoManager.Instance.ent_Proyecto.nombreProyecto}");
             //inpectorDinamico inpector = new inpectorDinamico();
@@ -108,19 +108,7 @@ public class proyectos : MonoBehaviour
         return dt_Proyectos;
     }
 
-    private async Task<int> CrearProyecto(ent_proyecto nuevoProyecto)
-    {
-        int resultado = 0;
-        try
-        {
-            resultado = await neg_proyectos.neg_crearProyecto(nuevoProyecto);
-        }
-        catch (System.Exception ex)
-        {
-            Debug.LogError("Error al crear proyecto: " + ex.Message);
-        }
-        return resultado;
-    }
+    
 
     void Filtrar(string texto)
     {

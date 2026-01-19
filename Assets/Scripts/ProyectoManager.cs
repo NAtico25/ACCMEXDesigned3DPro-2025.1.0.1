@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ProyectoManager : MonoBehaviour
 {
+    public bool esNuevoProyecto = false;
+
     public static ProyectoManager Instance;
 
     public json_usuario ent_Usuario;

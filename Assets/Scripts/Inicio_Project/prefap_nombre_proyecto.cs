@@ -24,4 +24,19 @@ public class prefap_nombre_proyecto : MonoBehaviour
     {
         
     }
+
+    public async Task<int> CrearProyecto(ent_proyecto nuevoProyecto)
+    {
+        int resultado = 0;
+        try
+        {
+            ProyectoManager.Instance.proyectoNuevo.nombreProyecto = nombreProyectoInput.text;
+            resultado = await neg_proyectos.neg_crearProyecto(nuevoProyecto);
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError("Error al crear proyecto: " + ex.Message);
+        }
+        return resultado;
+    }
 }
