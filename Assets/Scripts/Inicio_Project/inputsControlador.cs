@@ -36,7 +36,7 @@ public class inputsControlador : MonoBehaviour
                 ProyectoManager.Instance.ent_Proyecto = convertidor.ToCampo(ProyectoManager.Instance.proyectoNuevo);
                 inpectorDinamico inpector = new inpectorDinamico();
                 inpector.Guardar(ProyectoManager.Instance.ent_Proyecto);
-                verificarCrearProyecto(ProyectoManager.Instance.esNuevoProyecto).Wait();
+                verificarCrearProyecto(ProyectoManager.Instance.esNuevoProyecto);
                 Debug.Log("Proyecto guardado correctamente.");
             }
             catch (System.Exception e)
@@ -59,10 +59,11 @@ public class inputsControlador : MonoBehaviour
         }
     }
 
-    private async Task verificarCrearProyecto(bool esNuevo)
+    private async void verificarCrearProyecto(bool esNuevo)
     {
         if (ProyectoManager.Instance.esNuevoProyecto == true)
         {
+            Debug.Log("Creando nuevo proyecto en la base de datos...");
             int valor = await nombre_Proyecto.CrearProyecto(ProyectoManager.Instance.ent_Proyecto);
         }
     }

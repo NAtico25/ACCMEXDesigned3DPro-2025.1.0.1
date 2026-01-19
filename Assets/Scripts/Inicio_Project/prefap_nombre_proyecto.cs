@@ -32,6 +32,7 @@ public class prefap_nombre_proyecto : MonoBehaviour
         {
             ProyectoManager.Instance.proyectoNuevo.nombreProyecto = nombreProyectoInput.text;
             resultado = await neg_proyectos.neg_crearProyecto(nuevoProyecto);
+            Debug.Log("Proyecto creado en la base de datos: " + resultado);
         }
         catch (System.Exception ex)
         {
