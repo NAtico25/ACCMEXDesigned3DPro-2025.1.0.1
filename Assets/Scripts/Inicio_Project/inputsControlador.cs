@@ -63,6 +63,11 @@ public class inputsControlador : MonoBehaviour
     {
         if (ProyectoManager.Instance.esNuevoProyecto == true)
         {
+            ProyectoManager.Instance.ent_Proyecto.documentoCotizacion = convertidor.ConvertirJson(ProyectoManager.Instance.ent_Proyecto);
+            ProyectoManager.Instance.ent_Proyecto.LayoutProyecto = convertidor.ConvertirJson(ProyectoManager.Instance.ent_Proyecto);
+            ProyectoManager.Instance.ent_Proyecto.clienteProyecto = "PruebaClienteCodigo";
+            ProyectoManager.Instance.ent_Proyecto.dadoAltaProyecto = true;
+            Debug.Log($"Los datos son los siguientes: {ProyectoManager.Instance.ent_Proyecto.clienteProyecto}");
             Debug.Log("Creando nuevo proyecto en la base de datos...");
             int valor = await nombre_Proyecto.CrearProyecto(ProyectoManager.Instance.ent_Proyecto);
         }
