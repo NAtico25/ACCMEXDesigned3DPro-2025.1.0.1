@@ -9,6 +9,7 @@ public class prefap_nuevoCliente : MonoBehaviour
     public TMP_InputField input_NombreCliente;
     public Button boton_CrearCliente;
     public Button boton_Cancelar;
+    public CanvasGroup canvasGroup;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,13 +42,18 @@ public class prefap_nuevoCliente : MonoBehaviour
     public void ActivarVentana()
     {
         gameObject.SetActive(true);
+        canvasGroup.interactable = false;
+        canvasGroup.blocksRaycasts = false;
         Time.timeScale = 0f; // Congela el resto de elementos
+
     }
 
    
     public void DesactivarVentana()
     {
         gameObject.SetActive(false);
+        canvasGroup.interactable = true;
+        canvasGroup.blocksRaycasts = true;
         Time.timeScale = 1f; // Reanuda 
     }
 

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class prefap_nombre_cliente : MonoBehaviour
 {
     public TMP_Dropdown dropDownCliente;
+    public prefap_nuevoCliente ventana_NuevoCliente;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,7 @@ public class prefap_nombre_cliente : MonoBehaviour
         if (texto == "Nuevo Cliente")
         {
             Debug.Log("Se ha seleccionado 'Nuevo Cliente'.");
+            ventana_NuevoCliente.ActivarVentana();
         }
         else
         {
