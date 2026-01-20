@@ -28,6 +28,29 @@ public class neg_inicioProyect : MonoBehaviour
         }
         return sqldt_Clientes;
     }
+
+    public static async Task<int> neg_CrearCliente(string nombreCliente)
+    {
+        int resultado = 0;
+        dat_Conexion dat_Conexion = null;
+        try
+        {
+            dat_Conexion = new dat_Conexion();
+            dat_Conexion.abrirConexion(true);
+            resultado = await dat_inicioProyect.dat_CrearCliente(dat_Conexion, nombreCliente);
+        }
+        catch (System.Exception)
+        {
+            throw;
+        }
+        finally
+        {
+            if (dat_Conexion != null)
+                dat_Conexion.CerrarConexion();
+            Debug.Log("Conexión cerrada en neg_CrearCliente.");
+        }
+        return resultado;
+    }
     void Start()
     {
         

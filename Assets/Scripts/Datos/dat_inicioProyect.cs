@@ -43,14 +43,22 @@ public class dat_inicioProyect : MonoBehaviour
         return dataTable_verificarSesion;
     }
     // Start is called before the first frame update
-    void Start()
+    public static async Task<int> dat_CrearCliente(dat_Conexion dat_Conexion, string nombreCliente)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        int resultado = 0;
+        try
+        {
+            dat_Conexion.sqlCommand.CommandType = CommandType.StoredProcedure;
+            dat_Conexion.sqlCommand.CommandText = "sp_CrearCliente";
+            dat_Conexion.sqlCommand.Parameters.Clear();
+            dat_Conexion.sqlCommand.Parameters.AddWithValue("@Nombre", nombreCliente);
+            resultado = await dat_Conexion.sqlCommand.ExecuteNonQueryAsync();
+        }
+        catch (Exception)
+        {
+            throw;
+            throw new Exception("Ha ocurrido un error conectandose a la base de datos." + "\n\nDetalle del Error:\n");
+        }
+        return resultado;
     }
 }

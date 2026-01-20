@@ -32,6 +32,15 @@ public class prefap_nombre_cliente : MonoBehaviour
     {
         string texto = dropDownCliente.options[index].text;
         Debug.Log("Seleccionado: " + texto);
+        if (texto == "Nuevo Cliente")
+        {
+            Debug.Log("Se ha seleccionado 'Nuevo Cliente'.");
+        }
+        else
+        {
+            Debug.Log("Cliente existente seleccionado: " + texto);
+            ProyectoManager.Instance.ent_Proyecto.clienteProyecto = texto;
+        }
     }
 
     public void ActualizarNombreCliente()
@@ -49,6 +58,7 @@ public class prefap_nombre_cliente : MonoBehaviour
             string nombreCliente = row["Nombre"].ToString();
             opciones.Add(new TMP_Dropdown.OptionData(nombreCliente));
         }
+        opciones.Add(new TMP_Dropdown.OptionData("Nuevo Cliente"));
         dropDownCliente.AddOptions(opciones);
         dropDownCliente.RefreshShownValue();
     }
