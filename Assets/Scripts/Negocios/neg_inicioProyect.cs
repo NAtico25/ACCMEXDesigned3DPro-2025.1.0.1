@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
@@ -31,25 +32,25 @@ public class neg_inicioProyect : MonoBehaviour
 
     public static async Task<int> neg_CrearCliente(string nombreCliente)
     {
-        int resultado = 0;
         dat_Conexion dat_Conexion = null;
+        int cont = 0;
         try
         {
             dat_Conexion = new dat_Conexion();
             dat_Conexion.abrirConexion(true);
-            resultado = await dat_inicioProyect.dat_CrearCliente(dat_Conexion, nombreCliente);
+            cont = await dat_inicioProyect.dat_CrearCliente(dat_Conexion, nombreCliente );
+            dat_Conexion.sqlCommand.Transaction.Commit();
         }
-        catch (System.Exception)
+        catch (Exception)
         {
+            dat_Conexion.sqlCommand.Transaction.Rollback();
             throw;
         }
         finally
         {
-            if (dat_Conexion != null)
-                dat_Conexion.CerrarConexion();
-            Debug.Log("Conexión cerrada en neg_CrearCliente.");
+            dat_Conexion.CerrarConexion();
         }
-        return resultado;
+        return cont;
     }
     void Start()
     {

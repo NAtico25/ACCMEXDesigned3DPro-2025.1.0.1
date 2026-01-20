@@ -52,7 +52,7 @@ public class inputsControlador : MonoBehaviour
         if (objetoPadre.GetComponentsInChildren<ent_seccion>() != null)
         {
             ent_seccion[] secciones = objetoPadre.GetComponentsInChildren<ent_seccion>();
-            Debug.Log("Secciones encontradas: " + secciones.Length);
+            //Debug.Log("Secciones encontradas: " + secciones.Length);
            
             ProyectoManager.Instance.ent_Proyecto.seccionesProyecto = secciones;
             ProyectoManager.Instance.proyectoNuevo = convertidor.ToCampo(ProyectoManager.Instance.ent_Proyecto);
