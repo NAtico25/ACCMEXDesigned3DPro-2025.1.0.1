@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static SlotsDrop3D;
 
 public class UISilletaArrastrar_Soltar : MonoBehaviour,
-    IBeginDragHandler, IDragHandler /*, IEndDragHandler*/
+    IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     //Valores que pide desde el inspector
     public GameObject silletaPrefab;
@@ -23,6 +24,7 @@ public class UISilletaArrastrar_Soltar : MonoBehaviour,
     public void OnBeginDrag(PointerEventData eventBase)
     {
         rect.SetAsLastSibling();
+        DragState.current = this;
     }
 
     public void OnDrag(PointerEventData eventBase)
@@ -30,8 +32,13 @@ public class UISilletaArrastrar_Soltar : MonoBehaviour,
         rect.anchoredPosition += eventBase.delta / canvas.scaleFactor;
     }
 
-    public void onEndDrag(PointerEventData eventBase)
+    public void OnEndDrag(PointerEventData eventBase)
     {
         rect.anchoredPosition = startPos;
+    }
+
+    public static class DragState
+    {
+        public static UISilletaArrastrar_Soltar current;
     }
 }
