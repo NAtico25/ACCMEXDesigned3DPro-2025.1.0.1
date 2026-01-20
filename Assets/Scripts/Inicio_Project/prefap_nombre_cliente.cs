@@ -46,7 +46,7 @@ public class prefap_nombre_cliente : MonoBehaviour
         List<TMP_Dropdown.OptionData> opciones = new List<TMP_Dropdown.OptionData>();
         foreach (DataRow row in dtClientes.Rows)
         {
-            string nombreCliente = row["NombreCliente"].ToString();
+            string nombreCliente = row["Nombre"].ToString();
             opciones.Add(new TMP_Dropdown.OptionData(nombreCliente));
         }
         dropDownCliente.AddOptions(opciones);
