@@ -22,7 +22,7 @@ public class ComponentesSeccion : MonoBehaviour
     void Awake()
     {
         inputCompSecc.onEndEdit.AddListener(OnNoSeccionChanged);
-        inputCompSecc2.onEndEdit.AddListener(OnNoParteChanged);
+        //inputCompSecc2.onEndEdit.AddListener(OnNoParteChanged);
     }
 
     // Se llama cuando haces clic en un objeto 3D
