@@ -1808,7 +1808,7 @@ PrefabInstance:
     - target: {fileID: 8887444067023603018, guid: ef80665ed155af74297fc0a9e7d50515, type: 3}
       propertyPath: canvasGroup
       value: 
-      objectReference: {fileID: 584889185}
+      objectReference: {fileID: 7502860175469529154}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23629,6 +23629,7 @@ GameObject:
   - component: {fileID: 7502860175469529153}
   - component: {fileID: 4057279918033175794}
   - component: {fileID: 2789167505529422119}
+  - component: {fileID: 7502860175469529154}
   m_Layer: 5
   m_Name: Fondo
   m_TagString: Untagged
@@ -25629,6 +25630,18 @@ MonoBehaviour:
   inputCompSecc2: {fileID: 0}
   listaMaterialesUI: {fileID: 0}
   seccionActual: {fileID: 1218339046}
+--- !u!225 &7502860175469529154
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7021469823890499281}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &7509822565443126381
 MonoBehaviour:
   m_ObjectHideFlags: 0
