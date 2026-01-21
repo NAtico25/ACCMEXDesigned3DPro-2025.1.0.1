@@ -101,4 +101,28 @@ public class neg_proyectos : MonoBehaviour
         }
         return sqldt_VerificarSesion;
     }
+
+    public static async Task<DataTable> neg_datosProyecto(ent_proyecto ent_Proyecto)
+    {
+        DataTable sqldt_VerificarSesion = null;
+        dat_Conexion dat_Conexion = null;
+
+        try
+        {
+            dat_Conexion = new dat_Conexion();
+            dat_Conexion.abrirConexion(false);
+            sqldt_VerificarSesion = await dat_proyectos.dat_datosProyecto(ent_Proyecto, dat_Conexion);
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+        finally
+        {
+            if (dat_Conexion != null)
+                dat_Conexion.CerrarConexion();
+            Debug.Log("Conexión cerrada en neg_cambiarEstadoProyecto.");
+        }
+        return sqldt_VerificarSesion;
+    }
 }

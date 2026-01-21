@@ -92,6 +92,7 @@ public class prefap_proyecto : MonoBehaviour, IPointerClickHandler, IPointerEnte
     {
         Debug.Log($"Proyecto seleccionado: {idProyecto} - {nombreProyecto.text}");
         UltimaVezInteract();
+        ObtenerTablaProyecto(idProyecto);
     }
 
     #region Eventos PunterosMouse
@@ -165,5 +166,27 @@ public class prefap_proyecto : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
 
     #endregion
+
+    private async void ObtenerTablaProyecto(int id)
+    {
+        DataTable dt_Proyecto = await neg_proyectos.neg_datosProyecto(ProyectoManager.Instance.ent_Proyecto);
+        foreach (DataRow row in dt_Proyecto.Rows)
+        {
+            ProyectoManager.Instance.ent_Proyecto.idProyecto = Convert.ToInt32(row["IdProyecto"]);
+            ProyectoManager.Instance.ent_Proyecto.nombreProyecto = row["Nombre"].ToString();
+            ProyectoManager.Instance.ent_Proyecto.clienteProyecto = row["Cliente"].ToString();
+            ProyectoManager.Instance.ent_Proyecto.LayoutProyecto = row["Layout"] as byte[];
+            ProyectoManager.Instance.ent_Proyecto.documentoCotizacion = row["DocumentoCotizacion"] as byte[];
+        }
+        try
+        {
+            ProyectoManager.Instance.ent_Proyecto = convertidor.ConvertirDesdeBytes(ProyectoManager.Instance.ent_Proyecto.LayoutProyecto);
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"Error al convertir el layout del proyecto: {ex.Message}");
+
+        }
+    }
 
 }

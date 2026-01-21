@@ -38,7 +38,7 @@ public class neg_inicioProyect : MonoBehaviour
         {
             dat_Conexion = new dat_Conexion();
             dat_Conexion.abrirConexion(true);
-            cont = await dat_inicioProyect.dat_CrearCliente(dat_Conexion, nombreCliente );
+            cont = await dat_inicioProyect.dat_CrearCliente(dat_Conexion, nombreCliente);
             dat_Conexion.sqlCommand.Transaction.Commit();
         }
         catch (Exception)
