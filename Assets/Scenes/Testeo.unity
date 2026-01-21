@@ -658,9 +658,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 230149508}
-  m_Layer: 0
+  - component: {fileID: 230149509}
+  - component: {fileID: 230149510}
+  m_Layer: 3
   m_Name: Slot_01
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -680,6 +682,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1074152115}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &230149509
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230149507}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.33, y: 0.12, z: 0.23}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &230149510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230149507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e475084e4b341244aa2a7dd1260d5e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotIndex: 0
+  manager: {fileID: 1074152116}
 --- !u!1001 &232046217
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1517,6 +1554,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 557443003}
+  - component: {fileID: 557443004}
   m_Layer: 0
   m_Name: Slot_04
   m_TagString: Untagged
@@ -1539,6 +1577,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1074152115}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &557443004
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557443002}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &584889179 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1692195994308857602, guid: ef80665ed155af74297fc0a9e7d50515, type: 3}
@@ -2334,9 +2399,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 892106947}
-  m_Layer: 0
+  - component: {fileID: 892106948}
+  - component: {fileID: 892106949}
+  m_Layer: 3
   m_Name: Slot_03
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2356,6 +2423,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1074152115}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &892106948
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892106946}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.33, y: 0.12, z: 0.23}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &892106949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892106946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e475084e4b341244aa2a7dd1260d5e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotIndex: 0
+  manager: {fileID: 1074152116}
 --- !u!1 &928944933
 GameObject:
   m_ObjectHideFlags: 0
@@ -2782,7 +2884,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1074152115}
-  - component: {fileID: 1074152114}
+  - component: {fileID: 1074152116}
   m_Layer: 0
   m_Name: SlotContainer_Seccion
   m_TagString: Untagged
@@ -2790,7 +2892,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1074152114
+--- !u!4 &1074152115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074152113}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.153, y: 0.012, z: 0.09113983}
+  m_LocalScale: {x: 1.7992032, y: 0.48809913, z: 0.5768344}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 230149508}
+  - {fileID: 1878984594}
+  - {fileID: 892106947}
+  - {fileID: 557443003}
+  - {fileID: 1430715793}
+  - {fileID: 806174855}
+  - {fileID: 697807558}
+  - {fileID: 1788068618}
+  - {fileID: 1971459475}
+  - {fileID: 132369430}
+  - {fileID: 928944934}
+  - {fileID: 1459175166}
+  m_Father: {fileID: 1218339048}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1074152116
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2799,7 +2928,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1074152113}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ab544a377c2b9043922d2b0eaffccee, type: 3}
+  m_Script: {fileID: 11500000, guid: 17493cf0b33080246a514bbed397e440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slots:
@@ -2815,40 +2944,19 @@ MonoBehaviour:
   - {fileID: 132369430}
   - {fileID: 928944934}
   - {fileID: 1459175166}
-  silletaTipo1: {fileID: 1785089425}
-  silletaTipo2: {fileID: 1944952719}
-  silletaTipo3: {fileID: 298257722}
-  silletaTipo4: {fileID: 794859463}
-  silletaTipo5: {fileID: 1516961600}
-  silletaTipo6: {fileID: 0}
+  silleta0_5F: {fileID: 1785089425}
+  silleta1F: {fileID: 1944952719}
+  silleta1_5F: {fileID: 794859463}
+  silleta2F: {fileID: 298257722}
+  silleta2_5F: {fileID: 0}
+  silleta3F: {fileID: 0}
+  silleta6F: {fileID: 0}
+  slotPrefab: {fileID: 230149507}
+  slotContainer: {fileID: 0}
+  slotsPorSeccion: 12
+  separacionX: 0.35
   estadoTexto: {fileID: 0}
---- !u!4 &1074152115
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1074152113}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.061, y: 1.162, z: -7.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 230149508}
-  - {fileID: 1878984594}
-  - {fileID: 892106947}
-  - {fileID: 557443003}
-  - {fileID: 1430715793}
-  - {fileID: 806174855}
-  - {fileID: 697807558}
-  - {fileID: 1788068618}
-  - {fileID: 1971459475}
-  - {fileID: 132369430}
-  - {fileID: 928944934}
-  - {fileID: 1459175166}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  manager: {fileID: 0}
 --- !u!1 &1077161056
 GameObject:
   m_ObjectHideFlags: 0
@@ -3315,19 +3423,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1157338122}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7339540073298413158}
-        m_TargetAssemblyTypeName: Botones, Assembly-CSharp
-        m_MethodName: OnColocarTipo4
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1157338122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3413,6 +3509,7 @@ Transform:
   m_Children:
   - {fileID: 1263484575510500649}
   - {fileID: 1512788401}
+  - {fileID: 1074152115}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1218339049
@@ -3448,7 +3545,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1, z: 0.05}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1224587924
 GameObject:
@@ -3462,6 +3559,7 @@ GameObject:
   - component: {fileID: 1224587928}
   - component: {fileID: 1224587927}
   - component: {fileID: 1224587926}
+  - component: {fileID: 1224587929}
   m_Layer: 5
   m_Name: 0_5F
   m_TagString: Untagged
@@ -3532,19 +3630,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1224587927}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7339540073298413158}
-        m_TargetAssemblyTypeName: Botones, Assembly-CSharp
-        m_MethodName: OnColocarTipo1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1224587927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3583,6 +3669,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224587924}
   m_CullTransparentMesh: 1
+--- !u!114 &1224587929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224587924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feef512b88376554099e8d7c68dc73fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  silletaPrefab: {fileID: 1785089425}
+  size: 0
+  localOffset: {x: 0.27, y: -0.953, z: 0.1}
 --- !u!1 &1350505114
 GameObject:
   m_ObjectHideFlags: 0
@@ -3748,19 +3849,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1389679398}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7339540073298413158}
-        m_TargetAssemblyTypeName: Botones, Assembly-CSharp
-        m_MethodName: OnColocarTipo2
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1389679398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4271,11 +4360,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f9446c9cb39e4942bd815b7fe599e6a, type: 3}
---- !u!1 &1516961600 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 683029806074226730, guid: 5f9446c9cb39e4942bd815b7fe599e6a, type: 3}
-  m_PrefabInstance: {fileID: 1516961599}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1516961601 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3703629446584030009, guid: 5f9446c9cb39e4942bd815b7fe599e6a, type: 3}
@@ -4669,19 +4753,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1678108724}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7339540073298413158}
-        m_TargetAssemblyTypeName: Botones, Assembly-CSharp
-        m_MethodName: OnColocarTipo3
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1678108724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5060,9 +5132,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1878984594}
-  m_Layer: 0
+  - component: {fileID: 1878984595}
+  - component: {fileID: 1878984596}
+  m_Layer: 3
   m_Name: Slot_02
-  m_TagString: Untagged
+  m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5082,6 +5156,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1074152115}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1878984595
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878984593}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.33, y: 0.12, z: 0.23}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1878984596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878984593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e475084e4b341244aa2a7dd1260d5e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotIndex: 0
+  manager: {fileID: 1074152116}
 --- !u!1 &1906691952
 GameObject:
   m_ObjectHideFlags: 0
@@ -25014,7 +25123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46b52f18fd433654a8d29f851459e54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sileltaManager: {fileID: 1074152114}
+  sileltaManager: {fileID: 0}
   tableroManager: {fileID: 0}
 --- !u!222 &7344225366894691752
 CanvasRenderer:
@@ -29784,7 +29893,6 @@ SceneRoots:
   - {fileID: 1916818032}
   - {fileID: 2186100375522645662}
   - {fileID: 1218339048}
-  - {fileID: 1074152115}
   - {fileID: 1821156908}
   - {fileID: 1536530668}
   - {fileID: 665762192}

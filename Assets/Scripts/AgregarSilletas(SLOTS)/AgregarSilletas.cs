@@ -33,59 +33,49 @@ public class AgregarSilletas : MonoBehaviour
     //Hara la funcion de eliminar silleta
     private List<GameObject> silletasInstanciadas = new List<GameObject>();
 
-    public void AgregarSeccion()
+    public TableroManager manager;
+
+    void Start()
     {
-        int inicio = slots.Count;
-
-        for (int i = 0; i < slotsPorSeccion; i++)
+        // Detectar automáticamente todos los slots hijos del slotContainer
+        slots.Clear();
+        foreach (Transform t in slotContainer)
         {
-            GameObject nuevoSlot = Instantiate(slotPrefab, slotContainer);
+            slots.Add(t);
 
-            // Posición consecutiva
-            nuevoSlot.transform.localPosition =
-                new Vector3((inicio + i) * separacionX, 0, 0);
+            // Asignar el componente SlotsDrop3D si no existe
+            SlotsDrop3D s = t.GetComponent<SlotsDrop3D>();
+            if (s == null)
+                s = t.gameObject.AddComponent<SlotsDrop3D>();
 
-            slots.Add(nuevoSlot.transform);
-            slotOcupado.Add(false);
+            s.slotIndex = slots.Count - 1; // índice según jerarquía
+            s.manager = this;
         }
+
+        // Inicializar slots ocupados
+        slotOcupado.Clear();
+        for (int i = 0; i < slots.Count; i++)
+            slotOcupado.Add(false);
     }
 
     public bool PlaceSilleta(int startSlot, GameObject silletaPrefab, int size, Vector3 localPosOffset)
     {
-        // Verificar si hay espacio suficiente
-        if (startSlot + size > slots.Count)
-        {
-            Debug.LogWarning("No hay suficiente espacio para esta silleta.");
-            return false;
-        }
+        Transform slot = slots[startSlot];
 
-        // Comprobar que los slots estén libres
-        for (int i = startSlot; i < startSlot + size; i++)
-        {
-            if (slotOcupado[i])
-            {
-                Debug.LogWarning("Uno o más slots están ocupados.");
-                return false;
-            }
-        }
+        Debug.Log("Instanciando silleta en: " + slot.name);
 
-        // Instanciar la silleta en el primer slot
-        Transform firstSlot = slots[startSlot];
-        GameObject silleta = Instantiate(silletaPrefab, firstSlot.position, firstSlot.rotation, firstSlot);
+        // CLON del prefab del botón
+        GameObject silleta = Instantiate(
+            silletaPrefab,
+            slot.position,
+            slot.rotation,
+            slotContainer.parent
+        );
 
-        Silleta_individual info = silleta.AddComponent<Silleta_individual>();
-        info.startSlot = startSlot;
-        info.size = size;
+        silleta.transform.localScale = Vector3.one;
+        silleta.transform.position += localPosOffset;
 
-        //Eliminar
-        silletasInstanciadas.Add(silleta);
-
-        // Asignar solo la posición local personalizada
-        silleta.transform.localPosition = localPosOffset;
-
-        // Marcar los slots como ocupados
-        for (int i = startSlot; i < startSlot + size; i++)
-            slotOcupado[i] = true;
+        Debug.Log("Silleta creada correctamente");
 
         return true;
     }
@@ -108,12 +98,16 @@ public class AgregarSilletas : MonoBehaviour
 
     private int BuscarEspacioDisponible(int size)
     {
-        for (int i = 0; i < slots.Count - size + 1; i++)
+        for (int i = 0; i <= slots.Count - size; i++)
         {
             bool libre = true;
             for (int j = 0; j < size; j++)
             {
-                if (slotOcupado[i + j]) { libre = false; break; }
+                if (slotOcupado[i + j])
+                {
+                    libre = false;
+                    break;
+                }
             }
             if (libre) return i;
         }
@@ -124,27 +118,20 @@ public class AgregarSilletas : MonoBehaviour
     {
         if (silletasInstanciadas.Count == 0)
         {
-            Debug.LogWarning("No hay silletas para eliminar.");
             if (estadoTexto != null)
                 estadoTexto.text = "No hay silletas para eliminar";
             return;
         }
 
-        // Obtener la última silleta agregada
-        GameObject ultimaSilleta = silletasInstanciadas[silletasInstanciadas.Count - 1];
-
-        // Liberar sus slots
-        Silleta_individual s = ultimaSilleta.GetComponent<Silleta_individual>();
+        GameObject ultima = silletasInstanciadas[silletasInstanciadas.Count - 1];
+        Silleta_individual s = ultima.GetComponent<Silleta_individual>();
         if (s != null)
         {
             for (int i = s.startSlot; i < s.startSlot + s.size; i++)
-            {
                 slotOcupado[i] = false;
-            }
         }
 
-        // Eliminarla del juego y de la lista
-        Destroy(ultimaSilleta);
+        Destroy(ultima);
         silletasInstanciadas.RemoveAt(silletasInstanciadas.Count - 1);
 
         if (estadoTexto != null)
@@ -153,12 +140,12 @@ public class AgregarSilletas : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.green;
         if (slots == null) return;
+        Gizmos.color = Color.green;
         foreach (Transform slot in slots)
         {
             if (slot != null)
-                Gizmos.DrawWireCube(slot.position, new Vector3(0.3242188f, 0.1242188f, 0.2267891f));
+                Gizmos.DrawWireCube(slot.position, new Vector3(0.324f, 0.124f, 0.226f));
         }
     }
 }

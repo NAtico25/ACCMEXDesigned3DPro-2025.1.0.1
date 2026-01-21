@@ -6,9 +6,8 @@ public class SlotsDrop3D : MonoBehaviour
 {
     public int slotIndex;
     public AgregarSilletas manager;
-    public UISilletaArrastrar_Soltar manager2;
 
-    private void OnMouseUp()
+    /*private void OnMouseUp()
     {
         TryPlace();
     }
@@ -28,5 +27,5 @@ public class SlotsDrop3D : MonoBehaviour
     public static class DragState
     {
         public static UISilletaArrastrar_Soltar current;
-    }
+    }*/
 }
