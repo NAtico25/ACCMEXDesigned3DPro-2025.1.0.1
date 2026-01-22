@@ -32,6 +32,9 @@ public static class convertidor
             for (int i = 0; i < ent_Proyecto.seccionesProyecto.Length; i++)
             {
                 datos.secciones[i] = new SeccionData();
+                datos.secciones[i].largo_Seccion = ent_Proyecto.seccionesProyecto[i].largo_Seccion;
+                datos.secciones[i].ancho_Seccion = ent_Proyecto.seccionesProyecto[i].ancho_Seccion;
+                datos.secciones[i].profundidad_Seccion = ent_Proyecto.seccionesProyecto[i].profundidad_Seccion;
                 datos.secciones[i].nombre_Seccion = ent_Proyecto.seccionesProyecto[i].nombre_Seccion;
                 datos.secciones[i].no_seccion = ent_Proyecto.seccionesProyecto[i].no_seccion;
                 datos.secciones[i].zoclo = ent_Proyecto.seccionesProyecto[i].zoclo;
@@ -114,6 +117,9 @@ public static class convertidor
     public static ent_seccion Tocampo(SeccionData s) => new ent_seccion
     {
         nombre_Seccion = s.nombre_Seccion,
+        largo_Seccion = s.largo_Seccion,
+        ancho_Seccion = s.ancho_Seccion,
+        profundidad_Seccion = s.profundidad_Seccion,
         no_seccion = s.no_seccion,
         zoclo = s.zoclo,
         piezas_Anclaje = s.piezas_Anclaje,

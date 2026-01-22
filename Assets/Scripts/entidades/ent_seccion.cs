@@ -6,6 +6,9 @@ using UnityEngine;
 public class ent_seccion : MonoBehaviour
 {
     public string nombre_Seccion = "Seccion";
+    public double largo_Seccion = 2.46; // en metros con zoclo
+    public double ancho_Seccion = 60; // en centimetros sin tapas laterales
+    public double profundidad_Seccion = 45; // en centimetros sin tapa
     public int no_seccion { get; set; }
     public Mat_zoclo zoclo { get; set; } // Obligatorio
     public Mat_piezas_anclaje piezas_Anclaje { get; set; }

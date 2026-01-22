@@ -14,6 +14,7 @@ public class Mat_puerta : Material
     public int numero_seguros;
     public int porta_seguros;
     public string descripcion;
+    public double espesor_Puerta = 2.5; // centimetros
 
     public enum tipo_Puerta
     {
