@@ -34,30 +34,32 @@ public class UISilletaArrastrar_Soltar : MonoBehaviour,
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        // Regresar el botón a su lugar
+        // Esto hace que regrese el botón UI a su posición original
         rect.anchoredPosition = startPos;
 
-        Debug.Log("OnEndDrag ejecutado");
-
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
-        Debug.DrawRay(ray.origin, ray.direction * 20f, Color.red, 2f);
 
+        //Busca el layer Slot para que no colisione con el otro boxcollider que es el de clic
         int layerMask = LayerMask.GetMask("Slot");
 
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask))
         {
             Debug.Log("Raycast golpeó SLOT: " + hit.collider.name);
 
-            SlotsDrop3D slot = hit.collider.GetComponent<SlotsDrop3D>();
-            if (slot != null)
-            {
-                slot.manager.PlaceSilleta(
-                    slot.slotIndex,
-                    silletaPrefab,
-                    size,
-                    localOffset
-                );
-            }
+            // Aqui crea el clon del prefab 3D
+            GameObject silletaClone = Instantiate(silletaPrefab);
+
+            // Lo combierte hijo del slot
+            silletaClone.transform.SetParent(hit.collider.transform, false);
+
+            // Pone la posicion que tiene en el inspector local usando el offset del botón
+            silletaClone.transform.localPosition = localOffset;
+
+            // Esto rootación y escala seguras
+            silletaClone.transform.localRotation = Quaternion.identity;
+            silletaClone.transform.localScale = Vector3.one;
+
+            Debug.Log("Silleta clonada y colocada en slot");
         }
         else
         {

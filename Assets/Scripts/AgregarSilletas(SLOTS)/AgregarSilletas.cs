@@ -6,7 +6,7 @@ public class AgregarSilletas : MonoBehaviour
 {
     //Se crea los campos para que se agreguen los diferentes tipos de silletas
     [Header("Slots dentro del gabinete")]
-    public List<Transform> slots = new List<Transform>(); // 12 slots físicos en el gabinete
+    public List<Transform> slots = new List<Transform>(); // 12 slots físicos en la seccion
 
     [Header("Tipos de silletas")]
     public GameObject silleta0_5F; // ocupa 1 espacio
@@ -17,7 +17,7 @@ public class AgregarSilletas : MonoBehaviour
     public GameObject silleta3F; // ocupa 6 espacios
     public GameObject silleta6F; // ocupa 12 espacios
 
-    //Cuantas secciones hay  puestas
+    //Cuantas secciones hay puestas
     [Header("Prefabs")]
     public GameObject slotPrefab;
     public Transform slotContainer;
@@ -30,7 +30,7 @@ public class AgregarSilletas : MonoBehaviour
 
     //Dice cuantos slots hay ocupado
     private List<bool> slotOcupado = new List<bool>();
-    //Hara la funcion de eliminar silleta
+    //Hara la funcion de eliminar silleta solo en el anterior en este no funciona
     private List<GameObject> silletasInstanciadas = new List<GameObject>();
 
     public TableroManager manager;
