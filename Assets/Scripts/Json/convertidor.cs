@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 
 
@@ -82,9 +83,11 @@ public static class convertidor
         string json = System.Text.Encoding.UTF8.GetString(bytes);
 
         // string → objeto
-        ent_proyecto proyecto = JsonUtility.FromJson<ent_proyecto>(json);
+        datosJsonProyecto datos = JsonUtility.FromJson<datosJsonProyecto>(json);
+        //ent_proyecto proyecto = JsonUtility.FromJson<ent_proyecto>(json);
+        ent_proyecto ent_Proyecto = ToCampo(datos);
 
-        return proyecto;
+        return ent_Proyecto;
     }
     public static json_usuario ConvertirUsuario(ent_usuario ent_Usuario)
     {
