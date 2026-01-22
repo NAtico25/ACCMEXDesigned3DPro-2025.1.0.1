@@ -42,25 +42,80 @@ public class AgregarSilletas : MonoBehaviour
 
     public bool PlaceSilleta(int startSlot, GameObject silletaPrefab, int size, Vector3 localPosOffset)
     {
-        Transform slot = slots[startSlot];
+        // Validar rango
+        if (startSlot < 0 || startSlot + size > slots.Count)
+            return false;
 
-        Debug.Log("Instanciando silleta en: " + slot.name);
+        // VALIDAR SI HAY ALGÚN SLOT OCUPADO
+        for (int i = startSlot; i < startSlot + size; i++)
+        {
+            SlotsDrop3D s = slots[i].GetComponent<SlotsDrop3D>();
+            if (s.ocupado)
+            {
+                Debug.Log("Slot ocupado: " + slots[i].name);
+                return false;
+            }
+        }
 
-        // CLON del prefab del botón
-        GameObject silleta = Instantiate(
-            silletaPrefab,
-            slot.position,
-            slot.rotation,
-            slotContainer.parent
-        );
+        // Crear silleta
+        Transform slotBase = slots[startSlot];
+        GameObject silleta = Instantiate(silletaPrefab, slotBase);
+        silleta.transform.localPosition = localPosOffset;
+        silleta.transform.localRotation = Quaternion.identity;
 
-        silleta.transform.localScale = Vector3.one;
-        silleta.transform.position += localPosOffset;
+        // Configurar silleta
+        SilletaInstanciada si = silleta.GetComponent<SilletaInstanciada>();
+        si.startSlot = startSlot;
+        si.size = size;
+        si.slotsOcupados = new SlotsDrop3D[size];
 
-        Debug.Log("Silleta creada correctamente");
+        // Marcar slots como ocupados
+        for (int i = 0; i < size; i++)
+        {
+            SlotsDrop3D s = slots[startSlot + i].GetComponent<SlotsDrop3D>();
+            s.ocupado = true;
+            s.silletaActual = si;
+            si.slotsOcupados[i] = s;
+        }
 
         return true;
     }
+
+    public bool TryPlaceSilleta(SilletaInstanciada silleta, int startSlot)
+    {
+        int size = silleta.size;
+
+        // validar rango
+        if (startSlot < 0 || startSlot + size > slots.Count)
+            return false;
+
+        // validar espacio
+        for (int i = startSlot; i < startSlot + size; i++)
+        {
+            if (slots[i].GetComponent<SlotsDrop3D>().ocupado)
+                return false;
+        }
+
+        // colocar
+        silleta.startSlot = startSlot;
+        silleta.slotsOcupados = new SlotsDrop3D[size];
+
+        for (int i = 0; i < size; i++)
+        {
+            SlotsDrop3D s = slots[startSlot + i].GetComponent<SlotsDrop3D>();
+            s.ocupado = true;
+            silleta.slotsOcupados[i] = s;
+        }
+
+        // snap exacto al slot
+        silleta.transform.SetParent(slots[startSlot]);
+        silleta.transform.localPosition = Vector3.zero;
+
+        silleta.lastValidPosition = silleta.transform.position;
+
+        return true;
+    }
+
 
     public void ColocarSilletaAuto(GameObject silletaPrefab, int size, Vector3 localPosOffset)
     {

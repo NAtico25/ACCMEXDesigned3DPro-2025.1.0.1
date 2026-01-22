@@ -633,6 +633,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotIndex: 0
   manager: {fileID: 1074152116}
+  silletaActual: {fileID: 0}
+  ocupado: 0
 --- !u!65 &132369432
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -754,6 +756,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotIndex: 0
   manager: {fileID: 1074152116}
+  silletaActual: {fileID: 0}
+  ocupado: 0
 --- !u!1001 &232046217
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -828,6 +832,7 @@ GameObject:
   - component: {fileID: 240950108}
   - component: {fileID: 240950107}
   - component: {fileID: 240950106}
+  - component: {fileID: 240950109}
   m_Layer: 5
   m_Name: Stratix
   m_TagString: Untagged
@@ -898,19 +903,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 240950107}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7339540073298413158}
-        m_TargetAssemblyTypeName: Botones, Assembly-CSharp
-        m_MethodName: OnColocarTipo5
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &240950107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -949,6 +942,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240950104}
   m_CullTransparentMesh: 1
+--- !u!114 &240950109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240950104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feef512b88376554099e8d7c68dc73fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  silletaPrefab: {fileID: 687596584}
+  size: 4
+  localOffset: {x: -0.0699, y: -0.241, z: 0.884}
 --- !u!1 &241775871
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,6 +1637,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotIndex: 0
   manager: {fileID: 1074152116}
+  silletaActual: {fileID: 0}
+  ocupado: 0
 --- !u!65 &557443005
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1996,6 +2006,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &687596584 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 683029806074226730, guid: 5f9446c9cb39e4942bd815b7fe599e6a, type: 3}
+  m_PrefabInstance: {fileID: 1516961599}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &697807557
 GameObject:
   m_ObjectHideFlags: 0
@@ -2043,6 +2058,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotIndex: 0
   manager: {fileID: 1074152116}
+  silletaActual: {fileID: 0}
+  ocupado: 0
 --- !u!65 &697807560
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2240,6 +2257,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotIndex: 0
   manager: {fileID: 1074152116}
+  silletaActual: {fileID: 0}
+  ocupado: 0
 --- !u!65 &806174857
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2578,6 +2597,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotIndex: 0
   manager: {fileID: 1074152116}
+  silletaActual: {fileID: 0}
+  ocupado: 0
 --- !u!1 &928944933
 GameObject:
   m_ObjectHideFlags: 0
@@ -2625,6 +2646,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotIndex: 0
   manager: {fileID: 1074152116}
+  silletaActual: {fileID: 0}
+  ocupado: 0
 --- !u!65 &928944936
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3510,6 +3533,7 @@ GameObject:
   - component: {fileID: 1157338123}
   - component: {fileID: 1157338122}
   - component: {fileID: 1157338121}
+  - component: {fileID: 1157338124}
   m_Layer: 5
   m_Name: 2F
   m_TagString: Untagged
@@ -3619,6 +3643,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1157338119}
   m_CullTransparentMesh: 1
+--- !u!114 &1157338124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157338119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feef512b88376554099e8d7c68dc73fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  silletaPrefab: {fileID: 298257722}
+  size: 4
+  localOffset: {x: 0.2536, y: 0.5106, z: 0.5374}
 --- !u!1 &1218339045
 GameObject:
   m_ObjectHideFlags: 0
@@ -3839,7 +3878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   silletaPrefab: {fileID: 1785089425}
-  size: 0
+  size: 1
   localOffset: {x: 0.254, y: 0.1351, z: 0.5361}
 --- !u!1 &1350505114
 GameObject:
@@ -4059,7 +4098,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   silletaPrefab: {fileID: 1944952719}
-  size: 1
+  size: 2
   localOffset: {x: 0.254, y: 0.2594, z: 0.5361}
 --- !u!1 &1430715792
 GameObject:
@@ -4108,6 +4147,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotIndex: 0
   manager: {fileID: 1074152116}
+  silletaActual: {fileID: 0}
+  ocupado: 0
 --- !u!65 &1430715795
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4407,6 +4448,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotIndex: 0
   manager: {fileID: 1074152116}
+  silletaActual: {fileID: 0}
+  ocupado: 0
 --- !u!65 &1459175168
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5053,7 +5096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   silletaPrefab: {fileID: 794859463}
-  size: 2
+  size: 3
   localOffset: {x: -0.0064, y: -0.1509, z: 0.0175}
 --- !u!1 &1761413018
 GameObject:
@@ -5296,7 +5339,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1282728225376181325, guid: 0c2a7d9bed5a995418b2b4a34651ca21, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1785089429}
+    - targetCorrespondingSourceObject: {fileID: 1282728225376181325, guid: 0c2a7d9bed5a995418b2b4a34651ca21, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1785089428}
+    - targetCorrespondingSourceObject: {fileID: 1282728225376181325, guid: 0c2a7d9bed5a995418b2b4a34651ca21, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1785089427}
   m_SourcePrefab: {fileID: 100100000, guid: 0c2a7d9bed5a995418b2b4a34651ca21, type: 3}
 --- !u!1 &1785089425 stripped
 GameObject:
@@ -5308,6 +5360,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9002710721921513769, guid: 0c2a7d9bed5a995418b2b4a34651ca21, type: 3}
   m_PrefabInstance: {fileID: 1785089424}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1785089427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785089425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c98c200c168d5da4da00055635c0bf27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1785089428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785089425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a799d944d3ad6348a5bdac1c9a001db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 1
+  startSlot: 0
+  slotsOcupados:
+  - {fileID: 230149510}
+  lastValidPosition: {x: 0, y: 0, z: 0}
+--- !u!65 &1785089429
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785089425}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.33, y: 0.13, z: 0.34}
+  m_Center: {x: -0.255, y: -0.135, z: -0.535}
 --- !u!1 &1788068617
 GameObject:
   m_ObjectHideFlags: 0
@@ -5355,6 +5457,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotIndex: 0
   manager: {fileID: 1074152116}
+  silletaActual: {fileID: 0}
+  ocupado: 0
 --- !u!65 &1788068620
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5491,6 +5595,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotIndex: 0
   manager: {fileID: 1074152116}
+  silletaActual: {fileID: 0}
+  ocupado: 0
 --- !u!1 &1906691952
 GameObject:
   m_ObjectHideFlags: 0
@@ -5731,6 +5837,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotIndex: 0
   manager: {fileID: 1074152116}
+  silletaActual: {fileID: 0}
+  ocupado: 0
 --- !u!65 &1971459477
 BoxCollider:
   m_ObjectHideFlags: 0

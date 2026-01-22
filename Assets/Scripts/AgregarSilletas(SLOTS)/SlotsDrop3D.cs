@@ -6,6 +6,8 @@ public class SlotsDrop3D : MonoBehaviour
 {
     public int slotIndex;
     public AgregarSilletas manager;
+    public SilletaInstanciada silletaActual;
+    public bool ocupado;
 
     /*private void OnMouseUp()
     {
