@@ -3840,7 +3840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   silletaPrefab: {fileID: 1785089425}
   size: 0
-  localOffset: {x: 0.254, y: 0.1512, z: 0.5361}
+  localOffset: {x: 0.254, y: 0.1351, z: 0.5361}
 --- !u!1 &1350505114
 GameObject:
   m_ObjectHideFlags: 0
@@ -4060,7 +4060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   silletaPrefab: {fileID: 1944952719}
   size: 1
-  localOffset: {x: 0.254, y: 0.2764, z: 0.5361}
+  localOffset: {x: 0.254, y: 0.2594, z: 0.5361}
 --- !u!1 &1430715792
 GameObject:
   m_ObjectHideFlags: 0
@@ -5054,7 +5054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   silletaPrefab: {fileID: 794859463}
   size: 2
-  localOffset: {x: -0.0064, y: -0.1383, z: 0.0175}
+  localOffset: {x: -0.0064, y: -0.1509, z: 0.0175}
 --- !u!1 &1761413018
 GameObject:
   m_ObjectHideFlags: 0

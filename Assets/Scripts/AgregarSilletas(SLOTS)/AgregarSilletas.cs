@@ -37,25 +37,7 @@ public class AgregarSilletas : MonoBehaviour
 
     void Start()
     {
-        // Detectar automáticamente todos los slots hijos del slotContainer
-        slots.Clear();
-        foreach (Transform t in slotContainer)
-        {
-            slots.Add(t);
 
-            // Asignar el componente SlotsDrop3D si no existe
-            SlotsDrop3D s = t.GetComponent<SlotsDrop3D>();
-            if (s == null)
-                s = t.gameObject.AddComponent<SlotsDrop3D>();
-
-            s.slotIndex = slots.Count - 1; // índice según jerarquía
-            s.manager = this;
-        }
-
-        // Inicializar slots ocupados
-        slotOcupado.Clear();
-        for (int i = 0; i < slots.Count; i++)
-            slotOcupado.Add(false);
     }
 
     public bool PlaceSilleta(int startSlot, GameObject silletaPrefab, int size, Vector3 localPosOffset)
