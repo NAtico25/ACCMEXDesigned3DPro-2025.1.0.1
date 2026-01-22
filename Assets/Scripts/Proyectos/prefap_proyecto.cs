@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class prefap_proyecto : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
@@ -92,7 +93,7 @@ public class prefap_proyecto : MonoBehaviour, IPointerClickHandler, IPointerEnte
     {
         Debug.Log($"Proyecto seleccionado: {idProyecto} - {nombreProyecto.text}");
         UltimaVezInteract();
-        ObtenerTablaProyecto(idProyecto);
+        ObtenerTablaProyecto(idProyecto, nombreProyecto.text, clienteProyecto.text);
     }
 
     #region Eventos PunterosMouse
@@ -167,8 +168,19 @@ public class prefap_proyecto : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
     #endregion
 
-    private async void ObtenerTablaProyecto(int id)
+    private async void ObtenerTablaProyecto(int id, string nombreProyecto, string clienteProyecto)
     {
+        ProyectoManager.Instance.proyectoNuevo = new datosJsonProyecto()
+        {
+            idProyecto = id,
+            nombreProyecto = nombreProyecto,
+            clienteProyecto = clienteProyecto
+        };
+
+
+        ProyectoManager.Instance.esNuevoProyecto = false;
+        ProyectoManager.Instance.ent_Proyecto = convertidor.ToCampo(ProyectoManager.Instance.proyectoNuevo);
+        ProyectoManager.Instance.ent_Proyecto.idProyecto = id;
         DataTable dt_Proyecto = await neg_proyectos.neg_datosProyecto(ProyectoManager.Instance.ent_Proyecto);
         foreach (DataRow row in dt_Proyecto.Rows)
         {
@@ -187,6 +199,8 @@ public class prefap_proyecto : MonoBehaviour, IPointerClickHandler, IPointerEnte
             Debug.LogError($"Error al convertir el layout del proyecto: {ex.Message}");
 
         }
+        Debug.Log($"Proyecto cargado: {ProyectoManager.Instance.ent_Proyecto.nombreProyecto}");
+
     }
 
 }
