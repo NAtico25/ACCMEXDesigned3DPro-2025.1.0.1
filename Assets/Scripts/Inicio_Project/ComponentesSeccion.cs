@@ -22,7 +22,7 @@ public class ComponentesSeccion : MonoBehaviour
     void Awake()
     {
         inputCompSecc.onEndEdit.AddListener(OnNoSeccionChanged);
-        //inputCompSecc2.onEndEdit.AddListener(OnNoParteChanged);
+        inputCompSecc2.onEndEdit.AddListener(OnNoParteChanged);
     }
 
     // Se llama cuando haces clic en un objeto 3D
@@ -60,7 +60,7 @@ public class ComponentesSeccion : MonoBehaviour
         if (seccionActual == null || seccionActual.zoclo == null) return;
 
         TextCompSecc2.text = "Zoclo";
-        inputCompSecc2.text = seccionActual.zoclo.Numero_Parte;
+        inputCompSecc2.text = "ABB-ZCL";//seccionActual.zoclo.Numero_Parte.ToString();
     }
 
     void OnNoParteChanged(string componente)

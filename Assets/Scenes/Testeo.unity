@@ -14410,6 +14410,7 @@ MonoBehaviour:
   Guardar: {fileID: -898926445451343350, guid: 8dbf95a352675b949b16aaf03c5d8243, type: 3}
   objetoPadre: {fileID: 1821156908}
   nombre_Proyecto: {fileID: 4529865605379467272}
+  prefap_GuardarNuevo: {fileID: 0}
 --- !u!1 &2792676385904317558
 GameObject:
   m_ObjectHideFlags: 0
@@ -26967,8 +26968,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextCompSecc: {fileID: 3564636919731732398}
   inputCompSecc: {fileID: 5122889200691992674}
-  TextCompSecc2: {fileID: 0}
-  inputCompSecc2: {fileID: 0}
+  TextCompSecc2: {fileID: 1781101917478671725}
+  inputCompSecc2: {fileID: 7796028757173539731}
   listaMaterialesUI: {fileID: 0}
   seccionActual: {fileID: 1218339046}
 --- !u!225 &7502860175469529154

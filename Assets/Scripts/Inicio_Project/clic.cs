@@ -24,6 +24,7 @@ public class clic : MonoBehaviour
         {
             inspector.MostrarObjeto(seccion);
             Debug.Log("Objeto clickeado: " + seccion.nombre_Seccion);
+            Debug.Log("Zoclo: " + seccion.zoclo.Numero_Parte);
         }
 
         if (uiSeccion != null && seccion != null)

@@ -19,7 +19,7 @@ public class Medidas : MonoBehaviour
     {
         if (seccion == null || textoLargo == null) return;
 
-        textoLargo.text = $"{seccion.largo_Seccion:F2} m";
+        textoLargo.text = $"{seccion.largo_Seccion:F2} cm";
         textoAncho.text = $"{seccion.ancho_Seccion:F2} cm";
     }
 }
