@@ -10,6 +10,7 @@ public class inputsControlador : MonoBehaviour
     public InputActionReference Guardar;
     public Transform objetoPadre;
     public prefap_nombre_proyecto nombre_Proyecto;
+    public prefap_guardarNuevoProyecto prefap_GuardarNuevo;
 
     // Start is called before the first frame update
     void Start()
@@ -33,9 +34,11 @@ public class inputsControlador : MonoBehaviour
         {
             try
             {
+                prefap_GuardarNuevo.ActivarVentana();
                 ProyectoManager.Instance.ent_Proyecto = convertidor.ToCampo(ProyectoManager.Instance.proyectoNuevo);
                 inpectorDinamico inpector = new inpectorDinamico();
                 inpector.Guardar(ProyectoManager.Instance.ent_Proyecto);
+
                 verificarCrearProyecto(ProyectoManager.Instance.esNuevoProyecto);
                 Debug.Log("Proyecto guardado correctamente.");
             }
