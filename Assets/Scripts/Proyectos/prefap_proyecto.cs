@@ -193,6 +193,7 @@ public class prefap_proyecto : MonoBehaviour, IPointerClickHandler, IPointerEnte
         try
         {
             ProyectoManager.Instance.ent_Proyecto = convertidor.ConvertirDesdeBytes(ProyectoManager.Instance.ent_Proyecto.LayoutProyecto);
+            SceneManager.LoadScene("Testeo");
         }
         catch (Exception ex)
         {
