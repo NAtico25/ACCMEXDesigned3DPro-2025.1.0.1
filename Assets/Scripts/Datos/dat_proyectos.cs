@@ -86,12 +86,17 @@ public class dat_proyectos : MonoBehaviour
             dat_Conexion.sqlCommand.CommandText = "sp_CrearProyecto";
             dat_Conexion.sqlCommand.Parameters.Clear();
             dat_Conexion.sqlCommand.Parameters.AddWithValue("@Nombre", ent_proyecto.nombreProyecto);
+            Debug.Log($"Nombre del proyecto: {ent_proyecto.nombreProyecto}");
             dat_Conexion.sqlCommand.Parameters.AddWithValue("@Cliente", ent_proyecto.clienteProyecto);
+            Debug.Log($"Cliente del proyecto: {ent_proyecto.clienteProyecto}");
             dat_Conexion.sqlCommand.Parameters.AddWithValue("@DadoAlta", ent_proyecto.dadoAltaProyecto);
+            Debug.Log($"Dado de alta: {ent_proyecto.dadoAltaProyecto}");
             dat_Conexion.sqlCommand.Parameters.AddWithValue("@Fecha", ent_proyecto.fechaProyecto);
+            Debug.Log($"Fecha del proyecto: {ent_proyecto.fechaProyecto}");
             dat_Conexion.sqlCommand.Parameters.AddWithValue("@Layout", ent_proyecto.LayoutProyecto);
             dat_Conexion.sqlCommand.Parameters.AddWithValue("@DocumentoCotizacion", ent_proyecto.documentoCotizacion);
             dat_Conexion.sqlCommand.Parameters.AddWithValue("@Gastos", ent_proyecto.gastosProyecto);
+            Debug.Log($"Gastos del proyecto: {ent_proyecto.gastosProyecto}");
             int rowsAffected = await dat_Conexion.sqlCommand.ExecuteNonQueryAsync();
             return 1;
         }

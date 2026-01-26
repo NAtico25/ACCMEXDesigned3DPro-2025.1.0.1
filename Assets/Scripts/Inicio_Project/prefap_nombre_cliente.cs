@@ -41,6 +41,7 @@ public class prefap_nombre_cliente : MonoBehaviour
         else
         {
             Debug.Log("Cliente existente seleccionado: " + texto);
+            ProyectoManager.Instance.proyectoNuevo.clienteProyecto = texto;
             ProyectoManager.Instance.ent_Proyecto.clienteProyecto = texto;
         }
     }

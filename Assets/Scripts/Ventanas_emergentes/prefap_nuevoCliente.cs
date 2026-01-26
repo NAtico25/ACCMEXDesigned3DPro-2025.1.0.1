@@ -20,8 +20,14 @@ public class prefap_nuevoCliente : MonoBehaviour
             if (nombreCliente != "")
             {
                 Debug.Log($"Crear cliente con nombre: {nombreCliente}");
+                ProyectoManager.Instance.proyectoNuevo.clienteProyecto = nombreCliente;
+                ProyectoManager.Instance.ent_Proyecto.clienteProyecto = nombreCliente;
                 CrearCliente(nombreCliente);
                 DesactivarVentana();
+            }
+            else
+            {
+                
             }
         });
 
