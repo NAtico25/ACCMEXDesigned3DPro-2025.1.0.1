@@ -39,8 +39,8 @@ public class inputsControlador : MonoBehaviour
                 inpectorDinamico inpector = new inpectorDinamico();
                 inpector.Guardar(ProyectoManager.Instance.ent_Proyecto);
 
-                verificarCrearProyecto(ProyectoManager.Instance.esNuevoProyecto);
-                Debug.Log("Proyecto guardado correctamente.");
+                //verificarCrearProyecto(ProyectoManager.Instance.esNuevoProyecto);
+                //Debug.Log("Proyecto guardado correctamente.");
             }
             catch (System.Exception e)
             {
