@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ent_seccion : MonoBehaviour
 {
+    public InputActionReference clicDerecho;
     public string nombre_Seccion = "Seccion";
     public double largo_Seccion = 246; // en centimetros con zoclo
     public double ancho_Seccion = 60; // en centimetros sin tapas laterales
@@ -107,13 +109,33 @@ public class ent_seccion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        clicDerecho.action.Enable();
+    }
+
+    void OnEnable()
+    {
+        clicDerecho.action.Enable();
+    }
+    
+    void OnDisable()
+    {
+        clicDerecho.action.Disable();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (clicDerecho.action.WasPressedThisFrame())
+        {
+            try
+            {
+                Destroy(gameObject);
+            }
+            catch
+            {
+
+            }
+        }
     }
 
     private void Awake()

@@ -4347,6 +4347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afd28c2fedee76849a32384af4da4c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clicDerecho: {fileID: -1774347245794905222, guid: 115d22a2b9910fe4dab637cb3d002de9, type: 3}
   nombre_Seccion: Seccion
   largo_Seccion: 2.46
   ancho_Seccion: 60

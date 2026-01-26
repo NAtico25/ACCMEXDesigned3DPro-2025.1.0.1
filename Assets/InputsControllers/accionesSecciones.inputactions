@@ -1,0 +1,34 @@
+{
+    "name": "accionesSecciones",
+    "maps": [
+        {
+            "name": "New action map",
+            "id": "67365be6-1179-4943-bb35-326c202d6305",
+            "actions": [
+                {
+                    "name": "clicDerecho",
+                    "type": "Button",
+                    "id": "658a02ff-282e-40a7-b8bf-8f0a63216bc5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a85247f0-dd04-4abd-863f-80174713843c",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "clicDerecho",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
