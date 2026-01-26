@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class ent_seccion : MonoBehaviour
 {
+    private bool detector;
     public InputActionReference clicDerecho;
     public string nombre_Seccion = "Seccion";
     public double largo_Seccion = 246; // en centimetros con zoclo
@@ -109,33 +110,49 @@ public class ent_seccion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        clicDerecho.action.Enable();
+       //clicDerecho.action.Enable();
     }
 
     void OnEnable()
     {
-        clicDerecho.action.Enable();
+       clicDerecho.action.Enable();
     }
     
     void OnDisable()
     {
-        clicDerecho.action.Disable();
+       //clicDerecho.action.Disable();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (clicDerecho.action.WasPressedThisFrame())
+        
+        try
         {
-            try
+            if (detector && clicDerecho.action.WasPressedThisFrame())
             {
-                Destroy(gameObject);
+                Destroy(gameObject); 
             }
-            catch
-            {
+            Debug.Log("Los datos son: " + detector + " " +no_seccion);
 
-            }
         }
+        catch
+        {
+
+        }
+        
+    }
+
+    private void OnMouseEnter()
+    {
+        detector = true;
+        Debug.Log($"la seccion {no_seccion} cambio el valor de detector a: {detector}");
+    }
+
+    private void OnMouseExit()
+    {
+        detector = false;
+        Debug.Log($"la seccion {no_seccion} cambio el valor de detector a: {detector}");
     }
 
     private void Awake()
