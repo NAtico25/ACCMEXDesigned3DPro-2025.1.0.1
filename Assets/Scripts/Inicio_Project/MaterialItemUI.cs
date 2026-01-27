@@ -30,13 +30,13 @@ public class MaterialItemUI : MonoBehaviour
 
     public void MostrarPrecio()
     {
-        if (PrecioActual == null) return;
+        if (PrecioActual == null || PrecioActual.piezas_Anclaje.Precio == 0.00) return;
 
         // Nombre del campo
         txtNombre.text = "Precio: ";
 
         // Valor del precio
-        inputPrecio.text = PrecioActual.acople_L.Precio.ToString("0.00");
+        inputPrecio.text = PrecioActual.piezas_Anclaje.Precio.ToString();
 
         inputPrecio.onEndEdit.AddListener(v =>
         {
@@ -47,12 +47,7 @@ public class MaterialItemUI : MonoBehaviour
 
     void OnNoPrecioChanged (string valor)
     {
-        if (PrecioActual == null) return;
-
-        if (int.TryParse(valor, out int nuevoValor))
-        {
-            // SET
-            PrecioActual.no_seccion = nuevoValor;
-        }
+        if (PrecioActual == null || PrecioActual.zoclo == null) return;
+        PrecioActual.piezas_Anclaje.Precio = int.Parse(valor);
     }
 }

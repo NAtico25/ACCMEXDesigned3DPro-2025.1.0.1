@@ -8,6 +8,7 @@ public class clic : MonoBehaviour
     public inpectorDinamico inspector;
     private ent_seccion seccion;
     public ComponentesSeccion uiSeccion;
+    public MaterialItemUI itemUI;
     //public Button botonVerDatos;
 
     void Awake()
@@ -30,6 +31,7 @@ public class clic : MonoBehaviour
         if (uiSeccion != null && seccion != null)
         {
             uiSeccion.AsignarSeccion(seccion);
+            itemUI.AsignarPrecio(seccion);
         }
     }
     // Start is called before the first frame update

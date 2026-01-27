@@ -14,6 +14,10 @@ public class ComponentesSeccion : MonoBehaviour
     public TMP_InputField inputCompSecc2;    
     public TMP_Text TextCompSecc3;
     public TMP_InputField inputCompSecc3;
+    public TMP_Text TextCompSecc4;
+    public TMP_InputField inputCompSecc4;
+    public TMP_Text TextCompSecc5;
+    public TMP_InputField inputCompSecc5;
 
     public ListaMaterialesUI listaMaterialesUI;
 
@@ -59,14 +63,38 @@ public class ComponentesSeccion : MonoBehaviour
 
     public void MostrarSeccionComp()
     {
-        if (seccionActual == null || seccionActual.zoclo == null) return;
-        if (seccionActual == null || seccionActual.piezas_Anclaje == null) return;
+        if (seccionActual == null) return;
+        //Zoclo
+        if (seccionActual.zoclo != null)
+        {
+            TextCompSecc2.text = seccionActual.zoclo.nombre_Material.ToString();
+            inputCompSecc2.text = seccionActual.zoclo.Numero_Parte.ToString();
+        }
+        //Piso Anclaje
+        if (seccionActual.piezas_Anclaje != null)
+        {
+            TextCompSecc3.text = seccionActual.piezas_Anclaje.nombre_Material.ToString();
+            inputCompSecc3.text = seccionActual.piezas_Anclaje.cantidad.ToString();
+        }
+        //Orejas Carga
+        if (seccionActual.orejas_Carga != null)
+        {
+            TextCompSecc4.text = seccionActual.orejas_Carga.nombre_Material.ToString();
+            inputCompSecc4.text = seccionActual.orejas_Carga.Numero_Parte.ToString();
+        }
+        //Piso Seccion
+        if (seccionActual.piso_Seccion != null)
+        {
+            TextCompSecc5.text = seccionActual.piso_Seccion.nombre_Material.ToString();
+            inputCompSecc5.text = seccionActual.piso_Seccion.Numero_Parte.ToString();
+        }
+        //Perfiles
+        //if (seccionActual == null || seccionActual.perfiles == null) return;
+        //if (seccionActual.perfiles.Count == 0) return;
 
-        TextCompSecc2.text = "Zoclo";
-        inputCompSecc2.text = seccionActual.zoclo.Numero_Parte.ToString();
-
-        TextCompSecc3.text = "Piezas de anclaje";
-        inputCompSecc3.text = seccionActual.piezas_Anclaje.cantidad.ToString();
+        //Sale con error, checar como funciona las listas
+        /*Mat_perfil perfil = seccionActual.perfiles[0];
+        inputCompSecc5.text = seccionActual.perfiles.Numero_Parte.ToString();*/
     }
 
     void OnNoParteChanged(string componente)
@@ -74,5 +102,7 @@ public class ComponentesSeccion : MonoBehaviour
         if (seccionActual == null || seccionActual.zoclo == null) return;
         seccionActual.zoclo.Numero_Parte = componente;
         seccionActual.piezas_Anclaje.cantidad = int.Parse(componente);
+        seccionActual.piso_Seccion.Numero_Parte = componente;
+        //seccionActual.piso_Seccion.Numero_Parte = componente;
     }
 }

@@ -159,10 +159,10 @@ public class ent_seccion : MonoBehaviour
     private void Awake()
     {
         zoclo = new Mat_zoclo();
-        zoclo.Numero_Parte = "ABB-ZCL";
-
         piezas_Anclaje = new Mat_piezas_anclaje();
-        piezas_Anclaje.cantidad = 0;
+        orejas_Carga = new Mat_orejas_carga();
+        //perfiles = new List<Mat_perfil>();
+        piso_Seccion = new Mat_piso_seccion();
     }
 
 
