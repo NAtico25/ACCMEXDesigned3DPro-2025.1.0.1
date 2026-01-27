@@ -70,6 +70,8 @@ public static class convertidor
                 datos.secciones[i].contraseguro = ent_Proyecto.seccionesProyecto[i].contraseguro;
                 datos.secciones[i].soporte_Aislante_Bus = ent_Proyecto.seccionesProyecto[i].soporte_Aislante_Bus;
                 datos.secciones[i].base_Tapa_Trasera = ent_Proyecto.seccionesProyecto[i].base_Tapa_Trasera;
+
+                //Hacer lo mismo pero con las silletas dentro de las secciones
             }
         }
             
@@ -77,6 +79,35 @@ public static class convertidor
         string path = Application.persistentDataPath + "/proyecto_" + ent_Proyecto.idProyecto + ".json";
         File.WriteAllText(path, json);
         Debug.Log("Guardando proyecto en: " + path);
+        byte[] bytes = System.Text.Encoding.UTF8.GetBytes(json);
+        return bytes;
+    }
+
+    public static byte[] ConvertirJson(Silleta ent_silleta)
+    {
+        datosJsonSilleta datos = new datosJsonSilleta
+        {
+            PosicionSilleta = ent_silleta.PosicionSilleta,
+            piso = ent_silleta.piso,
+            portaClemas = ent_silleta.portaClemas,
+            clemas = ent_silleta.clemas,
+            guiaSilleta = ent_silleta.guiaSilleta,
+            carretillas = ent_silleta.carretillas,
+            acrilicosSeparadores = ent_silleta.acrilicosSeparadores,
+            clemas_fuerza = ent_silleta.clemas_fuerza,
+            tipoSilleta = ent_silleta.tipoSilleta,
+            capacidad = ent_silleta.capacidad,
+            Nombre = ent_silleta.Nombre,
+            NumeroParte = ent_silleta.NumeroParte,
+            Descripcion = ent_silleta.Descripcion,
+            Precio = ent_silleta.Precio,
+            Coordenadas = ent_silleta.Coordenadas,
+            Rotacion = ent_silleta.Rotacion
+        };
+        string json = JsonUtility.ToJson(datos, true);
+        string path = Application.persistentDataPath + "/silleta_" + ent_silleta.PosicionSilleta + ent_silleta.Nombre + ent_silleta.NumeroParte + ".json";
+        File.WriteAllText(path, json);
+        Debug.Log("Guardando silleta en: " + path);
         byte[] bytes = System.Text.Encoding.UTF8.GetBytes(json);
         return bytes;
     }
