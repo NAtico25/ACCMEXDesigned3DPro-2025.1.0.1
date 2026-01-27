@@ -54,6 +54,7 @@ public class ent_seccion : MonoBehaviour
     public Mat_base_tapa_trasera base_Tapa_Trasera { get; set; }
 
 
+
     //Lista
     public List<Material> ObtenerMateriales()
     {
@@ -157,7 +158,11 @@ public class ent_seccion : MonoBehaviour
 
     private void Awake()
     {
-        
+        zoclo = new Mat_zoclo();
+        zoclo.Numero_Parte = "ABB-ZCL";
+
+        piezas_Anclaje = new Mat_piezas_anclaje();
+        piezas_Anclaje.cantidad = 0;
     }
 
 

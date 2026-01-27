@@ -11,7 +11,9 @@ public class ComponentesSeccion : MonoBehaviour
     public TMP_Text TextCompSecc;
     public TMP_InputField inputCompSecc;
     public TMP_Text TextCompSecc2;
-    public TMP_InputField inputCompSecc2;
+    public TMP_InputField inputCompSecc2;    
+    public TMP_Text TextCompSecc3;
+    public TMP_InputField inputCompSecc3;
 
     public ListaMaterialesUI listaMaterialesUI;
 
@@ -58,14 +60,19 @@ public class ComponentesSeccion : MonoBehaviour
     public void MostrarSeccionComp()
     {
         if (seccionActual == null || seccionActual.zoclo == null) return;
+        if (seccionActual == null || seccionActual.piezas_Anclaje == null) return;
 
         TextCompSecc2.text = "Zoclo";
-        inputCompSecc2.text = "ABB-ZCL";//seccionActual.zoclo.Numero_Parte.ToString();
+        inputCompSecc2.text = seccionActual.zoclo.Numero_Parte.ToString();
+
+        TextCompSecc3.text = "Piezas de anclaje";
+        inputCompSecc3.text = seccionActual.piezas_Anclaje.cantidad.ToString();
     }
 
     void OnNoParteChanged(string componente)
     {
         if (seccionActual == null || seccionActual.zoclo == null) return;
         seccionActual.zoclo.Numero_Parte = componente;
+        seccionActual.piezas_Anclaje.cantidad = int.Parse(componente);
     }
 }
