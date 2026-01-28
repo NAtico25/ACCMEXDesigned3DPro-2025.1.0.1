@@ -43,11 +43,14 @@ public class MaterialItemUI : MonoBehaviour
             if (double.TryParse(v, out double p))
                 PrecioActual.acople_L.Precio = p;
         });
+
     }
 
     void OnNoPrecioChanged (string valor)
     {
-        if (PrecioActual == null || PrecioActual.zoclo == null) return;
-        PrecioActual.piezas_Anclaje.Precio = int.Parse(valor);
+        if (PrecioActual.zoclo != null)
+        {
+            PrecioActual.piezas_Anclaje.Precio = int.Parse(valor);
+        }
     }
 }
