@@ -17,7 +17,9 @@ public class ComponentesSeccion : MonoBehaviour
     public TMP_Text TextCompSecc4;
     public TMP_InputField inputCompSecc4;
     public TMP_Text TextCompSecc5;
-    public TMP_InputField inputCompSecc5;
+    public TMP_InputField inputCompSecc5;    
+    public TMP_Text TextCompSecc6;
+    public TMP_InputField inputCompSecc6;
 
     public ListaMaterialesUI listaMaterialesUI;
 
@@ -95,6 +97,12 @@ public class ComponentesSeccion : MonoBehaviour
         //Sale con error, checar como funciona las listas
         /*Mat_perfil perfil = seccionActual.perfiles[0];
         inputCompSecc5.text = seccionActual.perfiles.Numero_Parte.ToString();*/
+        //Tapa trasera de seccion
+        if (seccionActual.tapa_trasera_seccion != null)
+        {
+            TextCompSecc6.text = seccionActual.tapa_trasera_seccion.nombre_Material.ToString();
+            inputCompSecc6.text = seccionActual.tapa_trasera_seccion.Numero_Parte.ToString();
+        }
     }
 
     void OnNoParteChanged(string componente)
@@ -104,5 +112,6 @@ public class ComponentesSeccion : MonoBehaviour
         seccionActual.piezas_Anclaje.cantidad = int.Parse(componente);
         seccionActual.piso_Seccion.Numero_Parte = componente;
         //seccionActual.piso_Seccion.Numero_Parte = componente;
+        seccionActual.tapa_trasera_seccion.Numero_Parte= componente;
     }
 }

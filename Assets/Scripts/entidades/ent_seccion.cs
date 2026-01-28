@@ -163,6 +163,7 @@ public class ent_seccion : MonoBehaviour
         orejas_Carga = new Mat_orejas_carga();
         //perfiles = new List<Mat_perfil>();
         piso_Seccion = new Mat_piso_seccion();
+        tapa_trasera_seccion = new Mat_tapa_trasera_seccion();
     }
 
 

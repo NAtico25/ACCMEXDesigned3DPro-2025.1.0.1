@@ -2838,7 +2838,7 @@ GameObject:
   - component: {fileID: 411987275}
   - component: {fileID: 411987276}
   m_Layer: 5
-  m_Name: Prefab-Component6 (5)
+  m_Name: Prefab-Component11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33534,6 +33534,8 @@ MonoBehaviour:
   inputCompSecc4: {fileID: 4369842}
   TextCompSecc5: {fileID: 1337509073}
   inputCompSecc5: {fileID: 86897134}
+  TextCompSecc6: {fileID: 824515848}
+  inputCompSecc6: {fileID: 828754830}
   listaMaterialesUI: {fileID: 0}
   seccionActual: {fileID: 1218339046}
 --- !u!225 &7502860175469529154
