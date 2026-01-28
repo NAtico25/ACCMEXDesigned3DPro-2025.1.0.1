@@ -198,6 +198,7 @@ MonoBehaviour:
   spriteCarpeta: {fileID: 21300000, guid: bf6377a5643a11d4fbe71a0e70ebd823, type: 3}
   spriteSilleta: {fileID: 0}
   botonPrincipal: {fileID: 1410737743084993779}
+  prefapSeleccioes: {fileID: 0}
 --- !u!1 &2986724336065205306
 GameObject:
   m_ObjectHideFlags: 0

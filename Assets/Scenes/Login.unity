@@ -7479,6 +7479,10 @@ PrefabInstance:
       propertyPath: botonPrincipal
       value: 
       objectReference: {fileID: 774871696413606027}
+    - target: {fileID: 6800882601258542388, guid: edb11b0bf6ca08247af2a72221717326, type: 3}
+      propertyPath: prefapSeleccioes
+      value: 
+      objectReference: {fileID: 1115077114}
     - target: {fileID: 7117447006480114534, guid: edb11b0bf6ca08247af2a72221717326, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

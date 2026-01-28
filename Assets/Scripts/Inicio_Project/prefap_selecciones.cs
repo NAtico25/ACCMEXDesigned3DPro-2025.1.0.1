@@ -39,6 +39,12 @@ public class prefap_selecciones : MonoBehaviour
     }
     public void RefrescarContenido(string path)
     {
+        items.Clear();
+        foreach (Transform hijo in contentCarpetas)
+        {
+            Destroy(hijo.gameObject);
+        }
+
         string[] carpetas = Directory.GetDirectories(path);
         int id = 1;
         foreach (string carpeta in carpetas)
@@ -48,6 +54,7 @@ public class prefap_selecciones : MonoBehaviour
             GameObject nuevo = Instantiate(prefabCarpetas, contentCarpetas);
             prefap_carpetas item = nuevo.GetComponent<prefap_carpetas>();
             item.path = carpeta;
+            item.prefapSeleccioes = this.gameObject;
 
             if (File.Exists(Path.Combine(carpeta, "data.json")))
             {
@@ -58,7 +65,6 @@ public class prefap_selecciones : MonoBehaviour
             }
             else
             {
-                
                 item.AsignarDatos(id, nombreCarpeta, 0);
                 id++;
                 items.Add(item);

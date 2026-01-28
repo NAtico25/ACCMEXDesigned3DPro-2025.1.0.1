@@ -15,6 +15,7 @@ public class prefap_carpetas : MonoBehaviour
     public Sprite spriteCarpeta;
     public Sprite spriteSilleta;
     public UnityEngine.UI.Button botonPrincipal;
+    public GameObject prefapSeleccioes;
     private modo modoBoton;
     private enum modo
     {
@@ -44,11 +45,25 @@ public class prefap_carpetas : MonoBehaviour
         {
             modoBoton = modo.Silleta;
             botonPrincipal.image.sprite = spriteSilleta;
+
+            //asignar codigo que ocurre al presionar el boton
+            botonPrincipal.onClick.AddListener(() =>
+            {
+                Debug.Log($"Boton Silleta presionado en carpeta ID: {idCarpeta} con path {path}");
+                
+            });
         }
         else
         {
             modoBoton = modo.Carpeta;
             botonPrincipal.image.sprite = spriteCarpeta;
+
+            botonPrincipal.onClick.AddListener(() =>
+            {
+                Debug.Log($"Boton Carpeta presionado en carpeta ID: {idCarpeta} con path {path}");
+                prefap_selecciones selecciones = prefapSeleccioes.GetComponent<prefap_selecciones>();
+                selecciones.RefrescarContenido(path);
+            });
         }
            
     }
