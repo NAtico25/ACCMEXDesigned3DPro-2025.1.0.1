@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class prefap_selecciones : MonoBehaviour
 {
+    public GameObject prefabCarpetas;
+    private List<prefap_carpetas> items = new List<prefap_carpetas>();
+    public Transform contentCarpetas;
     public static string ProyectosPath
     {
         get
@@ -27,9 +30,16 @@ public class prefap_selecciones : MonoBehaviour
     {
         string path = ProyectosPath;
         string[] carpetas = Directory.GetDirectories(path);
+        int id = 1;
         foreach (string carpeta in carpetas)
         {
+            string nombreCarpeta = Path.GetFileName(carpeta);
             Debug.Log("Carpeta encontrada: " + carpeta);
+            GameObject nuevo = Instantiate(prefabCarpetas, contentCarpetas);
+            prefap_carpetas item = nuevo.GetComponent<prefap_carpetas>();
+            item.AsignarDatos(id, nombreCarpeta);
+            id++;
+            items.Add(item);
         }
     }
 
