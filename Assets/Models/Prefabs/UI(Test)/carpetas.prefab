@@ -193,7 +193,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idCarpeta: 0
+  path: 
   nombreCarpetaText: {fileID: 8275428862423936303}
+  spriteCarpeta: {fileID: 21300000, guid: bf6377a5643a11d4fbe71a0e70ebd823, type: 3}
+  spriteSilleta: {fileID: 0}
+  botonPrincipal: {fileID: 1410737743084993779}
 --- !u!1 &2986724336065205306
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,6 +29,16 @@ public class prefap_selecciones : MonoBehaviour
     void Start()
     {
         string path = ProyectosPath;
+        RefrescarContenido(path);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+    public void RefrescarContenido(string path)
+    {
         string[] carpetas = Directory.GetDirectories(path);
         int id = 1;
         foreach (string carpeta in carpetas)
@@ -37,15 +47,23 @@ public class prefap_selecciones : MonoBehaviour
             Debug.Log("Carpeta encontrada: " + carpeta);
             GameObject nuevo = Instantiate(prefabCarpetas, contentCarpetas);
             prefap_carpetas item = nuevo.GetComponent<prefap_carpetas>();
-            item.AsignarDatos(id, nombreCarpeta);
-            id++;
-            items.Add(item);
-        }
-    }
+            item.path = carpeta;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            if (File.Exists(Path.Combine(carpeta, "data.json")))
+            {
+                item.spriteSilleta = item.CargarSpriteDesdePNG(Path.Combine(carpeta, "sprite.png"));
+                item.AsignarDatos(id, nombreCarpeta, 1);
+                id++;
+                items.Add(item);
+            }
+            else
+            {
+                
+                item.AsignarDatos(id, nombreCarpeta, 0);
+                id++;
+                items.Add(item);
+            }
+            
+        }
     }
 }

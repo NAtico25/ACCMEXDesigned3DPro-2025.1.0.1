@@ -353,7 +353,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &511452015171139975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,6 +386,7 @@ MonoBehaviour:
   input_NombreCliente: {fileID: 993157856638290372}
   boton_CrearCliente: {fileID: 774871696439240059}
   boton_Cancelar: {fileID: 23228991637101842}
+  canvasGroup: {fileID: 0}
 --- !u!1 &1974343497065994555
 GameObject:
   m_ObjectHideFlags: 0

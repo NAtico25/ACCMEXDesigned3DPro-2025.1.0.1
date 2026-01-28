@@ -1794,6 +1794,17 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &774871696413606027 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1410737743084993779, guid: edb11b0bf6ca08247af2a72221717326, type: 3}
+  m_PrefabInstance: {fileID: 7793152674709459448}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &859626403983346571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7460,14 +7471,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 693956584789419539, guid: edb11b0bf6ca08247af2a72221717326, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.8000107
-      objectReference: {fileID: 0}
     - target: {fileID: 1359729444339750409, guid: edb11b0bf6ca08247af2a72221717326, type: 3}
       propertyPath: m_Name
       value: carpetas
       objectReference: {fileID: 0}
+    - target: {fileID: 6800882601258542388, guid: edb11b0bf6ca08247af2a72221717326, type: 3}
+      propertyPath: botonPrincipal
+      value: 
+      objectReference: {fileID: 774871696413606027}
     - target: {fileID: 7117447006480114534, guid: edb11b0bf6ca08247af2a72221717326, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
