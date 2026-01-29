@@ -72,4 +72,9 @@ public class prefap_selecciones : MonoBehaviour
             
         }
     }
+    public void Reset()
+    {
+        RefrescarContenido(ProyectosPath);
+    }
+
 }
