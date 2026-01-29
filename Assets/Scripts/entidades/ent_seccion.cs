@@ -165,6 +165,7 @@ public class ent_seccion : MonoBehaviour
         piso_Seccion = new Mat_piso_seccion();
         tapa_trasera_seccion = new Mat_tapa_trasera_seccion();
         tapas_laterales_seccion = new Mat_tapas_laterales_seccion();
+        tapa_lateral_Inferior_seccion = new Mat_tapa_lateral_Inferior_seccion();
     }
 
 

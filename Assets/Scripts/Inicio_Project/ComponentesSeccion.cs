@@ -22,6 +22,8 @@ public class ComponentesSeccion : MonoBehaviour
     public TMP_InputField inputCompSecc6;
     public TMP_Text TextCompSecc7;
     public TMP_InputField inputCompSecc7;
+    public TMP_Text TextCompSecc8;
+    public TMP_InputField inputCompSecc8;
 
     public ListaMaterialesUI listaMaterialesUI;
 
@@ -111,6 +113,12 @@ public class ComponentesSeccion : MonoBehaviour
             TextCompSecc7.text = seccionActual.tapas_laterales_seccion.nombre_Material.ToString();
             inputCompSecc7.text = seccionActual.tapas_laterales_seccion.Numero_Parte.ToString();
         }
+        //Tapa laterial inferior
+        if (seccionActual.tapa_lateral_Inferior_seccion != null)
+        {
+            TextCompSecc8.text = seccionActual.tapa_lateral_Inferior_seccion.nombre_Material.ToString();
+            inputCompSecc8.text = seccionActual.tapa_lateral_Inferior_seccion.Numero_Parte.ToString();
+        }
     }
 
     void OnNoParteChanged(string componente)
@@ -122,5 +130,6 @@ public class ComponentesSeccion : MonoBehaviour
         //seccionActual.piso_Seccion.Numero_Parte = componente;
         seccionActual.tapa_trasera_seccion.Numero_Parte = componente;
         seccionActual.tapas_laterales_seccion.Numero_Parte = componente;
+        seccionActual.tapa_lateral_Inferior_seccion.Numero_Parte = componente;
     }
 }

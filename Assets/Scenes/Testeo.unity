@@ -33538,6 +33538,8 @@ MonoBehaviour:
   inputCompSecc6: {fileID: 828754830}
   TextCompSecc7: {fileID: 575896513}
   inputCompSecc7: {fileID: 811734898}
+  TextCompSecc8: {fileID: 1641735944}
+  inputCompSecc8: {fileID: 1713093694}
   listaMaterialesUI: {fileID: 0}
   seccionActual: {fileID: 1218339046}
 --- !u!225 &7502860175469529154
