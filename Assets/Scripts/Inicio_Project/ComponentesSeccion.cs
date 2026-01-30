@@ -50,7 +50,7 @@ public class ComponentesSeccion : MonoBehaviour
         if (seccionActual == null) return;
 
         // Nombre del campo
-        TextCompSecc.text = "Numero de Seccion";
+        TextCompSecc.text = "Numero de Seccion:";
 
         // Valor GET
         inputCompSecc.text = seccionActual.no_seccion.ToString();
