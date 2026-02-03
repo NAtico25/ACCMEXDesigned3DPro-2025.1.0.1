@@ -179,4 +179,41 @@ public class dat_proyectos : MonoBehaviour
         }
         return dataTable_verificarSesion;
     }
+
+    public static async Task<DataTable> dat_datosVersionesProyectos(ent_proyecto ent_Proyecto, dat_Conexion dat_Conexion)
+    {
+        SqlDataReader sqlDataReader_verificarSesion = null;
+        DataTable dataTable_verificarSesion = new DataTable();
+        try
+        {
+            dat_Conexion.sqlCommand.CommandType = CommandType.StoredProcedure;
+            dat_Conexion.sqlCommand.CommandText = "sp_ObtenerVersion";
+            dat_Conexion.sqlCommand.Parameters.Clear();
+            dat_Conexion.sqlCommand.Parameters.Clear();
+            dat_Conexion.sqlCommand.Parameters.AddWithValue("@IdProyecto", ent_Proyecto.idProyecto);
+            sqlDataReader_verificarSesion = await dat_Conexion.sqlCommand.ExecuteReaderAsync();
+
+            if (sqlDataReader_verificarSesion.HasRows)
+            {
+                dataTable_verificarSesion.Load(sqlDataReader_verificarSesion);
+            }
+        }
+        catch (Exception)
+        {
+            throw;
+            throw new Exception("Ha ocurrido un error conectandose a la base de datos." + "\n\nDetalle del Error:\n");
+        }
+        finally
+        {
+            if (sqlDataReader_verificarSesion != null)
+            {
+                if (!sqlDataReader_verificarSesion.IsClosed)
+                {
+                    sqlDataReader_verificarSesion.Close();
+                }
+                sqlDataReader_verificarSesion.Dispose();
+            }
+        }
+        return dataTable_verificarSesion;
+    }
 }
