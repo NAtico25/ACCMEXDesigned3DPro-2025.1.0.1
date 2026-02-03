@@ -27,6 +27,8 @@ public class ComponentesSeccion : MonoBehaviour
 
     public ListaMaterialesUI listaMaterialesUI;
 
+     public PrefabComponentesDatos prefabItem;
+
 
     [Header("Referencia de datos")]
     public ent_seccion seccionActual;
@@ -99,8 +101,8 @@ public class ComponentesSeccion : MonoBehaviour
         //if (seccionActual.perfiles.Count == 0) return;
 
         //Sale con error, checar como funciona las listas
-        /*Mat_perfil perfil = seccionActual.perfiles[0];
-        inputCompSecc5.text = seccionActual.perfiles.Numero_Parte.ToString();*/
+        //Mat_perfil perfil = seccionActual.perfiles[0];
+        //inputCompSecc5.text = seccionActual.perfiles.Numero_Parte.ToString();
         //Tapa trasera de seccion
         if (seccionActual.tapa_trasera_seccion != null)
         {
@@ -132,4 +134,77 @@ public class ComponentesSeccion : MonoBehaviour
         seccionActual.tapas_laterales_seccion.Numero_Parte = componente;
         seccionActual.tapa_lateral_Inferior_seccion.Numero_Parte = componente;
     }
+
+    /*public Transform contenedorUI;
+    public PrefabComponentesDatos prefabItem;
+
+    public TMP_Text TextCompSecc;
+    public TMP_InputField inputCompSecc;
+
+    ent_seccion seccionActual;
+
+    public void AsignarSeccion(ent_seccion nuevaSeccion)
+    {
+        seccionActual = nuevaSeccion;
+        RefrescarUI();
+        MostrarNoParte();
+    }
+
+    void MostrarNoParte()
+    {
+        if (seccionActual == null) return;
+
+        // Nombre del campo
+        TextCompSecc.text = "Numero de Seccion:";
+
+        // Valor GET
+        inputCompSecc.text = seccionActual.no_seccion.ToString();
+    }
+
+    void RefrescarUI()
+    {
+        foreach (Transform child in contenedorUI)
+            Destroy(child.gameObject);
+
+        if (seccionActual == null) return;
+
+        // Zoclo
+        if (seccionActual.zoclo != null)
+        {
+            CrearItem(
+                seccionActual.zoclo.nombre_Material,
+                seccionActual.zoclo.Numero_Parte,
+                v => seccionActual.zoclo.Numero_Parte = v
+            );
+        }
+
+        // Piso Anclaje
+        if (seccionActual.piezas_Anclaje != null)
+        {
+            CrearItem(
+                seccionActual.piezas_Anclaje.nombre_Material,
+                seccionActual.piezas_Anclaje.cantidad.ToString(),
+                v => seccionActual.piezas_Anclaje.cantidad = int.Parse(v)
+            );
+        }
+
+        //PERFILES (lista)
+        if (seccionActual.perfiles != null)
+        {
+            foreach (var perfil in seccionActual.perfiles)
+            {
+                CrearItem(
+                    perfil.nombre_Material,
+                    perfil.Numero_Parte,
+                    v => perfil.Numero_Parte = v
+                );
+            }
+        }
+    }
+
+    void CrearItem(string nombre, string valor, System.Action<string> callback)
+    {
+        PrefabComponentesDatos item = Instantiate(prefabItem, contenedorUI);
+        item.Configurar(nombre, valor, callback);
+    }*/
 }
