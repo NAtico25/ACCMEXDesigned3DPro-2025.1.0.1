@@ -17,6 +17,7 @@ public class prefap_carpetas : MonoBehaviour
     public UnityEngine.UI.Button botonPrincipal;
     public GameObject prefapSeleccioes;
     private modo modoBoton;
+    public Silleta ent_Silleta;
     private enum modo
     {
         Carpeta,

@@ -9,7 +9,7 @@ public class prefap_selecciones : MonoBehaviour
     public GameObject prefabCarpetas;
     private List<prefap_carpetas> items = new List<prefap_carpetas>();
     public Transform contentCarpetas;
-    public Silleta ent_Silleta;
+   
     public static string ProyectosPath
     {
         get
@@ -29,9 +29,6 @@ public class prefap_selecciones : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Silleta silleta = new Silleta(Silleta.TipoSilleta.VFD);
-        convertidor.ConvertirJson(silleta);
-
         string path = ProyectosPath;
         RefrescarContenido(path);
     }
@@ -66,7 +63,8 @@ public class prefap_selecciones : MonoBehaviour
                 item.AsignarDatos(id, nombreCarpeta, 1);
                 id++;
                 items.Add(item);
-                ent_Silleta = convertidor.ConvertirDesdeBytesSilleta(File.ReadAllBytes(Path.Combine(carpeta, "data.json")));
+                item.ent_Silleta = convertidor.ConvertirDesdeBytesSilleta(File.ReadAllBytes(Path.Combine(carpeta, "data.json")));
+                Debug.Log("Silleta cargada: " + item.ent_Silleta.tipoSilleta);
             }
             else
             {
