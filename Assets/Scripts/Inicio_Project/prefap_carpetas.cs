@@ -64,6 +64,7 @@ public class prefap_carpetas : MonoBehaviour
                 Debug.Log($"Boton Carpeta presionado en carpeta ID: {idCarpeta} con path {path}");
                 prefap_selecciones selecciones = prefapSeleccioes.GetComponent<prefap_selecciones>();
                 selecciones.RefrescarContenido(path);
+                ProyectoManager.Instance.rutaProyectoActual = path;
             });
         }
            

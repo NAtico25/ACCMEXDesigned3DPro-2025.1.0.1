@@ -10,6 +10,7 @@ public class prefap_crear_carpeta : MonoBehaviour
     public Button botonCancelar;
     public CanvasGroup canvasGroup;
     public TMP_InputField inputNombreCarpeta;
+    public string pathCarpeta;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,7 @@ public class prefap_crear_carpeta : MonoBehaviour
             string nombreCarpeta = inputNombreCarpeta.text;
             if (!string.IsNullOrEmpty(nombreCarpeta))
             {
-                CrearNuevaCarpeta(Application.dataPath, nombreCarpeta);
+                CrearNuevaCarpeta(ProyectoManager.Instance.rutaProyectoActual, nombreCarpeta);
                 DesactivarVentana();
             }
             else

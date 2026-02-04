@@ -14,6 +14,8 @@ public class ProyectoManager : MonoBehaviour
     public ent_proyecto ent_Proyecto;
 
     public datosJsonProyecto proyectoNuevo;
+    public string rutaPrincipalProyectos;
+    public string rutaProyectoActual;
 
     private void Awake()
     {

@@ -29,6 +29,8 @@ public class prefap_selecciones : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ProyectoManager.Instance.rutaProyectoActual = ProyectosPath;
+        ProyectoManager.Instance.rutaPrincipalProyectos = ProyectosPath;
         string path = ProyectosPath;
         RefrescarContenido(path);
     }
