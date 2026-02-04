@@ -11,6 +11,8 @@ public class prefap_versionesProyectos : MonoBehaviour
     public int numeroVersion;
     public int id_Version;
     public string fechaCreacion;
+    public ent_proyecto _Proyecto;
+    private byte[] archivoVersion;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +25,13 @@ public class prefap_versionesProyectos : MonoBehaviour
         
     }
 
-    public void SetData(int version, int id, string fecha)
+    public void SetData(int version, int id, string fecha, ent_proyecto ent_Proyecto)
     {
         numeroVersion = version;
         id_Version = id;
         fechaCreacion = fecha;
         inputVersion.text = "Versión: " + numeroVersion + " - " + fechaCreacion;
+        _Proyecto = ent_Proyecto;
     }
 
     //Colocar todo este codigo de abajo donde se controlara todo
@@ -51,10 +54,11 @@ public class prefap_versionesProyectos : MonoBehaviour
             int version = int.Parse(row["NumeroVersion"].ToString());
             DateTime fechadate = (DateTime)row["Fecha"];
             string fecha = fechadate.ToString("dd/MM/yyyy");
-            
+            archivoVersion = (byte[])row["Layout"];
+            ent_proyecto ent_Proyecto1 = convertidor.ConvertirDesdeBytes(archivoVersion);
 
             Debug.Log($"Asignando datos al item: Id={id}, version ={version}, Fecha={fecha}");
-            item.SetData(version, id, fecha);
+            item.SetData(version, id, fecha, ent_Proyecto1);
 
            
         }
