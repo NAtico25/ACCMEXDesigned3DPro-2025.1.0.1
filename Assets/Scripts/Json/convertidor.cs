@@ -123,6 +123,17 @@ public static class convertidor
 
         return ent_Proyecto;
     }
+    public static Silleta ConvertirDesdeBytesSilleta(byte[] bytes)
+    {
+        string json = System.Text.Encoding.UTF8.GetString(bytes);
+
+        // string → objeto
+        datosJsonSilleta datos = JsonUtility.FromJson<datosJsonSilleta>(json);
+        //ent_proyecto proyecto = JsonUtility.FromJson<ent_proyecto>(json);
+        Silleta ent_silleta = ToCampo(datos);
+
+        return ent_silleta;
+    }
     public static json_usuario ConvertirUsuario(ent_usuario ent_Usuario)
     {
         json_usuario jsonUsuario = new json_usuario
@@ -234,4 +245,24 @@ public static class convertidor
         soporte_Aislante_Bus = s.soporte_Aislante_Bus,
         base_Tapa_Trasera = s.base_Tapa_Trasera
     };
+    public static Silleta ToCampo(datosJsonSilleta s) => new Silleta(s.tipoSilleta)
+    {
+        PosicionSilleta = s.PosicionSilleta,
+        piso = s.piso,
+        portaClemas = s.portaClemas,
+        clemas = s.clemas,
+        guiaSilleta = s.guiaSilleta,
+        carretillas = s.carretillas,
+        acrilicosSeparadores = s.acrilicosSeparadores,
+        clemas_fuerza = s.clemas_fuerza,
+        tipoSilleta = s.tipoSilleta,
+        //capacidad = s.capacidad,
+        Nombre = s.Nombre,
+        NumeroParte = s.NumeroParte,
+        Descripcion = s.Descripcion,
+        Precio = s.Precio,
+        Coordenadas = s.Coordenadas,
+        Rotacion = s.Rotacion
+    };
+    
 }
