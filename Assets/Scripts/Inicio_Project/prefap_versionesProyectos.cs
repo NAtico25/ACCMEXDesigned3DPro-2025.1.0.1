@@ -12,7 +12,7 @@ public class prefap_versionesProyectos : MonoBehaviour
     public int id_Version;
     public string fechaCreacion;
     public ent_proyecto _Proyecto;
-    private byte[] archivoVersion;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -54,7 +54,7 @@ public class prefap_versionesProyectos : MonoBehaviour
             int version = int.Parse(row["NumeroVersion"].ToString());
             DateTime fechadate = (DateTime)row["Fecha"];
             string fecha = fechadate.ToString("dd/MM/yyyy");
-            archivoVersion = (byte[])row["Layout"];
+            byte[] archivoVersion = (byte[])row["Layout"];
             ent_proyecto ent_Proyecto1 = convertidor.ConvertirDesdeBytes(archivoVersion);
 
             Debug.Log($"Asignando datos al item: Id={id}, version ={version}, Fecha={fecha}");
