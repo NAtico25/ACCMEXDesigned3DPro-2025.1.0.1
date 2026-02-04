@@ -51,7 +51,7 @@ public class prefap_carpetas : MonoBehaviour
             botonPrincipal.onClick.AddListener(() =>
             {
                 Debug.Log($"Boton Silleta presionado en carpeta ID: {idCarpeta} con path {path}");
-                
+                Debug.Log($"Cargando silleta tipo: {ent_Silleta.tipoSilleta}");
             });
         }
         else
