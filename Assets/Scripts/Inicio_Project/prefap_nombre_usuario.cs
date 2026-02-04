@@ -21,7 +21,7 @@ public class prefap_nombre_usuario : MonoBehaviour
         }
         catch (Exception ex)
         {
-            Debug.LogError("Error al asignar el puesto de usuario: " + ex.Message);
+            Debug.Log("Error al asignar el puesto de usuario: " + ex.Message);
         }
     }
 

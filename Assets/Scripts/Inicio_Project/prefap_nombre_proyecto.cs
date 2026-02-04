@@ -16,7 +16,15 @@ public class prefap_nombre_proyecto : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nombreProyectoInput.text = ProyectoManager.Instance.proyectoNuevo.nombreProyecto;
+        try
+        {
+            nombreProyectoInput.text = ProyectoManager.Instance.proyectoNuevo.nombreProyecto;
+        }
+        catch (Exception ex)
+        {
+            Debug.Log("Error al asignar el nombre del proyecto: " + ex.Message);
+        }
+
     }
 
     // Update is called once per frame

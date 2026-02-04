@@ -59,8 +59,6 @@ public class prefap_versionesProyectos : MonoBehaviour
 
             Debug.Log($"Asignando datos al item: Id={id}, version ={version}, Fecha={fecha}");
             item.SetData(version, id, fecha, ent_Proyecto1);
-
-           
         }
     }
 }

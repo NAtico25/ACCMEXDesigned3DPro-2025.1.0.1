@@ -327,7 +327,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 7705442392505924878, guid: edb11b0bf6ca08247af2a72221717326, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1359729444339750409, guid: edb11b0bf6ca08247af2a72221717326, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1326906476}
   m_SourcePrefab: {fileID: 100100000, guid: edb11b0bf6ca08247af2a72221717326, type: 3}
 --- !u!1001 &166566599
 PrefabInstance:
@@ -425,6 +428,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2110846536378030510, guid: 087b12340925fed4386731276d5cd00f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110846536378030510, guid: 087b12340925fed4386731276d5cd00f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110846536378030510, guid: 087b12340925fed4386731276d5cd00f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4757284283627252152, guid: 087b12340925fed4386731276d5cd00f, type: 3}
       propertyPath: m_Name
       value: Selecciones
@@ -511,6 +526,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1326906475 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1359729444339750409, guid: edb11b0bf6ca08247af2a72221717326, type: 3}
+  m_PrefabInstance: {fileID: 44408382}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1326906476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326906475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5b4785c5af4d1649951c3b39f1d3542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputVersion: {fileID: 0}
+  numeroVersion: 0
+  id_Version: 0
+  fechaCreacion: 
+  _Proyecto: {fileID: 0}
+  prefabItem: {fileID: 0}
+  content: {fileID: 0}
 --- !u!1 &1466763903
 GameObject:
   m_ObjectHideFlags: 0
