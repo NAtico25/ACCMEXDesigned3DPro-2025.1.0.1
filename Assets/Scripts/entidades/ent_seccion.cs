@@ -117,11 +117,15 @@ public class ent_seccion : MonoBehaviour
     void OnEnable()
     {
        clicDerecho.action.Enable();
+        if (Medida.Medidas_Seccion.Instance != null)
+            Medida.Medidas_Seccion.Instance.RegistrarSeccion(this);
     }
     
     void OnDisable()
     {
-       //clicDerecho.action.Disable();
+        //clicDerecho.action.Disable();
+        if (Medida.Medidas_Seccion.Instance != null)
+            Medida.Medidas_Seccion.Instance.EliminarSeccion(this);
     }
 
     // Update is called once per frame
