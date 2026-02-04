@@ -3341,6 +3341,7 @@ MonoBehaviour:
   inputAncho: {fileID: 1170520160}
   inputProfundidad: {fileID: 1646027605}
   inputTotal: {fileID: 688471019}
+  inputTotalAncho: {fileID: 0}
 --- !u!1 &352231669
 GameObject:
   m_ObjectHideFlags: 0
@@ -4916,6 +4917,10 @@ PrefabInstance:
       propertyPath: canvasGroup
       value: 
       objectReference: {fileID: 7502860175469529154}
+    - target: {fileID: 8887444067023603018, guid: ef80665ed155af74297fc0a9e7d50515, type: 3}
+      propertyPath: nombre_Cliente_Controlador
+      value: 
+      objectReference: {fileID: 9184029588051463950}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

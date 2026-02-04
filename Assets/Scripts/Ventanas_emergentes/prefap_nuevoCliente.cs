@@ -10,6 +10,7 @@ public class prefap_nuevoCliente : MonoBehaviour
     public Button boton_CrearCliente;
     public Button boton_Cancelar;
     public CanvasGroup canvasGroup;
+    public prefap_nombre_cliente nombre_Cliente_Controlador;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class prefap_nuevoCliente : MonoBehaviour
                 ProyectoManager.Instance.ent_Proyecto.clienteProyecto = nombreCliente;
                 CrearCliente(nombreCliente);
                 DesactivarVentana();
+                nombre_Cliente_Controlador.LlenarDropdown();
             }
             else
             {
