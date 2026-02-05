@@ -73,7 +73,7 @@ namespace Medida
 
         public void RecalcularTotales()
         {
-            double totalAncho = 0;
+            double totalAncho = -60;
 
             foreach (ent_seccion s in secciones)
                 totalAncho += s.ancho_Seccion;

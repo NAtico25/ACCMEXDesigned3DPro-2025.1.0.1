@@ -3341,7 +3341,7 @@ MonoBehaviour:
   inputAncho: {fileID: 1170520160}
   inputProfundidad: {fileID: 1646027605}
   inputTotal: {fileID: 688471019}
-  inputTotalAncho: {fileID: 0}
+  inputTotalAncho: {fileID: 688471019}
 --- !u!1 &352231669
 GameObject:
   m_ObjectHideFlags: 0
