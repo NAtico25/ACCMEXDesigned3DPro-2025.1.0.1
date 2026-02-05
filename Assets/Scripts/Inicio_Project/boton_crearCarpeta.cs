@@ -22,6 +22,7 @@ public class boton_crearCarpeta : MonoBehaviour
         {
             Debug.Log("Boton regresar presionado");
             prefap_Selecciones.RefrescarContenido(ProyectoManager.Instance.rutaPrincipalProyectos);
+            ProyectoManager.Instance.rutaProyectoActual = ProyectoManager.Instance.rutaPrincipalProyectos;
         });
     }
 
