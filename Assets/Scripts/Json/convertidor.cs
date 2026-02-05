@@ -264,5 +264,5 @@ public static class convertidor
         Coordenadas = s.Coordenadas,
         Rotacion = s.Rotacion
     };
-    
+
 }
