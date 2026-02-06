@@ -20,9 +20,19 @@ public class prefap_crear_carpeta : MonoBehaviour
             string nombreCarpeta = inputNombreCarpeta.text;
             if (!string.IsNullOrEmpty(nombreCarpeta))
             {
-                CrearNuevaCarpeta(ProyectoManager.Instance.rutaProyectoActual, nombreCarpeta);
-                prefap_Selecciones.RefrescarContenido(ProyectoManager.Instance.rutaProyectoActual);
-                DesactivarVentana();
+                try
+                {
+                    CrearNuevaCarpeta(ProyectoManager.Instance.rutaProyectoActual, nombreCarpeta);
+                }catch (System.Exception e)
+                {
+
+                }
+                finally
+                {
+                    prefap_Selecciones.RefrescarContenido(ProyectoManager.Instance.rutaProyectoActual);
+                    DesactivarVentana();
+                }
+
             }
             else
             {

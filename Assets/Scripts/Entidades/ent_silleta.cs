@@ -11,6 +11,8 @@ public class Silleta : MonoBehaviour
     public string path;
 
     #region Getters y Setters publicos
+    public TipoSilleta tipoSilleta { get; set; }
+    public Capacidad capacidad { get; private set; }
     public string PosicionSilleta { get; set; }
     public Mat_piso.piso piso { get; set; }
     public Mat_porta_clemas portaClemas { get; set; }
@@ -19,18 +21,18 @@ public class Silleta : MonoBehaviour
     public Mat_carretillas carretillas { get; set; }
     public Mat_acrilicos_separadores acrilicosSeparadores { get; set; }
     public Mat_clemas_fuerza clemas_fuerza { get; set; }
-    public TipoSilleta tipoSilleta { get; set; }
-    public Capacidad capacidad { get; private set; }
+    public List<Mat_interruptor> interruptores { get; set; }
+    
     #endregion
 
-    #region Getters y Setters privados
+    
     public string Nombre { get; set; }
     public string NumeroParte { get; set; }
     public string Descripcion { get; set; }
     public double Precio { get; set; }
     public Vector3 Coordenadas { get; set; }
     public Quaternion Rotacion { get; set; }
-    #endregion
+    
 
 
     public enum TipoSilleta

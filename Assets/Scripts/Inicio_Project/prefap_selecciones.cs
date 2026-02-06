@@ -14,7 +14,8 @@ public class prefap_selecciones : MonoBehaviour
     {
         get
         {
-            string path = Path.Combine(Application.persistentDataPath, "Proyectos");
+            //string path = Path.Combine(Application.persistentDataPath, "Proyectos");
+            string path = @"\\189.196.22.194\Render";
 
             if (!Directory.Exists(path))
             {
@@ -32,6 +33,7 @@ public class prefap_selecciones : MonoBehaviour
         ProyectoManager.Instance.rutaProyectoActual = ProyectosPath;
         ProyectoManager.Instance.rutaPrincipalProyectos = ProyectosPath;
         string path = ProyectosPath;
+        Debug.Log("Ruta de proyectos: " + path);
         RefrescarContenido(path);
     }
 
