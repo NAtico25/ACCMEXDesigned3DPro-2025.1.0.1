@@ -39,21 +39,6 @@ namespace Medida
             inputProfundidad.text = seccion.profundidad_Seccion.ToString();
         }
 
-        /*public void CalcularTotal()
-        {
-            ent_seccion[] secciones = FindObjectsOfType<ent_seccion>();
-
-            double totalAncho = 0;
-
-            foreach (ent_seccion s in secciones)
-            {
-                totalAncho += s.ancho_Seccion;
-                totalAncho++;
-            }
-
-            inputTotal.text = totalAncho.ToString();
-        }*/
-
         public void RegistrarSeccion(ent_seccion seccion)
         {
             if (!secciones.Contains(seccion))
@@ -73,12 +58,42 @@ namespace Medida
 
         public void RecalcularTotales()
         {
+
+            int count = secciones.Count;
+
+            if (count == 0)
+            {
+                inputTotalAncho.text = "0";
+                return;
+            }
+
             double totalAncho = -60;
+
+            for (int i = 0; i < count; i++)
+            {
+                double ancho = secciones[i].ancho_Seccion;
+
+                // SOLO si hay más de una sección
+                if (count > 1)
+                {
+                    if (i == 0)
+                        ancho += 2;
+
+                    if (i == count - 1)
+                        ancho += 2;
+                }
+
+                totalAncho += ancho;
+            }
+
+            inputTotalAncho.text = totalAncho.ToString();
+
+            /*double totalAncho = -60;
 
             foreach (ent_seccion s in secciones)
                 totalAncho += s.ancho_Seccion;
 
-            inputTotalAncho.text = totalAncho.ToString();
+            inputTotalAncho.text = totalAncho.ToString();*/
         }
     }
 
