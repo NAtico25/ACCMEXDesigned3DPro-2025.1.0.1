@@ -73,7 +73,7 @@ namespace Medida
             {
                 double ancho = secciones[i].ancho_Seccion;
 
-                // SOLO si hay más de una sección
+                // Si hay más de una sección
                 if (count > 1)
                 {
                     if (i == 0)

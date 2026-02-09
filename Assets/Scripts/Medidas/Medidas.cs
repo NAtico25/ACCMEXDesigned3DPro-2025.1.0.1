@@ -10,7 +10,7 @@ public class Medidas : MonoBehaviour
     public TMP_Text textoLargo;
     public TMP_Text textoAncho;
 
-    void Start()
+    void Awake()
     {
         ActualizarTexto();
     }

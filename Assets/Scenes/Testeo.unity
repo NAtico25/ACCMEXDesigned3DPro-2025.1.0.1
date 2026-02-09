@@ -26256,6 +26256,7 @@ MonoBehaviour:
   inputPrecio: {fileID: 7408380350606890328}
   toggleActivo: {fileID: 0}
   PrecioActual: {fileID: 1218339046}
+  precio_Seccion: 0
 --- !u!224 &4058727320586200521
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27562,7 +27563,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Nom Precio Component:'
+  m_text: 'Precio:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -33475,6 +33476,7 @@ GameObject:
   - component: {fileID: 3594482463690090355}
   - component: {fileID: 7502860175469529153}
   - component: {fileID: 4057279918033175794}
+  - component: {fileID: 7502860175469529155}
   - component: {fileID: 2789167505529422119}
   - component: {fileID: 7502860175469529154}
   m_Layer: 5
@@ -35435,6 +35437,20 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &7502860175469529155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7021469823890499281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 928fc43196f69e742b04bf0500282b7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputPrecioTotal: {fileID: 0}
+  secciones: []
 --- !u!114 &7509822565443126381
 MonoBehaviour:
   m_ObjectHideFlags: 0
