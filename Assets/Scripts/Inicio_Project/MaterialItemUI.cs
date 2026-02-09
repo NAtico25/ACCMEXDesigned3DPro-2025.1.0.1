@@ -15,10 +15,13 @@ public class MaterialItemUI : MonoBehaviour
     [Header("Referencia de datos")]
     public ent_seccion PrecioActual;
 
+    public double precio_Seccion;
+
     Material material;
 
     void Awake()
     {
+        inputPrecio.onEndEdit.RemoveAllListeners();
         inputPrecio.onEndEdit.AddListener(OnNoPrecioChanged);
     }
 
@@ -48,9 +51,13 @@ public class MaterialItemUI : MonoBehaviour
 
     void OnNoPrecioChanged (string valor)
     {
-        if (PrecioActual.zoclo != null)
+        if (PrecioActual == null) return;
+
+        if (double.TryParse(valor, out double p))
         {
-            PrecioActual.piezas_Anclaje.Precio = int.Parse(valor);
+            PrecioActual.piezas_Anclaje.Precio = p;
+
+            // Recalcula el total
         }
     }
 }
