@@ -44,13 +44,10 @@ public class agregarSilletaEcena : MonoBehaviour
             obj.transform.localRotation = Quaternion.Euler(180f, 0f, 0f);
             obj.transform.localScale = Vector3.one;
             agregado = true;
+            ProyectoManager.Instance.ent_silleta = new Silleta(Silleta.TipoSilleta.Stratix);
         }
         else
         {
-            //foreach (Transform hijo in padre)
-            //{
-            //    Destroy(hijo.gameObject);
-            //}
 
             agregado = false;
             prefapConfirmarNuevaSilletaScript.ActivarVentana(1);
@@ -66,14 +63,10 @@ public class agregarSilletaEcena : MonoBehaviour
             obj.transform.localRotation = Quaternion.Euler(-7.78f, 0f, 0f);
             obj.transform.localScale = new Vector3(2, 2, 1f);
             agregado = true;
+            ProyectoManager.Instance.ent_silleta = new Silleta(Silleta.TipoSilleta.FVNR);
         }
         else
         {
-            //foreach (Transform hijo in padre)
-            //{
-            //    Destroy(hijo.gameObject);
-            //}
-
             agregado = false;
             prefapConfirmarNuevaSilletaScript.ActivarVentana(2);
         }
@@ -88,14 +81,10 @@ public class agregarSilletaEcena : MonoBehaviour
             obj.transform.localRotation = Quaternion.Euler(-7.78f, 0f, 0f);
             obj.transform.localScale = new Vector3(2, 2, 1f);
             agregado = true;
+            ProyectoManager.Instance.ent_silleta = new Silleta(Silleta.TipoSilleta.FVNR);
         }
         else
         {
-            //foreach (Transform hijo in padre)
-            //{
-            //    Destroy(hijo.gameObject);
-            //}
-
             agregado = false;
             prefapConfirmarNuevaSilletaScript.ActivarVentana(3);
         }
@@ -110,14 +99,10 @@ public class agregarSilletaEcena : MonoBehaviour
             obj.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
             obj.transform.localScale = new Vector3(3, 3, 1f);
             agregado = true;
+            ProyectoManager.Instance.ent_silleta = new Silleta(Silleta.TipoSilleta.FVNR);
         }
         else
         {
-            //foreach (Transform hijo in padre)
-            //{
-            //    Destroy(hijo.gameObject);
-            //}
-
             agregado = false;
             prefapConfirmarNuevaSilletaScript.ActivarVentana(4);
         }
@@ -132,14 +117,10 @@ public class agregarSilletaEcena : MonoBehaviour
             obj.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
             obj.transform.localScale = new Vector3(2.4f, 2.4f, 1f);
             agregado = true;
+            ProyectoManager.Instance.ent_silleta = new Silleta(Silleta.TipoSilleta.FVNR);
         }
         else
         {
-            //foreach (Transform hijo in padre)
-            //{
-            //    Destroy(hijo.gameObject);
-            //}
-
             agregado = false;
             prefapConfirmarNuevaSilletaScript.ActivarVentana(5);
         }

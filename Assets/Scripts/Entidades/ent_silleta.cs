@@ -22,10 +22,11 @@ public class Silleta : MonoBehaviour
     public Mat_acrilicos_separadores acrilicosSeparadores { get; set; }
     public Mat_clemas_fuerza clemas_fuerza { get; set; }
     public List<Mat_interruptor> interruptores { get; set; }
-    
+    public List<Mat_adicionales> adicionales { get; set; }
+
     #endregion
 
-    
+
     public string Nombre { get; set; }
     public string NumeroParte { get; set; }
     public string Descripcion { get; set; }
@@ -69,7 +70,6 @@ public class Silleta : MonoBehaviour
         }
 
     }
-
     public Silleta(TipoSilleta tipo)
     {
         tipoSilleta = tipo;

@@ -17,6 +17,8 @@ public class ProyectoManager : MonoBehaviour
     public string rutaPrincipalProyectos;
     public string rutaProyectoActual;
 
+    public Silleta ent_silleta = null;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)

@@ -2,10 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Mat_acrilicos_separadores : Material
 {
-    public materialParaUso MaterialParaUso = materialParaUso.Metal_mecanico;
-    public materialPara MaterialPara = materialPara.Silleta;
+    public int cantidad;
+    public string descripcion;
 
-    public int cantidad { get; set; }
+    Mat_acrilicos_separadores()
+    {
+        nombre_Material = "Acrilicos separadores";
+        Numero_Parte = "CA-001";
+        descripcion = "Acrilicos para silleta";
+        Precio = 50.0;
+        cantidad = 1;
+        MaterialParaUso = materialParaUso.Metal_mecanico;
+        MaterialPara = materialPara.Silleta;
+    }
 }

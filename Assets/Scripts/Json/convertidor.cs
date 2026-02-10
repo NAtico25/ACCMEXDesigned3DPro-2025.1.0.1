@@ -83,7 +83,7 @@ public static class convertidor
         return bytes;
     }
 
-    public static byte[] ConvertirJson(Silleta ent_silleta)
+    public static byte[] ConvertirJson(Silleta ent_silleta, string path)
     {
         datosJsonSilleta datos = new datosJsonSilleta
         {
@@ -95,6 +95,8 @@ public static class convertidor
             carretillas = ent_silleta.carretillas,
             acrilicosSeparadores = ent_silleta.acrilicosSeparadores,
             clemas_fuerza = ent_silleta.clemas_fuerza,
+            interruptores = ent_silleta.interruptores,
+            adicionales = ent_silleta.adicionales,
             tipoSilleta = ent_silleta.tipoSilleta,
             capacidad = ent_silleta.capacidad,
             Nombre = ent_silleta.Nombre,
@@ -105,7 +107,7 @@ public static class convertidor
             Rotacion = ent_silleta.Rotacion
         };
         string json = JsonUtility.ToJson(datos, true);
-        string path = Application.persistentDataPath + "/silleta_" + ent_silleta.PosicionSilleta + ent_silleta.Nombre + ent_silleta.NumeroParte + ".json";
+        path += "/" + "data.json";
         File.WriteAllText(path, json);
         Debug.Log("Guardando silleta en: " + path);
         byte[] bytes = System.Text.Encoding.UTF8.GetBytes(json);
@@ -255,6 +257,8 @@ public static class convertidor
         carretillas = s.carretillas,
         acrilicosSeparadores = s.acrilicosSeparadores,
         clemas_fuerza = s.clemas_fuerza,
+        interruptores = s.interruptores,
+        adicionales = s.adicionales,
         tipoSilleta = s.tipoSilleta,
         //capacidad = s.capacidad,
         Nombre = s.Nombre,
