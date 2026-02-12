@@ -11,17 +11,52 @@ public class prefap_datosSilleta : MonoBehaviour
     public TMP_Dropdown dropdownTipoSilleta;
     public TMP_Dropdown dropdownCapacidadSilleta;
     public TMP_Dropdown dropdownPiso;
+    public prefap_datosSilletaMinimizar Clemas;
+    public prefap_datosSilletaMinimizar PortaClemas;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (ProyectoManager.Instance.ent_silleta != null)
+        {
+            Silleta silleta = ProyectoManager.Instance.ent_silleta;
+            inputFieldNombre.text = silleta.Nombre;
+            inputFieldNumeroParte.text = silleta.NumeroParte;
+            dropdownTipoSilleta.value = (int)silleta.tipoSilleta;
+            dropdownCapacidadSilleta.value = (int)silleta.capacidad;
+            dropdownPiso.value = (int)silleta.piso;
+
+            if (ProyectoManager.Instance.ent_silleta.clemas != null)
+            {
+                if (ProyectoManager.Instance.ent_silleta.clemas.cantidad > 0)
+                    Clemas.Maximizar();
+                else
+                    Clemas.Minimizar();
+            }
+            else
+                Clemas.Minimizar();
+
+
+
+            if (ProyectoManager.Instance.ent_silleta.portaClemas != null)
+            {
+                if (ProyectoManager.Instance.ent_silleta.portaClemas.cantidad > 0)
+                    PortaClemas.Maximizar();
+                else
+                    PortaClemas.Minimizar();
+
+            }
+            else
+                PortaClemas.Minimizar();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         GuardarDatosSilleta();
+
     }
 
     public void GuardarDatosSilleta()

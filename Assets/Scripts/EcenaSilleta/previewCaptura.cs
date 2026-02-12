@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-
 public class previewCaptura : MonoBehaviour
 {
     public Camera previewCamera;
@@ -22,6 +21,9 @@ public class previewCaptura : MonoBehaviour
 
     public void Captura(string path)
     {
+
+
+
         RenderTexture.active = renderTexture;
         previewCamera.Render();
 

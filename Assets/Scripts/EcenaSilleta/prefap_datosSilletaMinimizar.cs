@@ -27,24 +27,26 @@ public class prefap_datosSilletaMinimizar : MonoBehaviour
         if (estaMinimizada)
         {
             Maximizar();
-            botonMaximiazarMininmizar.image.sprite = iconoMinimizar;
-            estaMinimizada = false;
+           
         }
         else
         {
             Minimizar();
-            botonMaximiazarMininmizar.image.sprite = iconoMaximizar;
-            estaMinimizada = true;
+            
         }
     }
 
     public void Maximizar()
     {
         ObjetoMaximizarMinimizar.SetActive(true);
+        botonMaximiazarMininmizar.image.sprite = iconoMinimizar;
+        estaMinimizada = false;
     }
 
     public void Minimizar()
     {
         ObjetoMaximizarMinimizar.SetActive(false);
+        botonMaximiazarMininmizar.image.sprite = iconoMaximizar;
+        estaMinimizada = true;
     }
 }
