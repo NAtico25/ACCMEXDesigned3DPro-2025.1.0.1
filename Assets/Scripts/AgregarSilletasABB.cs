@@ -5,46 +5,48 @@ public class AgregarSilletasABB : MonoBehaviour
 {
     public GameObject prefab;
     public Transform contenedor;   // ESTE es tu empty padre
-    public float offsetX = 2f;
 
     private int contador = 1;
-    private Vector3 ultimaPosicion;
-    private bool primero = true;
+    private GameObject ultimoObjeto;
 
     public void AgregarPrefab()
     {
         Vector3 pos;
 
-        if (primero)
+        if (contenedor.childCount == 0)
         {
-            // Primer objeto se coloca donde está el empty
             pos = contenedor.position;
-            ultimaPosicion = pos;
-            primero = false;
         }
         else
         {
-            // Los siguientes avanzan en X
-            pos = ultimaPosicion + new Vector3(offsetX, 0, 0);
-            ultimaPosicion = pos;
+            // Obtener el último hijo real
+            Transform ultimoHijo = contenedor.GetChild(contenedor.childCount - 1);
+
+            float anchoUltimo = ObtenerAncho(ultimoHijo.gameObject);
+            float anchoNuevo = ObtenerAncho(prefab);
+
+            pos = ultimoHijo.position +
+                  new Vector3((anchoUltimo / 2f) + (anchoNuevo / 2f), 0, 0);
         }
 
-        // Instanciar como hijo del empty
         GameObject nuevo = Instantiate(prefab, pos, Quaternion.identity, contenedor);
-
-        // Asegura que no cambie de tamaño por el parent
         nuevo.transform.localScale = prefab.transform.localScale;
-       
-        nuevo.GetComponent<ent_seccion>().no_seccion = contenedor.childCount; // Asignar numero de seccion basado en la cantidad de hijos
-        Debug.Log("Se agregó la silleta número: " + nuevo.GetComponent<ent_seccion>().no_seccion);
 
-        // Cambiar el texto del prefab clonado
+        nuevo.GetComponent<ent_seccion>().no_seccion = contenedor.childCount;
+
         TMP_Text texto = nuevo.GetComponentInChildren<TMP_Text>();
         if (texto != null)
         {
-            texto.text = $"Seccion {contador}";
+            texto.text = $"Seccion {contenedor.childCount}";
         }
+    }
 
-        contador++;
+    float ObtenerAncho(GameObject obj)
+    {
+        Renderer rend = obj.GetComponentInChildren<Renderer>();
+        if (rend != null)
+            return rend.bounds.size.x;
+
+        return 1f;
     }
 }
