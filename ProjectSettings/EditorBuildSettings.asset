@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Testeo.unity
     guid: ab2dff95064e70640a12e76bbdd2d3c1
+  - enabled: 1
+    path: Assets/Scenes/Crear-Silleta.unity
+    guid: 495b704c715ac3240adf03a3383ec2bc
   m_configObjects: {}

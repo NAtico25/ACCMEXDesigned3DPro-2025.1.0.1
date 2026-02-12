@@ -3,13 +3,9 @@ using UnityEngine;
 
 public class AgregarSilletasABB : MonoBehaviour
 {
-    public GameObject prefab;
-    public Transform contenedor;   // ESTE es tu empty padre
+    public Transform contenedor;
 
-    private int contador = 1;
-    private GameObject ultimoObjeto;
-
-    public void AgregarPrefab()
+    public void AgregarPrefab(GameObject prefab)
     {
         Vector3 pos;
 
@@ -19,7 +15,6 @@ public class AgregarSilletasABB : MonoBehaviour
         }
         else
         {
-            // Obtener el último hijo real
             Transform ultimoHijo = contenedor.GetChild(contenedor.childCount - 1);
 
             float anchoUltimo = ObtenerAncho(ultimoHijo.gameObject);
