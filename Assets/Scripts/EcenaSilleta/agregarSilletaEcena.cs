@@ -10,6 +10,7 @@ public class agregarSilletaEcena : MonoBehaviour
     public GameObject silletaUnFactor;
     public GameObject silletaFactorMedio;
     public GameObject silletaDosFactor;
+    public GameObject ObjetoActual;
     public Transform padre;
     private bool agregado = false;
     public prefap_confirmarNuevaSilleta prefapConfirmarNuevaSilletaScript;
@@ -40,9 +41,9 @@ public class agregarSilletaEcena : MonoBehaviour
         if (!agregado)
         {
             GameObject obj = Instantiate(estratix, padre);
-            obj.transform.localPosition = new Vector3(1f, 0.15f, -0.3f);
-            obj.transform.localRotation = Quaternion.Euler(180f, 0f, 0f);
-            obj.transform.localScale = Vector3.one;
+            obj.transform.localPosition = new Vector3(2.7f, -0.04f, 0f);
+            obj.transform.localRotation = Quaternion.Euler(-180f, 173f, 0f);
+            obj.transform.localScale = new Vector3(1.6f, 1.6f, 1f);
             agregado = true;
             ProyectoManager.Instance.ent_silleta = new Silleta(Silleta.TipoSilleta.Stratix);
         }
@@ -64,6 +65,9 @@ public class agregarSilletaEcena : MonoBehaviour
             obj.transform.localScale = new Vector3(2, 2, 1f);
             agregado = true;
             ProyectoManager.Instance.ent_silleta = new Silleta(Silleta.TipoSilleta.FVNR);
+            ObjetoActual = obj;
+           
+                
         }
         else
         {
@@ -124,5 +128,14 @@ public class agregarSilletaEcena : MonoBehaviour
             agregado = false;
             prefapConfirmarNuevaSilletaScript.ActivarVentana(5);
         }
+    }
+
+    public void OcultarMostrarPorNombre(GameObject padre, string nombre, bool estado)
+    {
+        if (padre == null) return;
+
+        Transform hijo = padre.transform.Find(nombre);
+        if (hijo != null)
+            hijo.gameObject.SetActive(estado);
     }
 }

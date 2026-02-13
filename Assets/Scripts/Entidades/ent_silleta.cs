@@ -51,6 +51,7 @@ public class Silleta : MonoBehaviour
     {
         HP,
         AMP,
+        Red,
         Invalido
     }
 
@@ -65,7 +66,7 @@ public class Silleta : MonoBehaviour
             case TipoSilleta.FCB: return Capacidad.AMP;
             case TipoSilleta.MCB: return Capacidad.AMP;
             case TipoSilleta.FUR: return Capacidad.HP;
-            case TipoSilleta.Stratix: return Capacidad.Invalido;
+            case TipoSilleta.Stratix: return Capacidad.Red;
             default: return Capacidad.Invalido;
         }
 

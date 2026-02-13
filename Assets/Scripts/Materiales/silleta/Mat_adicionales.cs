@@ -10,7 +10,7 @@ public class Mat_adicionales : Material
 
     public Mat_adicionales()
     {
-        nombre_Material = "Nuevo material";
+        nombre_Material = "";
         MaterialParaUso = materialParaUso.Metal_mecanico;
         MaterialPara = materialPara.Silleta;
         Precio = 0.00;

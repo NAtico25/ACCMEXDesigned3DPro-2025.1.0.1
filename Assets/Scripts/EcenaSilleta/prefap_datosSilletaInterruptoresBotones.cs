@@ -9,6 +9,9 @@ public class prefap_datosSilletaInterruptoresBotones : MonoBehaviour
     public GameObject ObjetoAInstanciar;
     public Button botonInstanciar;
     public Button botonQuitarUltimaInstancia;
+    public agregarSilletaEcena scripAgregarSilletaEcena;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +23,14 @@ public class prefap_datosSilletaInterruptoresBotones : MonoBehaviour
     void Update()
     {
         
+
+       
+
     }
 
     public void InstanciarObjeto()
     {
+        
         //Se debera colocar el objeto ObjetoAInstanciar como hijo del objeto Contenido para que se muestre en la interfaz
         GameObject nuevaInstancia = Instantiate(ObjetoAInstanciar, Contenido.transform);
     }
