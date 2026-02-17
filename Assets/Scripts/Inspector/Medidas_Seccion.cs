@@ -67,7 +67,7 @@ namespace Medida
                 return;
             }
 
-            double totalAncho = -60;
+            double totalAncho = -120;
 
             for (int i = 0; i < count; i++)
             {
