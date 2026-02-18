@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class prefap_lamicoi : MonoBehaviour
 {
+    //public GameObject superior;
+    //public GameObject ;
     // Start is called before the first frame update
     void Start()
     {
