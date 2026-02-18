@@ -37,4 +37,11 @@ public class Mat_lamicoi : Material
         Amarillo,
         Blanco
     }
+    public enum TipoLamicoi
+    {
+        Doble,
+        Triple,
+        Cuadrupe,
+        Quituple
+    }
 }

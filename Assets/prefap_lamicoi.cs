@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class prefap_lamicoi : MonoBehaviour
 {
-    //public GameObject superior;
-    //public GameObject ;
+    public prefapComponentesLamicoi superior;
+    public prefapComponentesLamicoi inferior;
     // Start is called before the first frame update
+
+    
     void Start()
     {
         
@@ -18,13 +20,13 @@ public class prefap_lamicoi : MonoBehaviour
         
     }
 
-    public void ConfigurarSuperior()
+    public void ConfigurarSuperior(Mat_lamicoi lamicoi, int numeroComponente)
     {
-
+        superior.ConfigurarComponentes(lamicoi, numeroComponente);
     }
 
-    public void ConfigurarInferior()
+    public void ConfigurarInferior(Mat_lamicoi lamicoi, int numeroComponente)
     {
-
+        inferior.ConfigurarComponentes(lamicoi, numeroComponente);
     }
 }
