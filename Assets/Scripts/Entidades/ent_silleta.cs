@@ -10,6 +10,8 @@ public class Silleta : MonoBehaviour
 {
     public string path;
 
+    
+
     #region Getters y Setters publicos
     public TipoSilleta tipoSilleta { get; set; }
     public Capacidad capacidad { get; private set; }
@@ -24,7 +26,7 @@ public class Silleta : MonoBehaviour
     public List<Mat_interruptor> interruptores { get; set; }
     public List<Mat_adicionales> adicionales { get; set; }
 
-    #endregion
+   
 
 
     public string Nombre { get; set; }
@@ -33,7 +35,8 @@ public class Silleta : MonoBehaviour
     public double Precio { get; set; }
     public Vector3 Coordenadas { get; set; }
     public Quaternion Rotacion { get; set; }
-    
+    #endregion
+
 
 
     public enum TipoSilleta
@@ -146,6 +149,8 @@ public class Silleta : MonoBehaviour
             }
         }
     }
+
+   
 
 
     // --- Nota: Métodos para buscar en DB y descargar localmente no implementados ---

@@ -1191,6 +1191,10 @@ MonoBehaviour:
   iconoMaximizar: {fileID: 21300000, guid: f136ced2fd95259468862b882ccc70d0, type: 3}
   iconoMinimizar: {fileID: 21300000, guid: 41188e245054c794e9341bca029babee, type: 3}
   estaMinimizada: 0
+  inputFieldNumeroParte: {fileID: 7709254597394899565}
+  inputFieldCantidad: {fileID: 8284242057048943324}
+  inputFieldPrecio: {fileID: 627626133766171035}
+  inputFieldDescripcion: {fileID: 6977010002363323242}
 --- !u!1 &582486200296250454
 GameObject:
   m_ObjectHideFlags: 0
@@ -4569,6 +4573,10 @@ MonoBehaviour:
   iconoMaximizar: {fileID: 21300000, guid: f136ced2fd95259468862b882ccc70d0, type: 3}
   iconoMinimizar: {fileID: 21300000, guid: 41188e245054c794e9341bca029babee, type: 3}
   estaMinimizada: 0
+  inputFieldNumeroParte: {fileID: 9145211273481397976}
+  inputFieldCantidad: {fileID: 5786092537768920875}
+  inputFieldPrecio: {fileID: 5939241720112747278}
+  inputFieldDescripcion: {fileID: 249684376724574694}
 --- !u!1 &1662458909669435537
 GameObject:
   m_ObjectHideFlags: 0
@@ -5616,6 +5624,10 @@ MonoBehaviour:
   iconoMaximizar: {fileID: 21300000, guid: f136ced2fd95259468862b882ccc70d0, type: 3}
   iconoMinimizar: {fileID: 21300000, guid: 41188e245054c794e9341bca029babee, type: 3}
   estaMinimizada: 0
+  inputFieldNumeroParte: {fileID: 2299528263090219910}
+  inputFieldCantidad: {fileID: 5045916170693479495}
+  inputFieldPrecio: {fileID: 3693164106425410006}
+  inputFieldDescripcion: {fileID: 7997641022351330050}
 --- !u!1 &1880234427337563485
 GameObject:
   m_ObjectHideFlags: 0
@@ -6467,6 +6479,10 @@ MonoBehaviour:
   iconoMaximizar: {fileID: 21300000, guid: f136ced2fd95259468862b882ccc70d0, type: 3}
   iconoMinimizar: {fileID: 21300000, guid: 41188e245054c794e9341bca029babee, type: 3}
   estaMinimizada: 0
+  inputFieldNumeroParte: {fileID: 0}
+  inputFieldCantidad: {fileID: 0}
+  inputFieldPrecio: {fileID: 0}
+  inputFieldDescripcion: {fileID: 0}
 --- !u!1 &2097817608381628145
 GameObject:
   m_ObjectHideFlags: 0
@@ -13699,6 +13715,10 @@ MonoBehaviour:
   iconoMaximizar: {fileID: 21300000, guid: f136ced2fd95259468862b882ccc70d0, type: 3}
   iconoMinimizar: {fileID: 21300000, guid: 41188e245054c794e9341bca029babee, type: 3}
   estaMinimizada: 0
+  inputFieldNumeroParte: {fileID: 5237875184065255053}
+  inputFieldCantidad: {fileID: 1331155343218052362}
+  inputFieldPrecio: {fileID: 7629559906590889911}
+  inputFieldDescripcion: {fileID: 4054452193618719049}
 --- !u!1 &4678882371286301098
 GameObject:
   m_ObjectHideFlags: 0
@@ -14256,6 +14276,10 @@ MonoBehaviour:
   iconoMaximizar: {fileID: 21300000, guid: f136ced2fd95259468862b882ccc70d0, type: 3}
   iconoMinimizar: {fileID: 21300000, guid: 41188e245054c794e9341bca029babee, type: 3}
   estaMinimizada: 0
+  inputFieldNumeroParte: {fileID: 6931474762918498501}
+  inputFieldCantidad: {fileID: 1101642676474379427}
+  inputFieldPrecio: {fileID: 259457252594654565}
+  inputFieldDescripcion: {fileID: 7763885643649845692}
 --- !u!1 &4845454145577689431
 GameObject:
   m_ObjectHideFlags: 0

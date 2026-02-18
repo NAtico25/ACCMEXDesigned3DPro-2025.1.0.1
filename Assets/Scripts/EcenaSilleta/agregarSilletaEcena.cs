@@ -60,8 +60,8 @@ public class agregarSilletaEcena : MonoBehaviour
         if (!agregado)
         {
             GameObject obj = Instantiate(medioFactor, padre);
-            obj.transform.localPosition = new Vector3(3.2f, 0.2f, 0f);
-            obj.transform.localRotation = Quaternion.Euler(-7.78f, 0f, 0f);
+            obj.transform.localPosition = new Vector3(-6.16f, -8.75f, -1.36f);
+            obj.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
             obj.transform.localScale = new Vector3(2, 2, 1f);
             agregado = true;
             ProyectoManager.Instance.ent_silleta = new Silleta(Silleta.TipoSilleta.FVNR);

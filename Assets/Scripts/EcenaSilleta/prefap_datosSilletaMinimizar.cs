@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,10 @@ public class prefap_datosSilletaMinimizar : MonoBehaviour
     public Sprite iconoMaximizar;
     public Sprite iconoMinimizar;
     public bool estaMinimizada = false;
+    public TMP_InputField inputFieldNumeroParte;
+    public TMP_InputField inputFieldCantidad;
+    public TMP_InputField inputFieldPrecio;
+    public TMP_InputField inputFieldDescripcion;
     // Start is called before the first frame update
     void Start()
     {
