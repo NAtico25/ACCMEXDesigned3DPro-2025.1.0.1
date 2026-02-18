@@ -8,7 +8,7 @@ public class Mat_carretillas : Material
     public int cantidad;
     public string descripcion;
 
-    Mat_carretillas()
+    public Mat_carretillas()
     {
         nombre_Material = "Carretillas";
         Numero_Parte = "CA-001";

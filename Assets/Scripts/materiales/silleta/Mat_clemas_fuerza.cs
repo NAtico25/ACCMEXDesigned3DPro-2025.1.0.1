@@ -8,7 +8,7 @@ public class Mat_clemas_fuerza : Material
     public int cantidad;
     public string descripcion;
 
-    Mat_clemas_fuerza()
+    public Mat_clemas_fuerza()
     {
         nombre_Material = "Clemas de fuerza";
         Numero_Parte = "CF-001";

@@ -7,6 +7,7 @@ public class Mat_interruptor : Material
 {
     public string descripcion;
     public int cantidad;
+    public TipoInterruptor tipoInterruptor;
     //public double precio;
     public Mat_interruptor()
     {
@@ -17,5 +18,11 @@ public class Mat_interruptor : Material
         descripcion = "Describir especificaciones del interruptor";
         cantidad = 1;
     }
-   
+
+    public enum TipoInterruptor
+    {
+        TipoA,
+        TipoB
+    }
+
 }

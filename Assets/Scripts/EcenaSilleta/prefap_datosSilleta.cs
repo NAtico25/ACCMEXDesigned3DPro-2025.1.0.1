@@ -39,34 +39,65 @@ public class prefap_datosSilleta : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Silleta silleta = new Silleta((Silleta.TipoSilleta)dropdownTipoSilleta.value);
+        dropdownCapacidadSilleta.value = (int)silleta.AsignarCapacidadTipoSilleta((Silleta.TipoSilleta)dropdownTipoSilleta.value);
         //CargarDatosSilleta();
-        
+
         //GuardarDatosSilleta();
     }
 
-    public void GuardarDatosSilleta()
+    public Silleta GuardarDatosSilleta()
     {
-        string nombre = inputFieldNombre.text;
-        string numeroParte = inputFieldNumeroParte.text;
-        Silleta.TipoSilleta tipoSilleta = (Silleta.TipoSilleta)dropdownTipoSilleta.value;
-        Silleta.Capacidad capacidad = (Silleta.Capacidad)dropdownCapacidadSilleta.value;
-        Mat_piso.piso piso = (Mat_piso.piso)dropdownPiso.value;
-        // Aquí puedes crear una instancia de Silleta y asignar los valores
-        Silleta nuevaSilleta = new Silleta(tipoSilleta)
+        Silleta nuevaSilleta = new Silleta((Silleta.TipoSilleta)dropdownTipoSilleta.value)
         {
-            Nombre = nombre,
-            NumeroParte = numeroParte,
-            piso = piso
+            Nombre = inputFieldNombre.text,
+            NumeroParte = inputFieldNumeroParte.text,
+            piso = (Mat_piso.piso)dropdownPiso.value,
+            clemas = new Mat_clemas
+            { 
+                Numero_Parte = Clemas.inputFieldNumeroParte.text,
+                cantidad = Clemas.inputFieldCantidad.text != "" ? int.Parse(Clemas.inputFieldCantidad.text) : 0,
+                Precio = Clemas.inputFieldPrecio.text != "" ? double.Parse(Clemas.inputFieldPrecio.text) : 0,
+                descripcion = Clemas.inputFieldDescripcion.text
+            },
+            portaClemas = new Mat_porta_clemas
+            {
+                Numero_Parte = PortaClemas.inputFieldNumeroParte.text,
+                cantidad = PortaClemas.inputFieldCantidad.text != "" ? int.Parse(PortaClemas.inputFieldCantidad.text) : 0,
+                Precio = PortaClemas.inputFieldPrecio.text != "" ? double.Parse(PortaClemas.inputFieldPrecio.text) : 0,
+                descripcion = PortaClemas.inputFieldDescripcion.text
+            },
+            guiaSilleta = new Mat_guia_silleta
+            {
+                Numero_Parte = GuiaDeSilletas.inputFieldNumeroParte.text,
+                cantidad = GuiaDeSilletas.inputFieldCantidad.text != "" ? int.Parse(GuiaDeSilletas.inputFieldCantidad.text) : 0,
+                Precio = GuiaDeSilletas.inputFieldPrecio.text != "" ? double.Parse(GuiaDeSilletas.inputFieldPrecio.text) : 0,
+                descripcion = GuiaDeSilletas.inputFieldDescripcion.text
+            },
+            carretillas = new Mat_carretillas
+            {
+                Numero_Parte = Carretillas.inputFieldNumeroParte.text,
+                cantidad = Carretillas.inputFieldCantidad.text != "" ? int.Parse(Carretillas.inputFieldCantidad.text) : 0,
+                Precio = Carretillas.inputFieldPrecio.text != "" ? double.Parse(Carretillas.inputFieldPrecio.text) : 0,
+                descripcion = Carretillas.inputFieldDescripcion.text
+            },
+            acrilicosSeparadores = new Mat_acrilicos_separadores
+            {
+                Numero_Parte = AcrilicosSeparadores.inputFieldNumeroParte.text,
+                cantidad = AcrilicosSeparadores.inputFieldCantidad.text != "" ? int.Parse(AcrilicosSeparadores.inputFieldCantidad.text) : 0,
+                Precio = AcrilicosSeparadores.inputFieldPrecio.text != "" ? double.Parse(AcrilicosSeparadores.inputFieldPrecio.text) : 0,
+                descripcion = AcrilicosSeparadores.inputFieldDescripcion.text
+            },
+            clemas_fuerza = new Mat_clemas_fuerza
+            {
+                Numero_Parte = ClemasFuerza.inputFieldNumeroParte.text,
+                cantidad = ClemasFuerza.inputFieldCantidad.text != "" ? int.Parse(ClemasFuerza.inputFieldCantidad.text) : 0,
+                Precio = ClemasFuerza.inputFieldPrecio.text != "" ? double.Parse(ClemasFuerza.inputFieldPrecio.text) : 0,
+                descripcion = ClemasFuerza.inputFieldDescripcion.text
+            }
         };
-        //asignar seleccion en la dropdown de capacidad dependiendo del tipo de silleta seleccionado
-
-        dropdownCapacidadSilleta.value = (int)nuevaSilleta.capacidad;
-
-        // Aquí puedes agregar la lógica para guardar o utilizar la nueva silleta
-        Debug.Log($"Datos de la silleta guardados: {nuevaSilleta.Nombre} {nuevaSilleta.NumeroParte} {nuevaSilleta.tipoSilleta} {nuevaSilleta.capacidad} {nuevaSilleta.piso}");
-
-        ProyectoManager.Instance.ent_silleta = nuevaSilleta;
-        Debug.Log($"Silleta asignada al proyecto: {ProyectoManager.Instance.ent_silleta.Nombre} {ProyectoManager.Instance.ent_silleta.NumeroParte} {ProyectoManager.Instance.ent_silleta.tipoSilleta} {ProyectoManager.Instance.ent_silleta.capacidad} {ProyectoManager.Instance.ent_silleta.piso}");
+        
+        return nuevaSilleta;
     }
 
     public void CargarDatosSilleta()
