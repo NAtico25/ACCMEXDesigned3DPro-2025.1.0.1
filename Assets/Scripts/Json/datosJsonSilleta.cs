@@ -19,6 +19,7 @@ public class datosJsonSilleta
     public Mat_acrilicos_separadores acrilicosSeparadores;
     public Mat_clemas_fuerza clemas_fuerza;
     public List<Mat_interruptor> interruptores;
+    public List<Mat_lamicoi> lamicois;
     public List<Mat_adicionales> adicionales;
     public TipoSilleta tipoSilleta;
     public Capacidad capacidad;

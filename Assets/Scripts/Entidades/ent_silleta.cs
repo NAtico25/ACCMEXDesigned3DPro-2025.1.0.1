@@ -24,6 +24,7 @@ public class Silleta : MonoBehaviour
     public Mat_acrilicos_separadores acrilicosSeparadores { get; set; }
     public Mat_clemas_fuerza clemas_fuerza { get; set; }
     public List<Mat_interruptor> interruptores { get; set; }
+    public List<Mat_lamicoi> lamicois { get; set; }
     public List<Mat_adicionales> adicionales { get; set; }
 
    

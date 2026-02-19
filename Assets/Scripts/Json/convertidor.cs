@@ -258,6 +258,7 @@ public static class convertidor
         acrilicosSeparadores = s.acrilicosSeparadores,
         clemas_fuerza = s.clemas_fuerza,
         interruptores = s.interruptores,
+        lamicois = s.lamicois,
         adicionales = s.adicionales,
         tipoSilleta = s.tipoSilleta,
         //capacidad = s.capacidad,

@@ -17,23 +17,24 @@ public class prefap_datosSilleta : MonoBehaviour
     public prefap_datosSilletaMinimizar Carretillas;
     public prefap_datosSilletaMinimizar AcrilicosSeparadores;
     public prefap_datosSilletaMinimizar ClemasFuerza;
+    public prefap_datosSilletaInterruptoresBotones InterruptoresBotones;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (ProyectoManager.Instance.ent_silleta != null)
-        {
-            Silleta silleta = ProyectoManager.Instance.ent_silleta;
-            silleta.guiaSilleta.cantidad = 0;
-            silleta.carretillas.cantidad = 0;
-            silleta.acrilicosSeparadores.cantidad = 0;
-            silleta.clemas_fuerza.cantidad = 0;
-            inputFieldNombre.text = silleta.Nombre;
-            inputFieldNumeroParte.text = silleta.NumeroParte;
-            dropdownTipoSilleta.value = (int)silleta.tipoSilleta;
-            dropdownCapacidadSilleta.value = (int)silleta.capacidad;
-            dropdownPiso.value = (int)silleta.piso;
-        }
+        //if (ProyectoManager.Instance.ent_silleta != null)
+        //{
+        //    Silleta silleta = ProyectoManager.Instance.ent_silleta;
+        //    silleta.guiaSilleta.cantidad = 0;
+        //    silleta.carretillas.cantidad = 0;
+        //    silleta.acrilicosSeparadores.cantidad = 0;
+        //    silleta.clemas_fuerza.cantidad = 0;
+        //    inputFieldNombre.text = silleta.Nombre;
+        //    inputFieldNumeroParte.text = silleta.NumeroParte;
+        //    dropdownTipoSilleta.value = (int)silleta.tipoSilleta;
+        //    dropdownCapacidadSilleta.value = (int)silleta.capacidad;
+        //    dropdownPiso.value = (int)silleta.piso;
+        //}
     }
 
     // Update is called once per frame
@@ -53,19 +54,20 @@ public class prefap_datosSilleta : MonoBehaviour
             Nombre = inputFieldNombre.text,
             NumeroParte = inputFieldNumeroParte.text,
             piso = (Mat_piso.piso)dropdownPiso.value,
-            clemas = new Mat_clemas
-            { 
-                Numero_Parte = Clemas.inputFieldNumeroParte.text,
-                cantidad = Clemas.inputFieldCantidad.text != "" ? int.Parse(Clemas.inputFieldCantidad.text) : 0,
-                Precio = Clemas.inputFieldPrecio.text != "" ? double.Parse(Clemas.inputFieldPrecio.text) : 0,
-                descripcion = Clemas.inputFieldDescripcion.text
-            },
+           
             portaClemas = new Mat_porta_clemas
             {
                 Numero_Parte = PortaClemas.inputFieldNumeroParte.text,
                 cantidad = PortaClemas.inputFieldCantidad.text != "" ? int.Parse(PortaClemas.inputFieldCantidad.text) : 0,
                 Precio = PortaClemas.inputFieldPrecio.text != "" ? double.Parse(PortaClemas.inputFieldPrecio.text) : 0,
                 descripcion = PortaClemas.inputFieldDescripcion.text
+            },
+            clemas = new Mat_clemas
+            {
+                Numero_Parte = Clemas.inputFieldNumeroParte.text,
+                cantidad = Clemas.inputFieldCantidad.text != "" ? int.Parse(Clemas.inputFieldCantidad.text) : 0,
+                Precio = Clemas.inputFieldPrecio.text != "" ? double.Parse(Clemas.inputFieldPrecio.text) : 0,
+                descripcion = Clemas.inputFieldDescripcion.text
             },
             guiaSilleta = new Mat_guia_silleta
             {
@@ -94,9 +96,12 @@ public class prefap_datosSilleta : MonoBehaviour
                 cantidad = ClemasFuerza.inputFieldCantidad.text != "" ? int.Parse(ClemasFuerza.inputFieldCantidad.text) : 0,
                 Precio = ClemasFuerza.inputFieldPrecio.text != "" ? double.Parse(ClemasFuerza.inputFieldPrecio.text) : 0,
                 descripcion = ClemasFuerza.inputFieldDescripcion.text
-            }
+            },
+            interruptores = InterruptoresBotones.ObtenerDatosInterruptoresBotones()
+
         };
         
+        Debug.Log("Datos de silleta guardados: " + nuevaSilleta.Nombre + ", " + nuevaSilleta.NumeroParte + ", " + nuevaSilleta.tipoSilleta + ", " + nuevaSilleta.capacidad + ", " + nuevaSilleta.piso);
         return nuevaSilleta;
     }
 

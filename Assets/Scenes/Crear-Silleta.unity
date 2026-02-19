@@ -3960,7 +3960,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1115920578}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1115920580
 Camera:
   m_ObjectHideFlags: 0
@@ -4243,6 +4243,7 @@ GameObject:
   - component: {fileID: 1217035961}
   - component: {fileID: 1217035960}
   - component: {fileID: 1217035959}
+  - component: {fileID: 1217035962}
   m_Layer: 5
   m_Name: AplicarCambios
   m_TagString: Untagged
@@ -4313,7 +4314,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1217035960}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1217035962}
+        m_TargetAssemblyTypeName: AplicarCambios, Assembly-CSharp
+        m_MethodName: Aplicar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1217035960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4352,6 +4365,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217035957}
   m_CullTransparentMesh: 1
+--- !u!114 &1217035962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217035957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48d124d33e3e5fb42a6cc808ee801fb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  datos: {fileID: 0}
+  Silleta: {fileID: 0}
 --- !u!1 &1221238873
 GameObject:
   m_ObjectHideFlags: 0

@@ -6576,10 +6576,10 @@ MonoBehaviour:
   iconoMaximizar: {fileID: 21300000, guid: f136ced2fd95259468862b882ccc70d0, type: 3}
   iconoMinimizar: {fileID: 21300000, guid: 41188e245054c794e9341bca029babee, type: 3}
   estaMinimizada: 0
-  inputFieldNumeroParte: {fileID: 0}
-  inputFieldCantidad: {fileID: 0}
-  inputFieldPrecio: {fileID: 0}
-  inputFieldDescripcion: {fileID: 0}
+  inputFieldNumeroParte: {fileID: 3813272091483466382}
+  inputFieldCantidad: {fileID: 7527507547004390248}
+  inputFieldPrecio: {fileID: 2866971761141976280}
+  inputFieldDescripcion: {fileID: 1544703727295149403}
 --- !u!1 &2097817608381628145
 GameObject:
   m_ObjectHideFlags: 0
@@ -27598,6 +27598,7 @@ MonoBehaviour:
   Carretillas: {fileID: 8025656806526427149}
   AcrilicosSeparadores: {fileID: 4737363671640963627}
   ClemasFuerza: {fileID: 9014615577005464319}
+  InterruptoresBotones: {fileID: 3765714750089240299}
 --- !u!1 &8632761673739428565
 GameObject:
   m_ObjectHideFlags: 0

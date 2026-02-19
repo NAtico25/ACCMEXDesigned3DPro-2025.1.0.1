@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 [System.Serializable]
 public class Mat_guia_silleta : Material
@@ -8,7 +7,6 @@ public class Mat_guia_silleta : Material
 
     public int cantidad;
     public string descripcion;
-
     public Mat_guia_silleta()
     {
         nombre_Material = "Porta Clemas";

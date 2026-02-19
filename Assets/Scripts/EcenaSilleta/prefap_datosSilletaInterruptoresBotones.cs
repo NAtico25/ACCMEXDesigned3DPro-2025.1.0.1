@@ -44,4 +44,28 @@ public class prefap_datosSilletaInterruptoresBotones : MonoBehaviour
             Destroy(ultimaInstancia.gameObject);
         }
     }
+
+    public List<Mat_interruptor> ObtenerDatosInterruptoresBotones()
+    {
+        try
+        {
+            List<Mat_interruptor> lista = new List<Mat_interruptor>();
+            lista.Clear();
+            foreach (Transform child in Contenido.transform)
+            {
+                //Obtener prefap_MainInterruptor del hijo
+                prefap_MainInterruptor script = child.GetComponent<prefap_MainInterruptor>();
+                Mat_interruptor interruptor = script.ObtenerDatosInterruptor();
+                lista.Add(interruptor);
+            }
+            Debug.Log("Datos de interruptores y botones obtenidos correctamente. Cantidad: " + lista.Count);
+            return lista;
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError("Error al obtener datos de interruptores y botones: " + ex.Message);
+            return null;
+        }
+        
+    }
 }
