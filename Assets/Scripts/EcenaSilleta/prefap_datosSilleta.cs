@@ -18,6 +18,7 @@ public class prefap_datosSilleta : MonoBehaviour
     public prefap_datosSilletaMinimizar AcrilicosSeparadores;
     public prefap_datosSilletaMinimizar ClemasFuerza;
     public prefap_datosSilletaInterruptoresBotones InterruptoresBotones;
+    public prefap_mainListLamicoi MainListLamicoi;
 
     // Start is called before the first frame update
     void Start()
@@ -97,10 +98,12 @@ public class prefap_datosSilleta : MonoBehaviour
                 Precio = ClemasFuerza.inputFieldPrecio.text != "" ? double.Parse(ClemasFuerza.inputFieldPrecio.text) : 0,
                 descripcion = ClemasFuerza.inputFieldDescripcion.text
             },
-            interruptores = InterruptoresBotones.ObtenerDatosInterruptoresBotones()
+            interruptores = InterruptoresBotones.ObtenerDatosInterruptoresBotones(),
+            lamicois = MainListLamicoi.ObtenerListaLamicoi()
 
         };
-        
+
+        Debug.Log($"Lamicois datos: cantidad en la lista {nuevaSilleta.lamicois.Count}, cantidad de datos {nuevaSilleta.lamicois[0].colorLampara}");
         Debug.Log("Datos de silleta guardados: " + nuevaSilleta.Nombre + ", " + nuevaSilleta.NumeroParte + ", " + nuevaSilleta.tipoSilleta + ", " + nuevaSilleta.capacidad + ", " + nuevaSilleta.piso);
         return nuevaSilleta;
     }

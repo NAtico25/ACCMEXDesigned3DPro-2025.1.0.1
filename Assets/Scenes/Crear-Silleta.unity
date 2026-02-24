@@ -4378,7 +4378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   datos: {fileID: 1418347025592709562}
-  Silleta: {fileID: 0}
+  ContenidoSilleta: {fileID: 1469453710}
 --- !u!1 &1221238873
 GameObject:
   m_ObjectHideFlags: 0
@@ -8085,6 +8085,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 890687397}
     m_Modifications:
+    - target: {fileID: 1236525193259550101, guid: 36b38c530a44e5b4db32576a0e908f80, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1421967625713109524, guid: 36b38c530a44e5b4db32576a0e908f80, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5140802814793714542, guid: 36b38c530a44e5b4db32576a0e908f80, type: 3}
       propertyPath: m_Name
       value: componentesLamicoi

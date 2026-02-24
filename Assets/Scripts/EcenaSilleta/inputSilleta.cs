@@ -46,7 +46,7 @@ public class inputSilleta : MonoBehaviour
 
 
         byte[] data = convertidor.ConvertirJson(ProyectoManager.Instance.ent_silleta, pathCompletoCarpetaNombre);
-        Debug.Log("Cantidad de interruptores: " + ProyectoManager.Instance.ent_silleta.interruptores.Count);
+        Debug.Log("Cantidad de lamicoiis: " + ProyectoManager.Instance.ent_silleta.lamicois.Count);
         previewCapturaScript.Captura(pathCompletoCarpetaNombre);
     }
 }

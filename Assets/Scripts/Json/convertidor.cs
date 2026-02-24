@@ -96,6 +96,7 @@ public static class convertidor
             acrilicosSeparadores = ent_silleta.acrilicosSeparadores,
             clemas_fuerza = ent_silleta.clemas_fuerza,
             interruptores = ent_silleta.interruptores,
+            lamicois = ent_silleta.lamicois,
             adicionales = ent_silleta.adicionales,
             tipoSilleta = ent_silleta.tipoSilleta,
             capacidad = ent_silleta.capacidad,

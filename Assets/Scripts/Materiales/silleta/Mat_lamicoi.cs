@@ -8,7 +8,7 @@ public class Mat_lamicoi : Material
 {
 
     public string descripcion;
-    public int cantidadComponentes;
+    public TipoLamicoi TipoComponenteLamicoi;
     public ComponenteLamicoi[] componentes;
     public ColorLampara[] colorLampara;
     public Mat_lamicoi()
@@ -18,7 +18,6 @@ public class Mat_lamicoi : Material
         MaterialPara = materialPara.Silleta;
         Precio = 1750.00;
         descripcion = "Describir especificaciones del lamicoi";
-        cantidadComponentes = 2;
     }
 
     public enum ComponenteLamicoi

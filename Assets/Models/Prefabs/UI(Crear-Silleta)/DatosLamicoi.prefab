@@ -1014,6 +1014,7 @@ GameObject:
   - component: {fileID: 5214250133956141092}
   - component: {fileID: 4614371536275507773}
   - component: {fileID: 3311892156638772090}
+  - component: {fileID: 3000709841210879837}
   m_Layer: 0
   m_Name: DatosLamicoi
   m_TagString: Untagged
@@ -1082,6 +1083,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &3000709841210879837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6935399179547347013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d246c667b899ab041916e6fb668dbb20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropdownTipo: {fileID: 6763982717478740430}
+  contenido: {fileID: 6757699705516371653}
+  scripsContenidoLamicoi: []
 --- !u!1 &7128360058567773659
 GameObject:
   m_ObjectHideFlags: 0
