@@ -26,11 +26,13 @@ public class AplicarCambios : MonoBehaviour
         ProyectoManager.Instance.ent_silleta = silleta;
         Debug.Log("Datos de la silleta guardados correctamente en el ProyectoManager. Nombre: " + silleta.Nombre + ", NumeroParte: " + silleta.NumeroParte + ", TipoSilleta: " + silleta.tipoSilleta + ", Capacidad: " + silleta.capacidad + ", Piso: " + silleta.piso);
         Debug.Log("Los datos del proyecto manager son nombre: " + ProyectoManager.Instance.ent_silleta.interruptores.Count);
+        ColocarComponnetesSilleta();
     }
 
     public void ColocarComponnetesSilleta()
     {
         //Obtener Silleta del hijo de ContenidoSilleta
         Silleta silleta = ContenidoSilleta.GetComponentInChildren<Silleta>();
+        silleta.AplicarCambiosVisibles(ProyectoManager.Instance.ent_silleta);
     }
 }

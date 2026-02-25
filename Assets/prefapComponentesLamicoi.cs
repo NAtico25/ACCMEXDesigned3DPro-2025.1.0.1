@@ -24,6 +24,7 @@ public class prefapComponentesLamicoi : MonoBehaviour
     public void ConfigurarComponentes(Mat_lamicoi componenteLamicoi, int numeroComponente)
     {
         Mat_lamicoi.ComponenteLamicoi mat_Lamicoi = componenteLamicoi.componentes[numeroComponente];
+
         switch (mat_Lamicoi)
         {
             case Mat_lamicoi.ComponenteLamicoi.Boton:

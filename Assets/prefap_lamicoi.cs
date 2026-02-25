@@ -20,13 +20,13 @@ public class prefap_lamicoi : MonoBehaviour
         
     }
 
-    public void ConfigurarSuperior(Mat_lamicoi lamicoi, int numeroComponente)
+    public void ConfigurarSuperior(Mat_lamicoi lamicoi)
     {
-        superior.ConfigurarComponentes(lamicoi, numeroComponente);
+        superior.ConfigurarComponentes(lamicoi, (int)lamicoi.colorLampara[0]);
     }
 
-    public void ConfigurarInferior(Mat_lamicoi lamicoi, int numeroComponente)
+    public void ConfigurarInferior(Mat_lamicoi lamicoi)
     {
-        inferior.ConfigurarComponentes(lamicoi, numeroComponente);
+        inferior.ConfigurarComponentes(lamicoi, (int)lamicoi.colorLampara[1]);
     }
 }
