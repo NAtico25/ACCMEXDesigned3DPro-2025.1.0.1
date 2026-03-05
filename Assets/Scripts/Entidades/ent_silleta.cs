@@ -11,6 +11,7 @@ public class Silleta : MonoBehaviour
     public string path;
     public GameObject lamicoiDoble;
     public GameObject mandoReenviado;
+    public List<GameObject> listaComponentesAgregados;
     
 
     #region Getters y Setters publicos
@@ -154,36 +155,74 @@ public class Silleta : MonoBehaviour
 
     public void AplicarCambiosVisibles(Silleta silleta)
     {
-        int cantidad;
+        int cantidadLamicoiDoble;
+        int cantidadLamicoiTriple;
+        int cantidadLamicoiCuadruple;
+        int cantidadLamicoiQuituple; 
+        int cantidadInterruptores;
+
+        //recorrer la lista de lamicois y destruir los objetos de la lista  
+        foreach (GameObject componente in listaComponentesAgregados)
+        {
+            Destroy(componente);
+        }
+
         //La cantidad sera igual a la cantidad de lamicois que tenga la silleta pero de tipo lamicoiDoble, si no tiene ninguno de ese tipo, la cantidad sera 0
         if (silleta.lamicois != null || silleta.lamicois.Count != 0)
         {
-            lamicoiDoble.SetActive(true);
-            cantidad = silleta.lamicois.FindAll(l => l.TipoComponenteLamicoi == Mat_lamicoi.TipoLamicoi.Doble).Count;
-
-            prefap_lamicoi scripLamicoiDoble = lamicoiDoble.GetComponent<prefap_lamicoi>();
-            scripLamicoiDoble.ConfigurarSuperior(ProyectoManager.Instance.ent_silleta.lamicois[0]);
-            scripLamicoiDoble.ConfigurarInferior(ProyectoManager.Instance.ent_silleta.lamicois[0]);
-
-            if (cantidad > 10)
+            cantidadLamicoiDoble = silleta.lamicois.FindAll(l => l.TipoComponenteLamicoi == Mat_lamicoi.TipoLamicoi.Doble).Count;
+            if(cantidadLamicoiDoble > 0)
             {
-                Vector3 PosicionLamicoiDoble = lamicoiDoble.transform.position;
+                lamicoiDoble.SetActive(true);
+                prefap_lamicoi scripLamicoiDoble = lamicoiDoble.GetComponent<prefap_lamicoi>();
+                scripLamicoiDoble.ConfigurarSuperior(ProyectoManager.Instance.ent_silleta.lamicois[0]);
+                scripLamicoiDoble.ConfigurarInferior(ProyectoManager.Instance.ent_silleta.lamicois[0]);
 
-                // Se colocaran lamicoiDoble en la silleta dependiendo de la cantidad que se indique, se colocaran un poco mas abajo de PosicionLamicoiDoble
-                for (int i = 1; i < cantidad; i++)
+                if (cantidadLamicoiDoble > 1)
                 {
-                    GameObject nuevoLamicoiDoble = Instantiate(lamicoiDoble);
-                    nuevoLamicoiDoble.transform.position = new Vector3(PosicionLamicoiDoble.x, PosicionLamicoiDoble.y - (i * 0.5f), PosicionLamicoiDoble.z);
-                    nuevoLamicoiDoble.transform.rotation = lamicoiDoble.transform.rotation;
-                    nuevoLamicoiDoble.name = "LamicoiDoble_" + (i + 1);
+                    Vector3 PosicionLamicoiDoble = lamicoiDoble.transform.position;
+
+                    // Se colocaran lamicoiDoble en la silleta dependiendo de la cantidad que se indique, se colocaran un poco mas abajo de PosicionLamicoiDoble
+                    for (int i = 1; i < cantidadLamicoiDoble; i++)
+                    {
+                        GameObject nuevoLamicoiDoble = Instantiate(lamicoiDoble);
+                        nuevoLamicoiDoble.transform.SetParent(transform, false);
+                        nuevoLamicoiDoble.transform.position = new Vector3(PosicionLamicoiDoble.x, PosicionLamicoiDoble.y - (i * 0.5f), PosicionLamicoiDoble.z);
+                        nuevoLamicoiDoble.transform.rotation = lamicoiDoble.transform.rotation;
+                        nuevoLamicoiDoble.name = "LamicoiDoble_" + (i + 1);
+                        listaComponentesAgregados.Add(nuevoLamicoiDoble);
+                    }
                 }
             }
         }
         else
         {
-            cantidad = 0;
+            cantidadLamicoiDoble = 0;
         }
-        Debug.Log("Cantidad de lamicois: " + cantidad);
+        
+        if (silleta.interruptores != null || silleta.interruptores.Count != 0)
+        {
+            cantidadInterruptores = silleta.interruptores.Count;
+            if(cantidadInterruptores > 0)
+            {
+                mandoReenviado.SetActive(true);
+                // Se colocaran interruptores en la silleta dependiendo de la cantidad que se indique, se colocaran un poco mas abajo de lamicoiDoble
+                //Vector3 PosicionLamicoiDoble = lamicoiDoble.transform.position;
+                //for (int i = 0; i < cantidadInterruptores; i++)
+                //{
+                //    GameObject nuevoInterruptor = Instantiate(mandoReenviado);
+                //    nuevoInterruptor.transform.SetParent(transform, false);
+                //    nuevoInterruptor.transform.position = new Vector3(PosicionLamicoiDoble.x, PosicionLamicoiDoble.y - ((cantidadLamicoiDoble * 0.5f) + (i * 0.5f)), PosicionLamicoiDoble.z);
+                //    nuevoInterruptor.transform.rotation = mandoReenviado.transform.rotation;
+                //    nuevoInterruptor.name = "MandoReenviado_" + (i + 1);
+                //    listaComponentesAgregados.Add(nuevoInterruptor);
+                //}
+            }
+        }
+        else
+        {
+            cantidadInterruptores = 0;
+        }
 
 
     }
