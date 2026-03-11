@@ -11,6 +11,7 @@ public class Silleta : MonoBehaviour
     public string path;
     public float distanciaDeLamicois;
     public GameObject lamicoiDoble;
+    public GameObject lamicoiTriple;
     public GameObject mandoReenviado;
     public List<GameObject> listaComponentesAgregados;
     
@@ -200,7 +201,41 @@ public class Silleta : MonoBehaviour
         {
             cantidadLamicoiDoble = 0;
         }
-        
+
+        //Ahora con lamicoi triple
+        if (silleta.lamicois != null || silleta.lamicois.Count != 0)
+        {
+            cantidadLamicoiTriple = silleta.lamicois.FindAll(l => l.TipoComponenteLamicoi == Mat_lamicoi.TipoLamicoi.Triple).Count;
+            if (cantidadLamicoiTriple > 0)
+            {
+                lamicoiTriple.SetActive(true);
+                prefap_lamicoiTriple scripLamicoiTriple = lamicoiTriple.GetComponent<prefap_lamicoiTriple>();
+                scripLamicoiTriple.ConfigurarSuperior(ProyectoManager.Instance.ent_silleta.lamicois[0]);
+                scripLamicoiTriple.ConfigurarCentral(ProyectoManager.Instance.ent_silleta.lamicois[0]);
+                scripLamicoiTriple.ConfigurarInferior(ProyectoManager.Instance.ent_silleta.lamicois[0]);
+
+                if (cantidadLamicoiTriple > 1)
+                {
+                    Vector3 PosicionLamicoiTriple = lamicoiTriple.transform.position;
+
+                    // Se colocaran lamicoiDoble en la silleta dependiendo de la cantidad que se indique, se colocaran un poco mas abajo de PosicionLamicoiDoble
+                    for (int i = 1; i < cantidadLamicoiTriple; i++)
+                    {
+                        GameObject nuevoLamicoiTriple = Instantiate(lamicoiTriple);
+                        nuevoLamicoiTriple.transform.SetParent(transform, false);
+                        nuevoLamicoiTriple.transform.position = new Vector3(PosicionLamicoiTriple.x, PosicionLamicoiTriple.y - (i * distanciaDeLamicois), PosicionLamicoiTriple.z);
+                        nuevoLamicoiTriple.transform.rotation = lamicoiTriple.transform.rotation;
+                        nuevoLamicoiTriple.name = "LamicoiTriple_" + (i + 1);
+                        listaComponentesAgregados.Add(nuevoLamicoiTriple);
+                    }
+                }
+            }
+        }
+        else
+        {
+            cantidadLamicoiTriple = 0;
+        }
+
         if (silleta.interruptores != null || silleta.interruptores.Count != 0)
         {
             cantidadInterruptores = silleta.interruptores.Count;
