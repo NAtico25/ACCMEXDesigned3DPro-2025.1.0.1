@@ -24,8 +24,8 @@ public class AplicarCambios : MonoBehaviour
     {
         silleta = datos.GuardarDatosSilleta();
         ProyectoManager.Instance.ent_silleta = silleta;
-        Debug.Log("Datos de la silleta guardados correctamente en el ProyectoManager. Nombre: " + silleta.Nombre + ", NumeroParte: " + silleta.NumeroParte + ", TipoSilleta: " + silleta.tipoSilleta + ", Capacidad: " + silleta.capacidad + ", Piso: " + silleta.piso);
-        Debug.Log("Los datos del proyecto manager son nombre: " + ProyectoManager.Instance.ent_silleta.interruptores.Count);
+        //Debug.Log("Datos de la silleta guardados correctamente en el ProyectoManager. Nombre: " + silleta.Nombre + ", NumeroParte: " + silleta.NumeroParte + ", TipoSilleta: " + silleta.tipoSilleta + ", Capacidad: " + silleta.capacidad + ", Piso: " + silleta.piso);
+        //Debug.Log("Los datos del proyecto manager son nombre: " + ProyectoManager.Instance.ent_silleta.interruptores.Count);
         ColocarComponnetesSilleta();
     }
 

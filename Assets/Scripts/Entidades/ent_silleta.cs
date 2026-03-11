@@ -9,6 +9,7 @@ using System.IO;
 public class Silleta : MonoBehaviour
 {
     public string path;
+    public float distanciaDeLamicois;
     public GameObject lamicoiDoble;
     public GameObject mandoReenviado;
     public List<GameObject> listaComponentesAgregados;
@@ -187,7 +188,7 @@ public class Silleta : MonoBehaviour
                     {
                         GameObject nuevoLamicoiDoble = Instantiate(lamicoiDoble);
                         nuevoLamicoiDoble.transform.SetParent(transform, false);
-                        nuevoLamicoiDoble.transform.position = new Vector3(PosicionLamicoiDoble.x, PosicionLamicoiDoble.y - (i * 0.5f), PosicionLamicoiDoble.z);
+                        nuevoLamicoiDoble.transform.position = new Vector3(PosicionLamicoiDoble.x, PosicionLamicoiDoble.y - (i * distanciaDeLamicois), PosicionLamicoiDoble.z);
                         nuevoLamicoiDoble.transform.rotation = lamicoiDoble.transform.rotation;
                         nuevoLamicoiDoble.name = "LamicoiDoble_" + (i + 1);
                         listaComponentesAgregados.Add(nuevoLamicoiDoble);
