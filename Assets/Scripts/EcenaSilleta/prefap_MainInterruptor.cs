@@ -25,8 +25,22 @@ public class prefap_MainInterruptor : MonoBehaviour
     {
         Mat_interruptor interruptor = new Mat_interruptor();
         interruptor.Numero_Parte = NumeroParteInterruptor.text;
-        interruptor.cantidad = int.Parse(CantidadInterruptor.text);
-        interruptor.Precio = float.Parse(PrecioInterruptor.text);
+        try
+        {
+            interruptor.cantidad = int.Parse(CantidadInterruptor.text);
+        }
+        catch
+        {
+            interruptor.cantidad = 1; // Valor predeterminado en caso de error
+        }
+        try
+        {
+            interruptor.Precio = float.Parse(PrecioInterruptor.text);
+        }catch
+        {
+            interruptor.Precio = 0f; // Valor predeterminado en caso de error
+        }
+
         interruptor.descripcion = DescripcionInterruptor.text;
         Debug.Log("Datos del interruptor obtenidos: " + interruptor.Numero_Parte + ", " + interruptor.cantidad + ", " + interruptor.Precio + ", " + interruptor.descripcion);
         return interruptor;

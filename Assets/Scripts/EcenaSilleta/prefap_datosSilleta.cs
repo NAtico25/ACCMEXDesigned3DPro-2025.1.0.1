@@ -103,7 +103,7 @@ public class prefap_datosSilleta : MonoBehaviour
 
         };
 
-        Debug.Log($"Lamicois datos: cantidad en la lista {nuevaSilleta.lamicois.Count}, cantidad de datos {nuevaSilleta.lamicois[0].colorLampara}");
+        //Debug.Log($"Lamicois datos: cantidad en la lista {nuevaSilleta.lamicois.Count}, cantidad de datos {nuevaSilleta.lamicois[0].colorLampara}");
         Debug.Log("Datos de silleta guardados: " + nuevaSilleta.Nombre + ", " + nuevaSilleta.NumeroParte + ", " + nuevaSilleta.tipoSilleta + ", " + nuevaSilleta.capacidad + ", " + nuevaSilleta.piso);
         return nuevaSilleta;
     }

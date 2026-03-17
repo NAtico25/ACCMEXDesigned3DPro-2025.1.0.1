@@ -47,8 +47,8 @@ public class prefap_datosSilletaInterruptoresBotones : MonoBehaviour
 
     public List<Mat_interruptor> ObtenerDatosInterruptoresBotones()
     {
-        try
-        {
+        //try
+        //{
             List<Mat_interruptor> lista = new List<Mat_interruptor>();
             lista.Clear();
             foreach (Transform child in Contenido.transform)
@@ -60,12 +60,12 @@ public class prefap_datosSilletaInterruptoresBotones : MonoBehaviour
             }
             Debug.Log("Datos de interruptores y botones obtenidos correctamente. Cantidad: " + lista.Count);
             return lista;
-        }
-        catch (System.Exception ex)
-        {
-            Debug.LogError("Error al obtener datos de interruptores y botones: " + ex.Message);
-            return null;
-        }
+        //}
+        //catch (System.Exception ex)
+        //{
+        //    Debug.LogError("Error al obtener datos de interruptores y botones: " + ex.Message);
+        //    return null;
+        //}
         
     }
 }

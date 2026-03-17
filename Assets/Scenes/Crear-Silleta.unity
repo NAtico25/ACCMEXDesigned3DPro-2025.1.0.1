@@ -1376,7 +1376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5623400696037846002, guid: 1cb44f74d574f1244a59ebeb7c5698dd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5638387529000761291, guid: 1cb44f74d574f1244a59ebeb7c5698dd, type: 3}
       propertyPath: m_IsActive
@@ -5904,7 +5904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5638387529000761291, guid: 1cb44f74d574f1244a59ebeb7c5698dd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10587,7 +10587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: 
-  distanciaDeLamicois: 0.5
+  distanciaDeLamicois: 0.2
   lamicoiDoble: {fileID: 261248203}
   lamicoiTriple: {fileID: 1273525142}
   mandoReenviado: {fileID: 895897354}

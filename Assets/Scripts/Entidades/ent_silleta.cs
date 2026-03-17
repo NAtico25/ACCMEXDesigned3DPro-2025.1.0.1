@@ -157,8 +157,8 @@ public class Silleta : MonoBehaviour
 
     public void AplicarCambiosVisibles(Silleta silleta)
     {
-        int cantidadLamicoiDoble;
-        int cantidadLamicoiTriple;
+        int cantidadLamicoiDoble = 0;
+        int cantidadLamicoiTriple = 0;
         int cantidadLamicoiCuadruple;
         int cantidadLamicoiQuituple; 
         int cantidadInterruptores;
@@ -172,30 +172,48 @@ public class Silleta : MonoBehaviour
         //La cantidad sera igual a la cantidad de lamicois que tenga la silleta pero de tipo lamicoiDoble, si no tiene ninguno de ese tipo, la cantidad sera 0
         if (silleta.lamicois != null || silleta.lamicois.Count != 0)
         {
-            cantidadLamicoiDoble = silleta.lamicois.FindAll(l => l.TipoComponenteLamicoi == Mat_lamicoi.TipoLamicoi.Doble).Count;
-            if(cantidadLamicoiDoble > 0)
+
+            //Recorrer todos los lamicois de la silleta   
+            foreach (Mat_lamicoi lamicoi in silleta.lamicois)
             {
-                lamicoiDoble.SetActive(true);
-                prefap_lamicoi scripLamicoiDoble = lamicoiDoble.GetComponent<prefap_lamicoi>();
-                scripLamicoiDoble.ConfigurarSuperior(ProyectoManager.Instance.ent_silleta.lamicois[0]);
-                scripLamicoiDoble.ConfigurarInferior(ProyectoManager.Instance.ent_silleta.lamicois[0]);
-
-                if (cantidadLamicoiDoble > 1)
+                if (lamicoi.TipoComponenteLamicoi == Mat_lamicoi.TipoLamicoi.Doble)
                 {
-                    Vector3 PosicionLamicoiDoble = lamicoiDoble.transform.position;
-
-                    // Se colocaran lamicoiDoble en la silleta dependiendo de la cantidad que se indique, se colocaran un poco mas abajo de PosicionLamicoiDoble
-                    for (int i = 1; i < cantidadLamicoiDoble; i++)
-                    {
-                        GameObject nuevoLamicoiDoble = Instantiate(lamicoiDoble);
-                        nuevoLamicoiDoble.transform.SetParent(transform, false);
-                        nuevoLamicoiDoble.transform.position = new Vector3(PosicionLamicoiDoble.x, PosicionLamicoiDoble.y - (i * distanciaDeLamicois), PosicionLamicoiDoble.z);
-                        nuevoLamicoiDoble.transform.rotation = lamicoiDoble.transform.rotation;
-                        nuevoLamicoiDoble.name = "LamicoiDoble_" + (i + 1);
-                        listaComponentesAgregados.Add(nuevoLamicoiDoble);
-                    }
+                    cantidadLamicoiDoble++;
+                    AgregarLamicoiDoble(lamicoi, cantidadLamicoiDoble);
+                }
+                else if (lamicoi.TipoComponenteLamicoi == Mat_lamicoi.TipoLamicoi.Triple)
+                {
+                    cantidadLamicoiTriple++;
+                    AgregarLamicoiTriple(lamicoi, cantidadLamicoiTriple);
                 }
             }
+
+
+
+            //cantidadLamicoiDoble = silleta.lamicois.FindAll(l => l.TipoComponenteLamicoi == Mat_lamicoi.TipoLamicoi.Doble).Count;
+            //if(cantidadLamicoiDoble > 0)
+            //{
+            //    lamicoiDoble.SetActive(true);
+            //    prefap_lamicoi scripLamicoiDoble = lamicoiDoble.GetComponent<prefap_lamicoi>();
+            //    scripLamicoiDoble.ConfigurarSuperior(ProyectoManager.Instance.ent_silleta.lamicois[0]);
+            //    scripLamicoiDoble.ConfigurarInferior(ProyectoManager.Instance.ent_silleta.lamicois[0]);
+
+            //    if (cantidadLamicoiDoble > 1)
+            //    {
+            //        Vector3 PosicionLamicoiDoble = lamicoiDoble.transform.position;
+
+            //        // Se colocaran lamicoiDoble en la silleta dependiendo de la cantidad que se indique, se colocaran un poco mas abajo de PosicionLamicoiDoble
+            //        for (int i = 1; i < cantidadLamicoiDoble; i++)
+            //        {
+            //            GameObject nuevoLamicoiDoble = Instantiate(lamicoiDoble);
+            //            nuevoLamicoiDoble.transform.SetParent(transform, false);
+            //            nuevoLamicoiDoble.transform.position = new Vector3(PosicionLamicoiDoble.x, PosicionLamicoiDoble.y - (i * distanciaDeLamicois), PosicionLamicoiDoble.z);
+            //            nuevoLamicoiDoble.transform.rotation = lamicoiDoble.transform.rotation;
+            //            nuevoLamicoiDoble.name = "LamicoiDoble_" + (i + 1);
+            //            listaComponentesAgregados.Add(nuevoLamicoiDoble);
+            //        }
+            //    }
+            //}
         }
         else
         {
@@ -203,40 +221,40 @@ public class Silleta : MonoBehaviour
         }
 
         //Ahora con lamicoi triple
-        if (silleta.lamicois != null || silleta.lamicois.Count != 0)
-        {
-            cantidadLamicoiTriple = silleta.lamicois.FindAll(l => l.TipoComponenteLamicoi == Mat_lamicoi.TipoLamicoi.Triple).Count;
-            if (cantidadLamicoiTriple > 0)
-            {
-                lamicoiTriple.SetActive(true);
-                prefap_lamicoiTriple scripLamicoiTriple = lamicoiTriple.GetComponent<prefap_lamicoiTriple>();
-                scripLamicoiTriple.ConfigurarSuperior(ProyectoManager.Instance.ent_silleta.lamicois[0]);
-                scripLamicoiTriple.ConfigurarCentral(ProyectoManager.Instance.ent_silleta.lamicois[0]);
-                scripLamicoiTriple.ConfigurarInferior(ProyectoManager.Instance.ent_silleta.lamicois[0]);
+        //if (silleta.lamicois != null || silleta.lamicois.Count != 0)
+        //{
+        //    cantidadLamicoiTriple = silleta.lamicois.FindAll(l => l.TipoComponenteLamicoi == Mat_lamicoi.TipoLamicoi.Triple).Count;
+        //    if (cantidadLamicoiTriple > 0)
+        //    {
+        //        lamicoiTriple.SetActive(true);
+        //        prefap_lamicoiTriple scripLamicoiTriple = lamicoiTriple.GetComponent<prefap_lamicoiTriple>();
+        //        scripLamicoiTriple.ConfigurarSuperior(ProyectoManager.Instance.ent_silleta.lamicois[0]);
+        //        scripLamicoiTriple.ConfigurarCentral(ProyectoManager.Instance.ent_silleta.lamicois[0]);
+        //        scripLamicoiTriple.ConfigurarInferior(ProyectoManager.Instance.ent_silleta.lamicois[0]);
 
-                if (cantidadLamicoiTriple > 1)
-                {
-                    Vector3 PosicionLamicoiTriple = lamicoiTriple.transform.position;
+        //        if (cantidadLamicoiTriple > 1)
+        //        {
+        //            Vector3 PosicionLamicoiTriple = lamicoiTriple.transform.position;
 
-                    // Se colocaran lamicoiDoble en la silleta dependiendo de la cantidad que se indique, se colocaran un poco mas abajo de PosicionLamicoiDoble
-                    for (int i = 1; i < cantidadLamicoiTriple; i++)
-                    {
-                        GameObject nuevoLamicoiTriple = Instantiate(lamicoiTriple);
-                        nuevoLamicoiTriple.transform.SetParent(transform, false);
-                        nuevoLamicoiTriple.transform.position = new Vector3(PosicionLamicoiTriple.x, PosicionLamicoiTriple.y - (i * distanciaDeLamicois), PosicionLamicoiTriple.z);
-                        nuevoLamicoiTriple.transform.rotation = lamicoiTriple.transform.rotation;
-                        nuevoLamicoiTriple.name = "LamicoiTriple_" + (i + 1);
-                        listaComponentesAgregados.Add(nuevoLamicoiTriple);
-                    }
-                }
-            }
-        }
-        else
-        {
-            cantidadLamicoiTriple = 0;
-        }
+        //            // Se colocaran lamicoiDoble en la silleta dependiendo de la cantidad que se indique, se colocaran un poco mas abajo de PosicionLamicoiDoble
+        //            for (int i = 1; i < cantidadLamicoiTriple; i++)
+        //            {
+        //                GameObject nuevoLamicoiTriple = Instantiate(lamicoiTriple);
+        //                nuevoLamicoiTriple.transform.SetParent(transform, false);
+        //                nuevoLamicoiTriple.transform.position = new Vector3(PosicionLamicoiTriple.x, PosicionLamicoiTriple.y - (i * distanciaDeLamicois), PosicionLamicoiTriple.z);
+        //                nuevoLamicoiTriple.transform.rotation = lamicoiTriple.transform.rotation;
+        //                nuevoLamicoiTriple.name = "LamicoiTriple_" + (i + 1);
+        //                listaComponentesAgregados.Add(nuevoLamicoiTriple);
+        //            }
+        //        }
+        //    }
+        //}
+        //else
+        //{
+        //    cantidadLamicoiTriple = 0;
+        //}
 
-        if (silleta.interruptores != null || silleta.interruptores.Count != 0)
+        if (silleta.interruptores != null)
         {
             cantidadInterruptores = silleta.interruptores.Count;
             if(cantidadInterruptores > 0)
@@ -264,7 +282,69 @@ public class Silleta : MonoBehaviour
     }
 
 
+    public void AgregarLamicoiDoble(Mat_lamicoi lamicoi, int numeroLamicoi)
+    {
+        if (lamicoi.TipoComponenteLamicoi == Mat_lamicoi.TipoLamicoi.Doble)
+        {
+            if (numeroLamicoi == 1)
+            {
+                lamicoiDoble.SetActive(true);
+                prefap_lamicoi scripLamicoiDoble = lamicoiDoble.GetComponent<prefap_lamicoi>();
+                scripLamicoiDoble.ConfigurarSuperior(lamicoi);
+                scripLamicoiDoble.ConfigurarInferior(lamicoi);
+            }
+            else
+            {
+                Vector3 PosicionLamicoiDoble = lamicoiDoble.transform.position;
+            
+                GameObject nuevoLamicoiDoble = Instantiate(lamicoiDoble);
+                nuevoLamicoiDoble.transform.SetParent(transform, false);
+                nuevoLamicoiDoble.transform.position = new Vector3(PosicionLamicoiDoble.x, PosicionLamicoiDoble.y - (numeroLamicoi * distanciaDeLamicois), PosicionLamicoiDoble.z);
+                nuevoLamicoiDoble.transform.rotation = lamicoiDoble.transform.rotation;
+                nuevoLamicoiDoble.name = "LamicoiDoble_" + (numeroLamicoi);
+                listaComponentesAgregados.Add(nuevoLamicoiDoble);
+                prefap_lamicoi scripLamicoiDoble = nuevoLamicoiDoble.GetComponent<prefap_lamicoi>();
+                scripLamicoiDoble.ConfigurarSuperior(lamicoi);
+                scripLamicoiDoble.ConfigurarInferior(lamicoi);
+            }
+        }
+        else
+        {
+            
+        }
+    }
 
+    public void AgregarLamicoiTriple(Mat_lamicoi lamicoi, int numeroLamicoi)
+    {
+        if (lamicoi.TipoComponenteLamicoi == Mat_lamicoi.TipoLamicoi.Triple)
+        {
+            if (numeroLamicoi == 1)
+            {
+                lamicoiTriple.SetActive(true);
+                prefap_lamicoiTriple scripLamicoiTriple = lamicoiTriple.GetComponent<prefap_lamicoiTriple>();
+                scripLamicoiTriple.ConfigurarSuperior(lamicoi);
+                scripLamicoiTriple.ConfigurarCentral(lamicoi);
+                scripLamicoiTriple.ConfigurarInferior(lamicoi);
+            }
+            else
+            {
+                Vector3 PosicionLamicoiTriple = lamicoiTriple.transform.position;
+                GameObject nuevoLamicoiTriple = Instantiate(lamicoiTriple);
+                nuevoLamicoiTriple.transform.SetParent(transform, false);
+                nuevoLamicoiTriple.transform.position = new Vector3(PosicionLamicoiTriple.x, PosicionLamicoiTriple.y - (numeroLamicoi * distanciaDeLamicois), PosicionLamicoiTriple.z);
+                nuevoLamicoiTriple.transform.rotation = lamicoiTriple.transform.rotation;
+                nuevoLamicoiTriple.name = "LamicoiTriple_" + (numeroLamicoi);
+                listaComponentesAgregados.Add(nuevoLamicoiTriple);
+                prefap_lamicoiTriple scripLamicoiTriple = nuevoLamicoiTriple.GetComponent<prefap_lamicoiTriple>();
+                scripLamicoiTriple.ConfigurarSuperior(lamicoi);
+                scripLamicoiTriple.ConfigurarCentral(lamicoi);
+                scripLamicoiTriple.ConfigurarInferior(lamicoi);
+            }
+        }
+        else
+        {
+        }
+    }
 
     // --- Nota: Métodos para buscar en DB y descargar localmente no implementados ---
 }
