@@ -11,7 +11,9 @@ public class Silleta : MonoBehaviour
     public string path;
     public float distanciaDeLamicois;
     public GameObject lamicoiDoble;
+    public GameObject prefabLamicoiDoble;
     public GameObject lamicoiTriple;
+    public GameObject prefabLamicoiTriple;
     public GameObject mandoReenviado;
     public List<GameObject> listaComponentesAgregados;
     
@@ -157,10 +159,10 @@ public class Silleta : MonoBehaviour
 
     public void AplicarCambiosVisibles(Silleta silleta)
     {
-        int cantidadLamicoiDoble = 0;
-        int cantidadLamicoiTriple = 0;
-        int cantidadLamicoiCuadruple;
-        int cantidadLamicoiQuituple; 
+        int cantidadLamicoi = 0;
+        //int cantidadLamicoiTriple = 0;
+        //int cantidadLamicoiCuadruple;
+        //int cantidadLamicoiQuituple; 
         int cantidadInterruptores;
 
         //recorrer la lista de lamicois y destruir los objetos de la lista  
@@ -178,19 +180,19 @@ public class Silleta : MonoBehaviour
             {
                 if (lamicoi.TipoComponenteLamicoi == Mat_lamicoi.TipoLamicoi.Doble)
                 {
-                    cantidadLamicoiDoble++;
-                    AgregarLamicoiDoble(lamicoi, cantidadLamicoiDoble);
+                    cantidadLamicoi++;
+                    AgregarLamicoiDoble(lamicoi, cantidadLamicoi);
                 }
                 else if (lamicoi.TipoComponenteLamicoi == Mat_lamicoi.TipoLamicoi.Triple)
                 {
-                    cantidadLamicoiTriple++;
-                    AgregarLamicoiTriple(lamicoi, cantidadLamicoiTriple);
+                    cantidadLamicoi++;
+                    AgregarLamicoiTriple(lamicoi, cantidadLamicoi);
                 }
             }
         }
         else
         {
-            cantidadLamicoiDoble = 0;
+            cantidadLamicoi = 0;
         }
 
         if (silleta.interruptores != null)
@@ -236,7 +238,7 @@ public class Silleta : MonoBehaviour
             {
                 Vector3 PosicionLamicoiDoble = lamicoiDoble.transform.position;
             
-                GameObject nuevoLamicoiDoble = Instantiate(lamicoiDoble);
+                GameObject nuevoLamicoiDoble = Instantiate(prefabLamicoiDoble);
                 nuevoLamicoiDoble.transform.SetParent(transform, false);
                 nuevoLamicoiDoble.transform.position = new Vector3(PosicionLamicoiDoble.x, PosicionLamicoiDoble.y - (numeroLamicoi * distanciaDeLamicois), PosicionLamicoiDoble.z);
                 nuevoLamicoiDoble.transform.rotation = lamicoiDoble.transform.rotation;
@@ -267,8 +269,10 @@ public class Silleta : MonoBehaviour
             }
             else
             {
+
+
                 Vector3 PosicionLamicoiTriple = lamicoiTriple.transform.position;
-                GameObject nuevoLamicoiTriple = Instantiate(lamicoiTriple);
+                GameObject nuevoLamicoiTriple = Instantiate(prefabLamicoiTriple);
                 nuevoLamicoiTriple.transform.SetParent(transform, false);
                 nuevoLamicoiTriple.transform.position = new Vector3(PosicionLamicoiTriple.x, PosicionLamicoiTriple.y - (numeroLamicoi * distanciaDeLamicois), PosicionLamicoiTriple.z);
                 nuevoLamicoiTriple.transform.rotation = lamicoiTriple.transform.rotation;
