@@ -159,6 +159,9 @@ public class Silleta : MonoBehaviour
 
     public void AplicarCambiosVisibles(Silleta silleta)
     {
+        lamicoiDoble.SetActive(false);
+        lamicoiTriple.SetActive(false);
+
         int cantidadLamicoi = 0;
         //int cantidadLamicoiTriple = 0;
         //int cantidadLamicoiCuadruple;
