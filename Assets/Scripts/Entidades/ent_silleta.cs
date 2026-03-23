@@ -200,22 +200,33 @@ public class Silleta : MonoBehaviour
 
         if (silleta.interruptores != null)
         {
-            cantidadInterruptores = silleta.interruptores.Count;
-            if(cantidadInterruptores > 0)
+            int listaInterruptoresActuales = 0;
+            foreach (Mat_interruptor interruptor in silleta.interruptores)
             {
-                mandoReenviado.SetActive(true);
-                // Se colocaran interruptores en la silleta dependiendo de la cantidad que se indique, se colocaran un poco mas abajo de lamicoiDoble
-                //Vector3 PosicionLamicoiDoble = lamicoiDoble.transform.position;
-                //for (int i = 0; i < cantidadInterruptores; i++)
-                //{
-                //    GameObject nuevoInterruptor = Instantiate(mandoReenviado);
-                //    nuevoInterruptor.transform.SetParent(transform, false);
-                //    nuevoInterruptor.transform.position = new Vector3(PosicionLamicoiDoble.x, PosicionLamicoiDoble.y - ((cantidadLamicoiDoble * 0.5f) + (i * 0.5f)), PosicionLamicoiDoble.z);
-                //    nuevoInterruptor.transform.rotation = mandoReenviado.transform.rotation;
-                //    nuevoInterruptor.name = "MandoReenviado_" + (i + 1);
-                //    listaComponentesAgregados.Add(nuevoInterruptor);
-                //}
+                if(listaInterruptoresActuales == 0)
+                {
+                    mandoReenviado.SetActive(true);
+                    prefap_Interruptores3D scripInterruptor = mandoReenviado.GetComponent<prefap_Interruptores3D>();
+                    scripInterruptor.ConfigurarComponentes(interruptor, listaInterruptoresActuales);
+                    listaInterruptoresActuales++;
+                }
+                else
+                {
+                    GameObject nuevoInterruptor = Instantiate(mandoReenviado);
+                    nuevoInterruptor.transform.SetParent(transform, false);
+                    nuevoInterruptor.transform.position = new Vector3(mandoReenviado.transform.position.x, mandoReenviado.transform.position.y - (listaInterruptoresActuales * 0.5f), mandoReenviado.transform.position.z);
+                    nuevoInterruptor.transform.rotation = mandoReenviado.transform.rotation;
+                    nuevoInterruptor.name = "MandoReenviado_" + (listaInterruptoresActuales + 1);
+                    listaComponentesAgregados.Add(nuevoInterruptor);
+                    prefap_Interruptores3D scripInterruptor = nuevoInterruptor.GetComponent<prefap_Interruptores3D>();
+                    scripInterruptor.ConfigurarComponentes(interruptor, listaInterruptoresActuales);
+                    listaInterruptoresActuales++;
+                }
+
             }
+
+
+           
         }
         else
         {

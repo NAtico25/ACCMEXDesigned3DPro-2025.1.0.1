@@ -5,7 +5,11 @@ using UnityEngine;
 [System.Serializable]
 public class Mat_interruptor : Material
 {
-    public string descripcion;
+    //Nuevo test
+    public string numeroParteMandoReenviado;
+    public string descripcionMandoReenviado;
+    public double precioMandoReenviado;
+    public string descripcionInterruptor;
     public int cantidad;
     public TipoInterruptor tipoInterruptor;
     //public double precio;
@@ -15,8 +19,9 @@ public class Mat_interruptor : Material
         MaterialParaUso = materialParaUso.Metal_mecanico;
         MaterialPara = materialPara.Silleta;
         Precio = 1750.00;
-        descripcion = "Describir especificaciones del interruptor";
+        descripcionInterruptor = "Describir especificaciones del interruptor";
         cantidad = 1;
+
     }
 
     public enum TipoInterruptor

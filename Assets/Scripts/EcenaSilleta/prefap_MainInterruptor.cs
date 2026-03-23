@@ -6,9 +6,12 @@ using UnityEngine;
 public class prefap_MainInterruptor : MonoBehaviour
 {
     public TMP_InputField NumeroParteInterruptor;
-    public TMP_InputField CantidadInterruptor;
     public TMP_InputField PrecioInterruptor;
     public TMP_InputField DescripcionInterruptor;
+
+    public TMP_Dropdown DropdownTipoInterruptor;
+    public TMP_InputField NumeroParteMandoReenviado;
+    public TMP_InputField PrecioMandoReenviado;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +30,20 @@ public class prefap_MainInterruptor : MonoBehaviour
         interruptor.Numero_Parte = NumeroParteInterruptor.text;
         try
         {
-            interruptor.cantidad = int.Parse(CantidadInterruptor.text);
+            interruptor.tipoInterruptor = (Mat_interruptor.TipoInterruptor)DropdownTipoInterruptor.value;
         }
         catch
         {
-            interruptor.cantidad = 1; // Valor predeterminado en caso de error
+            interruptor.tipoInterruptor = Mat_interruptor.TipoInterruptor.TipoA; // Valor predeterminado en caso de error
+        }
+        interruptor.numeroParteMandoReenviado = NumeroParteMandoReenviado.text;
+        try
+        {
+            interruptor.precioMandoReenviado = float.Parse(PrecioMandoReenviado.text);
+        }
+        catch
+        {
+            interruptor.precioMandoReenviado = 0f; // Valor predeterminado en caso de error
         }
         try
         {
@@ -41,8 +53,8 @@ public class prefap_MainInterruptor : MonoBehaviour
             interruptor.Precio = 0f; // Valor predeterminado en caso de error
         }
 
-        interruptor.descripcion = DescripcionInterruptor.text;
-        Debug.Log("Datos del interruptor obtenidos: " + interruptor.Numero_Parte + ", " + interruptor.cantidad + ", " + interruptor.Precio + ", " + interruptor.descripcion);
+        interruptor.descripcionInterruptor = DescripcionInterruptor.text;
+        Debug.Log("Datos del interruptor obtenidos: " + interruptor.Numero_Parte + ", " + interruptor.cantidad + ", " + interruptor.Precio + ", " + interruptor.descripcionInterruptor);
         return interruptor;
     }
 }
