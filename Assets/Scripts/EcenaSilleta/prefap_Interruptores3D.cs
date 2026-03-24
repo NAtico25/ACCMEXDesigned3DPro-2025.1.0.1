@@ -17,7 +17,7 @@ public class prefap_Interruptores3D : MonoBehaviour
     {
         
     }
-    public void ConfigurarComponentes(Mat_interruptor componenteInterruptor, int numeroComponente)
+    public void ConfigurarComponentes(Mat_interruptor componenteInterruptor)
     {
         Mat_interruptor.TipoInterruptor mat_interruptor = componenteInterruptor.tipoInterruptor;
 

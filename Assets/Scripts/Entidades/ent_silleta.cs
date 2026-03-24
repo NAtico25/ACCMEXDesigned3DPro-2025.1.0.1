@@ -161,6 +161,7 @@ public class Silleta : MonoBehaviour
     {
         lamicoiDoble.SetActive(false);
         lamicoiTriple.SetActive(false);
+        mandoReenviado.SetActive(false);
 
         int cantidadLamicoi = 0;
         //int cantidadLamicoiTriple = 0;
@@ -207,7 +208,7 @@ public class Silleta : MonoBehaviour
                 {
                     mandoReenviado.SetActive(true);
                     prefap_Interruptores3D scripInterruptor = mandoReenviado.GetComponent<prefap_Interruptores3D>();
-                    scripInterruptor.ConfigurarComponentes(interruptor, listaInterruptoresActuales);
+                    scripInterruptor.ConfigurarComponentes(interruptor);
                     listaInterruptoresActuales++;
                 }
                 else
@@ -219,7 +220,7 @@ public class Silleta : MonoBehaviour
                     nuevoInterruptor.name = "MandoReenviado_" + (listaInterruptoresActuales + 1);
                     listaComponentesAgregados.Add(nuevoInterruptor);
                     prefap_Interruptores3D scripInterruptor = nuevoInterruptor.GetComponent<prefap_Interruptores3D>();
-                    scripInterruptor.ConfigurarComponentes(interruptor, listaInterruptoresActuales);
+                    scripInterruptor.ConfigurarComponentes(interruptor);
                     listaInterruptoresActuales++;
                 }
 
