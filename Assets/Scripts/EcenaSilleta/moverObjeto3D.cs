@@ -21,7 +21,7 @@ public class moverObjeto3D : MonoBehaviour
 
         isDragging = true;
 
-        Cursor.SetCursor(cursorClick, Vector2.zero, CursorMode.Auto);
+        Cursor.SetCursor(cursorClick, new Vector2(cursorClick.width / 2, cursorClick.height / 2), CursorMode.Auto);
     }
 
     void OnMouseUp()
