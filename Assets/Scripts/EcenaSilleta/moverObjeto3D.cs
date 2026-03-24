@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class prefap_mandoReenviado : MonoBehaviour
+public class moverObjeto3D : MonoBehaviour
 {
     public Texture2D cursorClick;
 

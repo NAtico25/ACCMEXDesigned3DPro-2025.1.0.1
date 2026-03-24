@@ -22723,6 +22723,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8348348751387273194, guid: 0f849043a7d4824459652de90be3aa4d, type: 3}
   m_PrefabInstance: {fileID: 8749735280523365271}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3748709099386969575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2898967726567174147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d34e2e707870f648969342ba4e05189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorClick: {fileID: 2800000, guid: 99aad3b6ed7edb64e9e6ae6e7dd7797d, type: 3}
+--- !u!65 &3748709099386969576
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2898967726567174147}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.006, y: 0.0112999985, z: 0.00013700247}
+  m_Center: {x: 0.0000000303844, y: 5.649565e-33, z: 0}
 --- !u!224 &3753287124880100042
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29614,6 +29648,40 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3504178704014046266, guid: 11e9c0744ff0f4b4485d321be015a79b, type: 3}
   m_PrefabInstance: {fileID: 8163878007320244414}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7805161968362357800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7805161968362357796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d34e2e707870f648969342ba4e05189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorClick: {fileID: 2800000, guid: 99aad3b6ed7edb64e9e6ae6e7dd7797d, type: 3}
+--- !u!65 &7805161968362357801
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7805161968362357796}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0059999987, y: 0.015999997, z: 0.00013700007}
+  m_Center: {x: 0, y: 0.000000029802322, z: 0}
 --- !u!1 &7815369792876427686
 GameObject:
   m_ObjectHideFlags: 0
@@ -30521,7 +30589,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3504178704014046266, guid: 11e9c0744ff0f4b4485d321be015a79b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7805161968362357800}
+    - targetCorrespondingSourceObject: {fileID: 3504178704014046266, guid: 11e9c0744ff0f4b4485d321be015a79b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7805161968362357801}
   m_SourcePrefab: {fileID: 100100000, guid: 11e9c0744ff0f4b4485d321be015a79b, type: 3}
 --- !u!224 &8166066608884807313
 RectTransform:
@@ -31399,7 +31473,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8784556690135187784, guid: 0f849043a7d4824459652de90be3aa4d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3748709099386969575}
+    - targetCorrespondingSourceObject: {fileID: 8784556690135187784, guid: 0f849043a7d4824459652de90be3aa4d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3748709099386969576}
   m_SourcePrefab: {fileID: 100100000, guid: 0f849043a7d4824459652de90be3aa4d, type: 3}
 --- !u!224 &8751751413516203336
 RectTransform:
