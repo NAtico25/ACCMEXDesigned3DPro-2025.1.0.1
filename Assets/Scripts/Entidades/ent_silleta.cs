@@ -15,6 +15,7 @@ public class Silleta : MonoBehaviour
     public GameObject lamicoiTriple;
     public GameObject prefabLamicoiTriple;
     public GameObject mandoReenviado;
+    public GameObject umc;
     public List<GameObject> listaComponentesAgregados;
     
 
